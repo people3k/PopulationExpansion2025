@@ -1,0 +1,985 @@
+,LabID,Age,Error,Material,Taxa,d13C,Method,Longitude,Latitude,LocAccuracy,Period,SiteID,SiteName,Country,Province,Continent,Source,Reference,calib
+2122,AA-2665,4830,200,BONE,XAD-2 purified,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyson 1989,intcal20
+2126,AA-2666,5380,390,BONE,XAD-2 purified,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,NA,intcal20
+2374,AA-2948,4900,70,BONE,glutamic acid,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyson 1989,intcal20
+2376,AA-2949,5060,80,BONE,hydroxyproline,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyson 1989,intcal20
+2377,AA-2950,4870,60,BONE,glycine,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyson 1989,intcal20
+2378,AA-2951,4750,100,BONE,alanine,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyson 1989,intcal20
+2379,AA-2952,1150,410,BONE,glycine,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. R.A. Tyso 1989,intcal20
+2508,AA-3248,3975,75,BONE,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+2804,AA-3748,2145,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2805,AA-3749,6865,60,BONE,fish otolith Cynoscion p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2807,AA-3750,2715,50,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2808,AA-3751,2320,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2809,AA-3752,3010,55,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2810,AA-3753,4080,60,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2811,AA-3754,4480,60,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2812,AA-3755,2690,65,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2813,AA-3756,4255,50,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2814,AA-3757,2860,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2815,AA-3758,2115,50,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2816,AA-3759,3075,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2818,AA-3760,2230,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2822,AA-3761,2015,60,BONE,fish otolith Umbrina r.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2828,AA-3762,2410,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2832,AA-3763,1870,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2833,AA-3764,2055,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2834,AA-3765,7215,70,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2835,AA-3766,1225,50,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+2836,AA-3767,1930,45,BONE,fish otolith Cynoscion p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper,intcal20
+3255,AA-4309,1630,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3256,AA-4310,2030,220,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3257,AA-4311,1820,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3259,AA-4312,1700,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3262,AA-4313,2585,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3263,AA-4314,3915,60,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3264,AA-4315,2135,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3265,AA-4316,2215,80,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3266,AA-4317,1725,55,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3267,AA-4318,2440,90,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3268,AA-4319,4755,60,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3269,AA-4320,7385,75,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3270,AA-4322,1995,65,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3271,AA-4323,1970,65,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3272,AA-4324,2015,50,BONE,fish otolith Umbrina r.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3273,AA-4325,5375,70,BONE,fish otolith Cynoscion p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3274,AA-4326,5060,65,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3275,AA-4327,1915,55,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+3276,AA-4328,5250,70,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+9637,BA-443411,1600,30,BONE,collagen,-15.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-�,NA,USA,California,North America,UWyo2021,Scheib et al. 2018-Ancient human parallel lineages within Noth America contributed to a coastal expansion,intcal20
+9638,BA-443413,1450,30,BONE,collagen,-21.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-�,NA,USA,California,North America,UWyo2021,Scheib et al. 2018-Ancient human parallel lineages within Noth America contributed to a coastal expansion,intcal20
+15943,Beta-116364,4330,50,BONE,collagen,-16,NA,-119.0844612,34.45500084,1,NA,CA-SNI-41,NA,USA,California,North America,UWyo2021,NA,intcal20
+17457,Beta-124933,1085,40,BONE,sea mammal,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-16283,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+17460,Beta-124938,660,50,BONE,sea mammal,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-16283,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+20270,Beta-141956,1920,40,BONE,collagen,-17.2,NA,-116.7357302,33.03555017,1,NA,CA-SDI-�,Lost Valley,USA,California,North America,UWyo2021,NA,intcal20
+20840,Beta-1454452,2180,30,BONE,deer,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-267,Piedras Blancas,USA,California,North America,UWyo2021,Joslin 2010-Middle and Late Holocene Hunter-Gatherer Adaptations to Coastal Ecosystems along the Southern San Simeon Reef,intcal20
+20841,Beta-1454453,3020,30,BONE,deer,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-267,Piedras Blancas,USA,California,North America,UWyo2021,Joslin 2010-Middle and Late Holocene Hunter-Gatherer Adaptations to Coastal Ecosystems along the Southern San Simeon Reef,intcal20
+20842,Beta-145452,2100,30,BONE,terrestrial deer collagen,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-267,Piedras Blancas,USA,California,North America,UWyo2021,Jones T.L. J.A. Ferneau 2002,intcal20
+20843,Beta-145453,2940,30,BONE,terrestrial deer collagen,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-267,Piedras Blancas,USA,California,North America,UWyo2021,Jones T.L. J.A. Ferneau 2002,intcal20
+22412,Beta-154320,8170,40,BONE,terrestrial Cervus e. nannodes elk,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1920/H,Bunkhouse,USA,California,North America,UWyo2021,Fitzgerald R. T. T.L. Jones and A. Schroth 2005,intcal20
+23178,Beta-158533�,7910,60,BONE,terrestrial Ursus arctors horribilis,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1920/H,Bunkhouse,USA,California,North America,UWyo2021,Fitzgerald R. T. T.L. Jones and A. Schroth 2005,intcal20
+25003,Beta-168629,1580,40,BONE,NA,-19.4,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25004,Beta-168630,1680,40,BONE,antler,-19.9,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+26050,Beta-175270,760,40,BONE,Bone-t dog collagen,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,NA,intcal20
+26851,Beta-178955,2010,40,BONE,turtle carapace (A. marmorata),NA,NA,-118.7300953,35.34288817,1,NA,CA-SJO-264,Manifold,USA,California,North America,UWyo2021,Sutton et al 2016-Archaeological Investigations at the Manifold Site�,intcal20
+26852,Beta-178956,2030,40,BONE,mammal long bone,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4220,Manifold,USA,California,North America,UWyo2021,Sutton et al 2016-Archaeological Investigations at the Manifold Site�,intcal20
+27177,Beta-180852,650,50,BONE,terrestrial elk,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+30543,Beta-200301,1580,40,BONE,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-1009,NA,USA,California,North America,UWyo2021,Ryan,intcal20
+31626,Beta-206363,7510,40,BONE,terrestrial Chendytes lawi,-13,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2,Diablo Canyon,USA,California,North America,UWyo2021,Jones,intcal20
+31710,Beta-206734,3040,40,BONE,Chendytes lawl bone,-16.9,NA,-119.0844612,34.45500084,1,NA,CA-VEN-1,Little Sycamore,USA,California,North America,UWyo2021,Jones et al. 2008-the protracted Holocene extinction of�.,intcal20
+31714,Beta-206799,1200,40,BONE,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2207,NA,USA,California,North America,UWyo2021,Hannahs Farrell 2007,intcal20
+33518,Beta-216555,7110,40,BONE,terrestrial Odocoileus hemionus,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2,Diablo Canyon,USA,California,North America,UWyo2021,Jones,intcal20
+33519,Beta-216556,3260,40,BONE,terrestrial Odocoileus hemionus,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2,Diablo Canyon,USA,California,North America,UWyo2021,Jones,intcal20
+33901,Beta-218492,10050,70,BONE,terrestrial Chendytes lawi,-12.7,NA,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson,intcal20
+35308,Beta-227810,3120,40,BONE,artiodactyl long bone,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-2553,NA,USA,California,North America,UWyo2021,Garfinkel and Romani 2008-Dating Aboriginal Occulation at Tiheshti-va'a-di,intcal20
+43386,Beta-294515,960,30,BONE,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Faught et al. 2011,intcal20
+46816,Beta-353138,590,30,BONE,collagen,-15.2,NA,-118.22564,34.3205641,1,NA,CA-LAN-138,Malaga Cove,USA,California,North America,UWyo2021,Koerper and Peterson 2013- On the Anatomy of the Malaga Cove Site,intcal20
+48641,Beta-403904,1450,30,BONE,terrestrial Canidae,-13.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P7-3,USA,California,North America,UWyo2021,NA,intcal20
+48796,Beta-409784,2030,30,BONE,terrestrial Canidae (tibia fragment),NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P7-3,USA,California,North America,UWyo2021,NA,intcal20
+50714,Beta-49361/ETH-9067,805,50,BONE,burned,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10148,East Mission Gorge,USA,California,North America,UWyo2021,Kyle C.E. D.R. Gallegos 1993,intcal20
+52258,Beta-63482,280,80,BONE,NA,-21.4,NA,-118.22564,34.3205641,1,NA,CA-LAN-�,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+53204,Beta-71308,4280,50,BONE,NA,NA,NA,-117.7616253,33.70141709,1,NA,CA-ORA-432,NA,USA,California,North America,UWyo2021,Wilson 2014-Paleoenvironmental effects on settlement patterns�,intcal20
+53733,Beta-73500/CAMS-14067,1400,60,BONE,collagen alkali extraction,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper 2000; Koerper H. C. 1994,intcal20
+53734,Beta-73501/CAMS-14068,1670,60,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper 2000; Koerper H. C. 1994,intcal20
+53735,Beta-73502/CAMS-14069,2390,60,BONE,fish otolith Menticirrhus u.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53736,Beta-73503/CAMS-14070,1320,70,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53737,Beta-73504/CAMS-14071,1610,60,BONE,fish otolith Cynoscion p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53738,Beta-73505/CAMS-14072,1470,60,BONE,fish otolith Seriphus p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53739,Beta-73506/CAMS-14073,1790,60,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53740,Beta-73507/CAMS-14074,1620,80,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53741,Beta-73508/CAMS-14075,1950,60,BONE,fish otolith Sebastes m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53742,Beta-73509/CAMS-14076,1930,60,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53743,Beta-73510/CAMS-14077,1630,50,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53744,Beta-73511/CAMS-14078,8250,60,BONE,fish otolith Seriphus p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53745,Beta-73512/CAMS-14079,8340,60,BONE,fish otolith Umbrina r.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53746,Beta-73513/CAMS-14080,1940,70,BONE,fish otolith Sebastes g.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+53747,Beta-73514/CAMS-14081,4300,60,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+56589,Beta-85585,1350,60,BONE,Canine,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Johnson 2016 Back to the Ballona (1961):�,intcal20
+57380,Beta-91262,290,50,BONE,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13986,NA,USA,California,North America,UWyo2021,Schroth A. R.L. Phillips and D.R. Gallegos 1997,intcal20
+57381,Beta-91263,5900,70,BONE,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13986,NA,USA,California,North America,UWyo2021,Schroth A. R.L. Phillips and D.R. Gallegos 1997,intcal20
+57382,Beta-91264,4280,70,BONE,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13986,NA,USA,California,North America,UWyo2021,Schroth A. R.L. Phillips and D.R. Gallegos 1997,intcal20
+57414,Beta-91754,3390,40,BONE,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13989,NA,USA,California,North America,UWyo2021,Schroth A. R.L. Phillips and D.R. Gallegos 1997,intcal20
+61485,CAMS-14832,1750,50,BONE,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,Witt Locality Sloth Hole,USA,California,North America,UWyo2021,Sutton 2019-Reassessing the Paleoindian Witt Locality,intcal20
+61571,CAMS-15580,2210,60,BONE,fish otolith Umbrina r.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61572,CAMS-15581,4320,60,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61573,CAMS-15582,4190,70,BONE,fish otolith Roncador s.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61574,CAMS-15583,1750,70,BONE,fish otolith Atractoscion n.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61575,CAMS-15584,2880,70,BONE,fish otolith Cynoscion p.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61576,CAMS-15585,1990,60,BONE,fish otolith Porichthys m.,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-378,Christ College site,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+61625,CAMS-16810,10960,80,BONE,collagen purified,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-173,Arlington Springs,USA,California,North America,UWyo2021,Fiedel 2004; Stafford et al. 2002,intcal20
+61640,CAMS-17125,11490,70,BONE,Mouse bone,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-173,Arlington Springs,USA,California,North America,UWyo2021,Reeder et al. 2008-Forty Years Later: What Have We Learned About the Earliest Human Occupations of Santa Rosa Island,intcal20
+65364,D-AMS-8450,2558,31,BONE,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-853,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+115030,OS-34983,4998,166,BONE,bird,-13.45,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-56,NA,USA,California,North America,UWyo2021,NA,intcal20
+115275,OS-66789,900,30,BONE,Canis familiaris,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,Guttenberg 2014-Spatial signatures of Ceremony and Social Interaction�,intcal20
+115300,OS-68030,10150,40,BONE,Goose Ultrafiltration,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+115583,OS-85198,4480,30,BONE,Diomedeidae,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-40,NA,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+115754,OS-96885,10150,70,BONE,Goose bone (uf),NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-26,Radio Point,USA,California,North America,UWyo2021,Hofman et al. 2018-Collagen Fingerprinting and the Earliest Marine Mammal Hunting in North America,intcal20
+118484,OxA-154,8470,140,BONE,amino acids,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-4669,Chancellor�s Residence; William Black House; SDM-W-12,USA,California,North America,UWyo2021,Bada J. L. R. Gillespie J.A.J. Gowlett and R.E.M. Hedges 1984,intcal20
+119665,OxA-188,5400,120,BONE,total amino acids,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Pollack et al Table 8.3- Archaeological Chemistry,intcal20
+122498,OxA-29072,768,22,BONE,collagen canid,-12.11,AMS,-118.22564,34.3205641,1,NA,CA-SCLI-1524,Lemon Tank,USA,California,North America,UWyo2021,Hofman 2016-Tracking the origins and diet of an endemic island canid�,intcal20
+122696,OxA-30069,2956,27,BONE,Urocyon Littoralis,-16.76,AMS,-120.0183356,34.67161852,1,NA,CA-ANI-2,NA,USA,California,North America,UWyo2021,Rick and Reeder-Myers 2018- Deception Island: Archaeology of 'Anyapax Anacapa Island,intcal20
+125645,OxA-774,5270,100,BONE,total amino acids,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Gowlett J.A.J. R.E.M. Hedges I.A. Law and C. Perry 1987,intcal20
+129194,PRI-12-119-1067,6340,100,BONE,collagen,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-1313/14791,NA,USA,California,North America,UWyo2021,Cummings and Puseman 2012-AMS Radiocarbon dating of boen from site CA-SDI-1313/14791 on the Marine Corps Base Camp Pendleton CA,intcal20
+129196,PRI-12-119-1674,8255,40,BONE,collagen,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-1313/14791,NA,USA,California,North America,UWyo2021,Cummings and Puseman 2012-AMS Radiocarbon dating of boen from site CA-SDI-1313/14791 on the Marine Corps Base Camp Pendleton CA,intcal20
+129197,PRI-12-119-78,2815,15,BONE,Charred,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-1313/14791,NA,USA,California,North America,UWyo2021,Cummings and Puseman 2012-AMS Radiocarbon dating of boen from site CA-SDI-1313/14791 on the Marine Corps Base Camp Pendleton CA,intcal20
+140809,SR-6833,8355,25,BONE,terrestrial Chendytes lawi,-13.2,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2,Diablo Canyon,USA,California,North America,UWyo2021,Jones,intcal20
+145351,SUERC-46062,80,29,BONE,mammal,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+158978,UCIAMS-119367,2265,15,BONE,fur seal,-13.5,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158979,UCIAMS-119368,2375,15,BONE,fur seal,-12.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158980,UCIAMS-119369,2560,20,BONE,fur seal,-13.5,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158981,UCIAMS-119370,1585,15,BONE,fur seal,-12.7,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158982,UCIAMS-119371,2500,15,BONE,fur seal,-13,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158983,UCIAMS-119372,2255,15,BONE,fur seal,-12.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158984,UCIAMS-119373,2515,15,BONE,fur seal,-13.7,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158985,UCIAMS-119374,2380,15,BONE,fur seal,-13.6,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-525,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158986,UCIAMS-119375,2055,15,BONE,fur seal,-13,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158987,UCIAMS-119376,2080,20,BONE,fur seal,-13.6,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158988,UCIAMS-119377,2095,15,BONE,fur seal,-13.7,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158989,UCIAMS-119378,2025,15,BONE,fur seal,-12.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158990,UCIAMS-119379,2165,15,BONE,fur seal,-12.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158991,UCIAMS-119380,2065,15,BONE,fur seal,-13.1,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158992,UCIAMS-119381,2030,15,BONE,fur seal,-13.9,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158993,UCIAMS-119382,2120,15,BONE,fur seal,-13.5,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158994,UCIAMS-119383,1210,20,BONE,fur seal,-13.6,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158995,UCIAMS-119384,2060,20,BONE,fur seal,-13.2,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158996,UCIAMS-119385,2075,15,BONE,fur seal,-12.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158997,UCIAMS-119386,2135,20,BONE,fur seal,-13.6,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158998,UCIAMS-119387,2180,15,BONE,fur seal,-13.5,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-528,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+158999,UCIAMS-119388,1185,15,BONE,fur seal,-13.3,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-602,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+159000,UCIAMS-119389,1210,20,BONE,fur seal,-14.2,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-602,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+159001,UCIAMS-119390,1215,15,BONE,fur seal,-13.4,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-602,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+159002,UCIAMS-119391,1200,20,BONE,fur seal,-13.8,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-602,NA,USA,California,North America,UWyo2021,Beck 2015-The Molecular Genetics of Prehistoric Hunting:�,intcal20
+159893,UCIAMS-59871,10000,30,BONE,Goose bone XAD,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+159894,UCIAMS-59872,10045,40,BONE,Goose bone XAD,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+160142,UCIAMS-94043,10070,30,BONE,Goose bone collagen (XAD),NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-26,Radio Point,USA,California,North America,UWyo2021,Erlandson et al 2020-Maritime Paleoindian technology subsistence and ecology�,intcal20
+160366,UCLA-1008B,1886,160,BONE,collagen,-19,NA,-118.22564,34.3205641,1,NA,CA-LAN-138,Malaga Cove,USA,California,North America,UWyo2021,Berger R. Libby W. F. 1966; Ericson J. E. Hagan T. A. 1972,intcal20
+160943,UCR-2103,530,80,BONE,Mule Deer Antler,-25,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1235,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+160967,UCR-2456,3480,60,BONE,marine mammal,-16,NA,-119.0844612,34.45500084,1,NA,CA-SNI-8,NA,USA,California,North America,UWyo2021,NA,intcal20
+160968,UCR-2456/CAMS-12349,3480,60,BONE,NA,-16.1,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-�,NA,USA,California,North America,UWyo2021,Koerper H. C. 1994,intcal20
+161051,UCR-3085/CAMS-437,11960,500,BONE,osteocalcin,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-171,Angeles Mesa,USA,California,North America,UWyo2021,Brooks et al. 1990 The Haverty Human Skeletons�,intcal20
+170054,WSU-4098,2720,70,BONE,NA,NA,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-192,Lovejoy Springs Site,USA,California,North America,UWyo2021,Price et al. 2009 The Archaeology of CA-LAN-192�,intcal20
+1447,AA-14548,5602,71,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-3939,NA,USA,California,North America,UWyo2021,Gardner et al. 2002,intcal20
+1448,AA-14553,6968,109,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-3939,NA,USA,California,North America,UWyo2021,Gardner et al. 2002,intcal20
+5111,AA-837,3330,220,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. A.J.T. Hull K. Brendel R.C. Duhamel and D. Donah 1987,intcal20
+5114,AA-83752,113,34,CHARCOAL,NA,-23.8,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-3931,Oak Flat Site,USA,California,North America,UWyo2021,Draucker 2014-Archaeological investigations at the Oak Flat Site,intcal20
+5115,AA-83754,507,34,CHARCOAL,NA,-11.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-3931,Oak Flat Site,USA,California,North America,UWyo2021,Draucker 2014-Archaeological investigations at the Oak Flat Site,intcal20
+5116,AA-838,3520,330,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. A.J.T. Hull K. Brendel R.C. Duhamel and D. Donah 1987,intcal20
+5120,AA-839,7000,390,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. A.J.T. Hull K. Brendel R.C. Duhamel and D. Donah 1987,intcal20
+5132,AA-840,4240,300,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10940,SDM-W-34; Del Mar Man Site,USA,California,North America,UWyo2021,Stafford T. West Jr. A.J.T. Hull K. Brendel R.C. Duhamel and D. Donah 1987,intcal20
+5264,AA-86776,302,35,CHARCOAL,NA,-23.2,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-3931,Oak Flat Site,USA,California,North America,UWyo2021,Draucker 2014-Archaeological investigations at the Oak Flat Site,intcal20
+5265,AA-86777,538,35,CHARCOAL,NA,-23.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-3931,Oak Flat Site,USA,California,North America,UWyo2021,Draucker 2014-Archaeological investigations at the Oak Flat Site,intcal20
+13368,Beta-100728,370,60,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4619,NA,USA,California,North America,UWyo2021,Gardner Jill Mark Q. Sutton 2009,intcal20
+13427,Beta-101300,130,50,CHARCOAL,NA,-24.7,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1437,NA,USA,California,North America,UWyo2021,NA,intcal20
+13429,Beta-101303,160,70,CHARCOAL,NA,-24.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1437,NA,USA,California,North America,UWyo2021,NA,intcal20
+13898,Beta-103975,8030,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-3632,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+14304,Beta-106703,2850,130,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Byrd et al. 1996,intcal20
+14310,Beta-106709,2120,50,CHARCOAL,NA,-22.5,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2058,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+14311,Beta-106711,1950,60,CHARCOAL,NA,-26.7,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2119,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+14312,Beta-106712,1870,50,CHARCOAL,NA,-25.1,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2373,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+14374,Beta-107189,3350,60,CHARCOAL,NA,-30.2,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow et al. 2016 The Archaeology and Rock Art of Swordfish Cave,intcal20
+14375,Beta-107190,3300,60,CHARCOAL,NA,-26.5,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow et al. 2016 The Archaeology and Rock Art of Swordfish Cave,intcal20
+14376,Beta-107191,3210,60,CHARCOAL,NA,-22.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow et al. 2016 The Archaeology and Rock Art of Swordfish Cave,intcal20
+14565,Beta-108286,820,50,CHARCOAL,NA,-24.6,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2480,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+14591,Beta-108476,2900,70,CHARCOAL,NA,-15.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-39,NA,USA,California,North America,UWyo2021,NA,intcal20
+14593,Beta-108478,3030,100,CHARCOAL,NA,-15.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-39,NA,USA,California,North America,UWyo2021,NA,intcal20
+14594,Beta-108479,3770,70,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-40,NA,USA,California,North America,UWyo2021,NA,intcal20
+14596,Beta-108481,3720,50,CHARCOAL,NA,-22.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-157,NA,USA,California,North America,UWyo2021,NA,intcal20
+14599,Beta-108485,1380,70,CHARCOAL,NA,-18.7,NA,-119.0844612,34.45500084,1,NA,CA-SNI-162,NA,USA,California,North America,UWyo2021,NA,intcal20
+14600,Beta-108486,1980,80,CHARCOAL,NA,-18.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-162,NA,USA,California,North America,UWyo2021,NA,intcal20
+14601,Beta-108487,3610,60,CHARCOAL,NA,-20.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-164,NA,USA,California,North America,UWyo2021,NA,intcal20
+15147,Beta-112018,4610,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+15209,Beta-112298,210,50,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-39,NA,USA,California,North America,UWyo2021,NA,intcal20
+15210,Beta-112299,1301,102,CHARCOAL,NA,-22.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-39,NA,USA,California,North America,UWyo2021,NA,intcal20
+15277,Beta-112551,5600,50,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-3939,NA,USA,California,North America,UWyo2021,Gardner et al. 2002,intcal20
+15535,Beta-113901,160,50,CHARCOAL,NA,-19.9,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2128,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+15536,Beta-113902,1750,50,CHARCOAL,NA,-24.5,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2328,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+15734,Beta-115218,2870,40,CHARCOAL,NA,-24.7,NA,-118.22564,34.3205641,1,NA,CA-SCLI-120,NA,USA,California,North America,UWyo2021,NA,intcal20
+15735,Beta-115219,410,50,CHARCOAL,NA,-23.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1215,Nursery,USA,California,North America,UWyo2021,NA,intcal20
+15736,Beta-115220,430,50,CHARCOAL,NA,-24.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1778,NA,USA,California,North America,UWyo2021,NA,intcal20
+15928,Beta-116349,1030,50,CHARCOAL,NA,-25.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-6,NA,USA,California,North America,UWyo2021,NA,intcal20
+15929,Beta-116350,5360,60,CHARCOAL,NA,-22.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-15,NA,USA,California,North America,UWyo2021,NA,intcal20
+15930,Beta-116351,650,90,CHARCOAL,NA,-23.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,NA,intcal20
+15931,Beta-116352,130,40,CHARCOAL,NA,-23,NA,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,NA,intcal20
+15932,Beta-116353,940,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-73,NA,USA,California,North America,UWyo2021,NA,intcal20
+15933,Beta-116354,310,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-76,NA,USA,California,North America,UWyo2021,NA,intcal20
+15934,Beta-116355,280,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-76,NA,USA,California,North America,UWyo2021,NA,intcal20
+15935,Beta-116356,600,40,CHARCOAL,NA,-25.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-79,NA,USA,California,North America,UWyo2021,NA,intcal20
+15936,Beta-116357,1510,50,CHARCOAL,NA,-25.2,NA,-119.0844612,34.45500084,1,NA,CA-SNI-84,NA,USA,California,North America,UWyo2021,NA,intcal20
+15937,Beta-116358,2230,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-117,NA,USA,California,North America,UWyo2021,NA,intcal20
+15938,Beta-116359,100,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-184,NA,USA,California,North America,UWyo2021,NA,intcal20
+15939,Beta-116360,2540,50,CHARCOAL,NA,-25.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-238,NA,USA,California,North America,UWyo2021,NA,intcal20
+15940,Beta-116361,4420,50,CHARCOAL,NA,-22.6,NA,-119.0844612,34.45500084,1,NA,CA-SNI-284,NA,USA,California,North America,UWyo2021,NA,intcal20
+15941,Beta-116362,590,80,CHARCOAL,NA,-24.3,NA,-119.0844612,34.45500084,1,NA,CA-SNI-290,NA,USA,California,North America,UWyo2021,NA,intcal20
+15942,Beta-116363,660,40,CHARCOAL,NA,-25.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-328,NA,USA,California,North America,UWyo2021,NA,intcal20
+15957,Beta-116511,1060,60,CHARCOAL,NA,-25.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-160,NA,USA,California,North America,UWyo2021,NA,intcal20
+15958,Beta-116512,1620,50,CHARCOAL,NA,-24.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-160,NA,USA,California,North America,UWyo2021,NA,intcal20
+15959,Beta-116513,1710,60,CHARCOAL,NA,-26,NA,-119.0844612,34.45500084,1,NA,CA-SNI-160,NA,USA,California,North America,UWyo2021,NA,intcal20
+16012,Beta-116920,550,50,CHARCOAL,NA,-24.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,NA,intcal20
+16024,Beta-117079,1170,80,CHARCOAL,acorn nutshell,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-165,NA,USA,California,North America,UWyo2021,Mikkelsen P. W.Hildebrandt and D. Jones 2000,intcal20
+16223,Beta-118004,160,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13037,NA,USA,California,North America,UWyo2021,Glenn Brian K. 1999,intcal20
+16226,Beta-118009,3240,40,CHARCOAL,acorn nutshell,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-165,NA,USA,California,North America,UWyo2021,Mikkelsen P. W.Hildebrandt and D. Jones 2000,intcal20
+16449,Beta-119186,6300,70,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SCRI-109,Punta Arena,USA,California,North America,UWyo2021,Glassow 2005:25; Braje 2007,intcal20
+16607,Beta-120341,1890,80,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-169,NA,USA,California,North America,UWyo2021,NA,intcal20
+16676,Beta-120896,70,60,CHARCOAL,NA,-24.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MRB-61,USA,California,North America,UWyo2021,NA,intcal20
+16677,Beta-120897,70,50,CHARCOAL,NA,-26.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MRB-8,USA,California,North America,UWyo2021,NA,intcal20
+16678,Beta-120898,210,50,CHARCOAL,NA,-24.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,WMR-1,USA,California,North America,UWyo2021,NA,intcal20
+16679,Beta-120899,240,60,CHARCOAL,NA,-25.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MRB-A,USA,California,North America,UWyo2021,NA,intcal20
+16680,Beta-120900,180,50,CHARCOAL,NA,-23.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MRB-54,USA,California,North America,UWyo2021,NA,intcal20
+16681,Beta-120901,270,40,CHARCOAL,NA,-25,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P17-3,USA,California,North America,UWyo2021,NA,intcal20
+16682,Beta-120902,630,70,CHARCOAL,NA,-24.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SAN-7,USA,California,North America,UWyo2021,NA,intcal20
+16683,Beta-120903,320,50,CHARCOAL,NA,-24.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,C3-4,USA,California,North America,UWyo2021,NA,intcal20
+16684,Beta-120904,280,50,CHARCOAL,NA,-26.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,C3-49,USA,California,North America,UWyo2021,NA,intcal20
+16685,Beta-120905,550,50,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MPS-20,USA,California,North America,UWyo2021,NA,intcal20
+16686,Beta-120906,80,50,CHARCOAL,NA,-25.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SAN-19,USA,California,North America,UWyo2021,NA,intcal20
+16687,Beta-120907,100,50,CHARCOAL,NA,-26.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,C3-051,USA,California,North America,UWyo2021,NA,intcal20
+16688,Beta-120908,220,50,CHARCOAL,NA,-26.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,MPS-28,USA,California,North America,UWyo2021,NA,intcal20
+16689,Beta-120909,910,70,CHARCOAL,NA,-23.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SAN-29,USA,California,North America,UWyo2021,NA,intcal20
+16690,Beta-120910,340,50,CHARCOAL,NA,-26.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SAN-21,USA,California,North America,UWyo2021,NA,intcal20
+16691,Beta-120911,510,60,CHARCOAL,NA,-24.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SA-74,USA,California,North America,UWyo2021,NA,intcal20
+16692,Beta-120912,550,40,CHARCOAL,NA,-23.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SA-61,USA,California,North America,UWyo2021,NA,intcal20
+16693,Beta-120914,1560,50,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SA-62,USA,California,North America,UWyo2021,NA,intcal20
+16694,Beta-120915,3520,50,CHARCOAL,NA,-21,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SA-59,USA,California,North America,UWyo2021,NA,intcal20
+17149,Beta-122814,410,70,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-5745,NA,USA,California,North America,UWyo2021,Barros 2008-Cultural Resources Resurvey and Evaluation of a 109 acre�,intcal20
+17150,Beta-122815,190,50,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-5745,NA,USA,California,North America,UWyo2021,Barros 2008-Cultural Resources Resurvey and Evaluation of a 109 acre�,intcal20
+17151,Beta-122816,810,60,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-14067/74,NA,USA,California,North America,UWyo2021,Barros 2008-Cultural Resources Resurvey and Evaluation of a 109 acre�,intcal20
+17153,Beta-122819,680,90,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-15120,W-4599,USA,California,North America,UWyo2021,Barros 2008-Cultural Resources Resurvey and Evaluation of a 109 acre�,intcal20
+17232,Beta-123225,630,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4620,NA,USA,California,North America,UWyo2021,Basgall Giambastiani 1999,intcal20
+17233,Beta-123226,1750,50,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4623,Sunflower,USA,California,North America,UWyo2021,Basgall Giambastiani 1999,intcal20
+17234,Beta-123227,2070,50,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4623,Sunflower,USA,California,North America,UWyo2021,Basgall Giambastiani 1999,intcal20
+17235,Beta-123228,2200,50,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4623,Sunflower,USA,California,North America,UWyo2021,Basgall Giambastiani 1999,intcal20
+17458,Beta-124935,360,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-16283,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+17459,Beta-124936,340,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-16283,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+17464,Beta-124961,1260,70,CHARCOAL,NA,-14,NA,-118.22564,34.3205641,1,NA,CA-SCLI-154,LVTA-8 (SCLI-154),USA,California,North America,UWyo2021,NA,intcal20
+17466,Beta-124963,200,50,CHARCOAL,NA,-22.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,LVTA/SE-46,USA,California,North America,UWyo2021,NA,intcal20
+18348,Beta-130809,200,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10726A,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+18359,Beta-130853,860,40,CHARCOAL,NA,-22.7,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3031,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+18360,Beta-130854,980,40,CHARCOAL,NA,-21.9,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3031,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+18575,Beta-131735,3310,40,CHARCOAL,NA,-25,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow C. G. et al. 2005,intcal20
+18576,Beta-131737,3300,40,CHARCOAL,NA,-26.5,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow C. G. et al. 2005,intcal20
+18578,Beta-131739,3340,40,CHARCOAL,NA,-25.2,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow C. G. et al. 2005,intcal20
+18750,Beta-132514,2570,50,CHARCOAL,NA,-23.8,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow C. G. et al. 2005,intcal20
+18887,Beta-133231,3320,50,CHARCOAL,NA,-23.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-530,Swordfish Cave,USA,California,North America,UWyo2021,Lebow C. G. et al. 2005,intcal20
+18914,Beta-133329,8940,70,CHARCOAL,NA,-23.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+19016,Beta-133959,100,40,CHARCOAL,NA,-23.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,PL-100,USA,California,North America,UWyo2021,NA,intcal20
+19018,Beta-133960,550,70,CHARCOAL,NA,-22.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1239,NA,USA,California,North America,UWyo2021,NA,intcal20
+19019,Beta-133961,420,90,CHARCOAL,NA,-23.7,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1249,NA,USA,California,North America,UWyo2021,NA,intcal20
+19135,Beta-13463,8180,150,CHARCOAL,NA,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-5250,Rogers Ridge,USA,California,North America,UWyo2021,Jenkins 1987 Dating the Pinto Occupation�,intcal20
+19399,Beta-136176,290,90,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14808,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+19400,Beta-136177,410,80,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14808,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+19401,Beta-136178,300,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14808,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+19402,Beta-136179,130,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14808,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+19403,Beta-136180,290,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14808,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+19449,Beta-136533,7970,70,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-3632,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+19450,Beta-136534,6760,80,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-3632,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+20351,Beta-142523,1250,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-129,NA,USA,California,North America,UWyo2021,NA,intcal20
+20352,Beta-142524,2780,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-130,NA,USA,California,North America,UWyo2021,NA,intcal20
+20503,Beta-14364,3930,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-603,Cave of Chimneys,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+20508,Beta-14367,3940,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-603,Cave of Chimneys,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+20557,Beta-144025,760,40,CHARCOAL,NA,-24.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+20558,Beta-144026,710,40,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+20559,Beta-144027,670,40,CHARCOAL,NA,-22.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+20560,Beta-144028,890,40,CHARCOAL,NA,-23.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+20561,Beta-144029,980,40,CHARCOAL,NA,-23.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+20562,Beta-144030,1340,40,CHARCOAL,NA,-22.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+21043,Beta-146417,1900,40,CHARCOAL,NA,-21.7,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2987,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+21044,Beta-146418,1150,40,CHARCOAL,NA,-24.6,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1974,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+21999,Beta-152032,2790,70,CHARCOAL,NA,-26.8,NA,-116.7357302,33.03555017,1,NA,CA-SDI-16283,NA,USA,California,North America,UWyo2021,Scarlotta 2015 (personal communication),intcal20
+22644,Beta-155554,580,40,CHARCOAL,NA,-23.9,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+22645,Beta-155555,1820,50,CHARCOAL,NA,-22.7,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+22694,Beta-155848,1110,80,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-369,NA,USA,California,North America,UWyo2021,Joslin 2010-Middle and Late Holocene Hunter-Gatherer Adaptations to Coastal Ecosystems along the Southern San Simeon Reef,intcal20
+22885,Beta-156918,1650,60,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-15557,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+22886,Beta-156919,1550,50,CHARCOAL,Charcoal (Ceanothus),NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-15557,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+23367,Beta-159766,1160,60,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-7322,NA,USA,California,North America,UWyo2021,Cooley and Barrie 2004 Archaeological Excavation at the Village�,intcal20
+23368,Beta-159767,520,50,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-7753,NA,USA,California,North America,UWyo2021,Cooley and Barrie 2004 Archaeological Excavation at the Village�,intcal20
+23369,Beta-159768,100,40,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-7756,NA,USA,California,North America,UWyo2021,Cooley and Barrie 2004 Archaeological Excavation at the Village�,intcal20
+23421,Beta-160098,660,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1169,NA,USA,California,North America,UWyo2021,Basgall 2006,intcal20
+23422,Beta-160099,1250,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-670,NA,USA,California,North America,UWyo2021,Basgall 2006,intcal20
+23423,Beta-160100,880,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-670,NA,USA,California,North America,UWyo2021,Basgall 2006,intcal20
+23424,Beta-160102,150,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1834,NA,USA,California,North America,UWyo2021,Basgall 2006,intcal20
+23425,Beta-160103,2390,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Basgall 2006,intcal20
+24067,Beta-163579,510,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+24068,Beta-163580,1470,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+24069,Beta-163582,340,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+24128,Beta-163916,5720,60,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,LT-38,USA,California,North America,UWyo2021,NA,intcal20
+24129,Beta-163917,710,80,CHARCOAL,NA,-21.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,LT-43,USA,California,North America,UWyo2021,NA,intcal20
+24130,Beta-163918,3150,60,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,LT-46,USA,California,North America,UWyo2021,NA,intcal20
+24131,Beta-163919,940,50,CHARCOAL,NA,-23.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,LT-60,USA,California,North America,UWyo2021,NA,intcal20
+24177,Beta-164080,7700,80,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SMI-606,Busted Balls,USA,California,North America,UWyo2021,NA,intcal20
+24446,Beta-165570,1810,80,CHARCOAL,NA,-25.3,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24452,Beta-165576,2010,60,CHARCOAL,NA,-23.5,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24636,Beta-166817,1950,60,CHARCOAL,NA,-24.2,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow Clayton G. 2006,intcal20
+24638,Beta-166819,2090,60,CHARCOAL,NA,-24.1,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow Clayton G. 2006,intcal20
+24745,Beta-167268,970,60,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-9595,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+24746,Beta-167269,960,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-9595,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+24747,Beta-167270,780,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-14451,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+24748,Beta-167271,7110,120,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-14452,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012,intcal20
+24987,Beta-168613,1310,40,CHARCOAL,NA,-24.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24988,Beta-168614,1250,40,CHARCOAL,NA,-24.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24991,Beta-168617,1870,80,CHARCOAL,NA,-25.6,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24992,Beta-168618,1710,40,CHARCOAL,NA,-24.7,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24993,Beta-168619,1700,40,CHARCOAL,NA,-24.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24994,Beta-168620,1700,40,CHARCOAL,NA,-25.7,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24995,Beta-168621,1710,40,CHARCOAL,NA,-26.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24996,Beta-168622,1720,40,CHARCOAL,NA,-26.7,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24998,Beta-168624,1780,40,CHARCOAL,NA,-24.8,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+24999,Beta-168625,1470,40,CHARCOAL,NA,-21.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25000,Beta-168626,1480,40,CHARCOAL,NA,-26.2,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25001,Beta-168627,1490,40,CHARCOAL,NA,-25.5,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25005,Beta-168631,2680,40,CHARCOAL,NA,-24.4,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25006,Beta-168632,2840,40,CHARCOAL,NA,-24.8,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25007,Beta-168633,2290,40,CHARCOAL,Charred twig,-25.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25008,Beta-168634,3140,40,CHARCOAL,NA,-27,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25009,Beta-168635,1750,40,CHARCOAL,NA,-24.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25011,Beta-168637,1750,40,CHARCOAL,NA,-25.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25012,Beta-168638,1770,40,CHARCOAL,NA,-25.2,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25014,Beta-168640,1730,40,CHARCOAL,NA,-25.4,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25017,Beta-168643,1340,60,CHARCOAL,NA,-24.2,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25019,Beta-168645,1550,40,CHARCOAL,NA,-26.5,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25022,Beta-168648,2450,40,CHARCOAL,NA,-24.7,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25024,Beta-168650,2760,40,CHARCOAL,NA,-24.6,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25026,Beta-168652,1440,40,CHARCOAL,NA,-25.4,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25028,Beta-168654,1540,40,CHARCOAL,NA,-27.1,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+25031,Beta-168668,930,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-211,NA,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+25032,Beta-168670,250,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-2600,Well,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+25033,Beta-168671,300,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-2608,Hunting Blind,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+25439,Beta-170998,1330,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5955,NA,USA,California,North America,UWyo2021,Culleton Jackson 2003; Culleton Jackson 2005,intcal20
+25440,Beta-170999,1390,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5955,NA,USA,California,North America,UWyo2021,Culleton Jackson 2003; Culleton Jackson 2005,intcal20
+25980,Beta-174802,640,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+25981,Beta-174803,3900,60,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+25982,Beta-174804,1890,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+26025,Beta-175068,600,60,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+26026,Beta-175069,1050,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1197,NA,USA,California,North America,UWyo2021,NA,intcal20
+26030,Beta-175147,8570,50,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9415,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+26154,Beta-175801,740,40,CHARCOAL,NA,-24.6,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2990,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+26155,Beta-175802,1830,60,CHARCOAL,NA,-23.4,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2990,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+26627,Beta-177847,360,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5404,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+26628,Beta-177848,340,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5404,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+26802,Beta-178731,450,90,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1180,NA,USA,California,North America,UWyo2021,Leach-Palm Joslin 2003,intcal20
+27160,Beta-180834,1370,50,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5373/H,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+27161,Beta-180835,800,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5373/H,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+27162,Beta-180837,27810,300,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-5373/H,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+27165,Beta-180840,710,40,CHARCOAL,NA,-20.4,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27167,Beta-180842,710,40,CHARCOAL,NA,-10.8,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27168,Beta-180843,690,40,CHARCOAL,NA,-12,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27171,Beta-180846,720,40,CHARCOAL,NA,-11,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27172,Beta-180847,680,40,CHARCOAL,NA,-10.8,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27174,Beta-180849,690,40,CHARCOAL,NA,-11.4,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton 2006,intcal20
+27191,Beta-180869,6850,40,CHARCOAL,NA,-24.3,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+27660,Beta-183170,7560,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-3632,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+27661,Beta-183171,6410,80,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-8959,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+27662,Beta-183173,7620,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9727,NA,USA,California,North America,UWyo2021,Sutton et al 2007-Advances in Understanding Mojave Desert Prehistory,intcal20
+27824,Beta-184145,300,80,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1833,NA,USA,California,North America,UWyo2021,Garlinghouse Farquhar 2005,intcal20
+27825,Beta-184146,530,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2210,NA,USA,California,North America,UWyo2021,Garlinghouse Farquhar 2005,intcal20
+27826,Beta-184147,140,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2210,NA,USA,California,North America,UWyo2021,Garlinghouse Farquhar 2005,intcal20
+28091,Beta-18608,4300,80,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-2067/H,NA,USA,California,North America,UWyo2021,Erlandson 2007 Stratigraphic Integrity and High-Resolution�,intcal20
+28283,Beta-186891,870,40,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P-11-6,USA,California,North America,UWyo2021,NA,intcal20
+28284,Beta-186892,3320,40,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P-11-6,USA,California,North America,UWyo2021,NA,intcal20
+28662,Beta-189343,380,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-115,NA,USA,California,North America,UWyo2021,Joslin 2006-Late Prehistoric Coastal Adaptations Along the San Simeon Reef,intcal20
+28777,Beta-190475,1110,40,CHARCOAL,NA,-12.3,AMS,-118.7300953,35.34288817,1,NA,CA-KER-6106,NA,USA,California,North America,UWyo2021,Williams 2009-Archaeological Investigation in the western Mojave Desert,intcal20
+28778,Beta-190476,1130,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-6106,NA,USA,California,North America,UWyo2021,Williams 2009-Archaeological Investigation in the western Mojave Desert,intcal20
+28779,Beta-190477,1110,50,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-6106,NA,USA,California,North America,UWyo2021,Williams 2009-Archaeological Investigation in the western Mojave Desert,intcal20
+28831,Beta-190757,860,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1180,NA,USA,California,North America,UWyo2021,Carpenter et al. 2007,intcal20
+28832,Beta-190758,560,50,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1180,NA,USA,California,North America,UWyo2021,Carpenter et al. 2007,intcal20
+28833,Beta-190759,1000,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2176,NA,USA,California,North America,UWyo2021,Carpenter et al. 2007,intcal20
+28834,Beta-190760,1550,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1835,NA,USA,California,North America,UWyo2021,Carpenter et al. 2007,intcal20
+28951,Beta-191404,190,30,CHARCOAL,Atriplex,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-3079,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+28952,Beta-191405,530,50,CHARCOAL,Asteraceae,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-3080,NA,USA,California,North America,UWyo2021,Culleton Jackson 2005,intcal20
+29149,Beta-192662,1590,40,CHARCOAL,NA,-25.1,NA,-117.7616253,33.70141709,1,NA,CA-ORA-263,NA,USA,California,North America,UWyo2021,Koerper H. C. 2006,intcal20
+29358,Beta-193733,770,40,CHARCOAL,NA,-26.1,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12983,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+29359,Beta-193734,750,40,CHARCOAL,NA,-26.4,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12983,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+29360,Beta-193735,380,40,CHARCOAL,NA,-26,NA,-116.7357302,33.03555017,1,NA,CA-SDI-14571,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+29554,Beta-194688,680,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-2609,Ridge,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+29571,Beta-194828,2870,60,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SCRI-�,Pozo 7,USA,California,North America,UWyo2021,NA,intcal20
+29758,Beta-196260,880,40,CHARCOAL,NA,-22.6,AMS,-118.22564,34.3205641,1,NA,CA-LAN-902,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+30326,Beta-199325,3350,110,CHARCOAL,NA,-24.4,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2987,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+31044,Beta-203143,730,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-115,NA,USA,California,North America,UWyo2021,Joslin 2006-Late Prehistoric Coastal Adaptations Along the San Simeon Reef,intcal20
+31257,Beta-204372,1000,40,CHARCOAL,NA,-24,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3418,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+31258,Beta-204373,940,40,CHARCOAL,NA,-23.4,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3418,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+31339,Beta-204972,4170,40,CHARCOAL,NA,-22,AMS,-118.22564,34.3205641,1,NA,CA-LAN-�,FS-050154089 SGM,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+31686,Beta-206585,1730,40,CHARCOAL,NA,-21.2,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-12196,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+31734,Beta-206884,240,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBR-12277,North Eagle Crags Skull Cave,USA,California,North America,UWyo2021,Allen 2006-Three Archaeological Landscapes of the Mojave B�,intcal20
+31735,Beta-206885,350,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBR-12273,Corey's Cave,USA,California,North America,UWyo2021,Allen 2006-Three Archaeological Landscapes of the Mojave B�,intcal20
+32217,Beta-210107,4480,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-670,NA,USA,California,North America,UWyo2021,Basgall,intcal20
+32377,Beta-210826,1590,40,CHARCOAL,NA,-26.6,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-263,NA,USA,California,North America,UWyo2021,Hull et al 2013 Recognizing Ritual Action and Intent�,intcal20
+32441,Beta-211390,350,40,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-�,Searles Salt Wells Valley,USA,California,North America,UWyo2021,Kaldenberg 2006; Rogers 2009,intcal20
+32815,Beta-212904,350,40,CHARCOAL,NA,-20.9,AMS,-118.22564,34.3205641,1,NA,CA-LAN-192,Lovejoy Springs Site,USA,California,North America,UWyo2021,Price et al. 2009 The Archaeology of CA-LAN-192�,intcal20
+33282,Beta-215192,1200,40,CHARCOAL,NA,-12.6,AMS,-118.22564,34.3205641,1,NA,CA-LAN-192,Lovejoy Springs Site,USA,California,North America,UWyo2021,Price et al. 2009 The Archaeology of CA-LAN-192�,intcal20
+33313,Beta-215484,520,40,CHARCOAL,NA,-16.3,AMS,-118.22564,34.3205641,1,NA,CA-LAN-192,Lovejoy Springs Site,USA,California,North America,UWyo2021,Price et al. 2009 The Archaeology of CA-LAN-192�,intcal20
+33388,Beta-215843,170,40,CHARCOAL,NA,-24.6,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10710,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+33740,Beta-217718,260,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16409,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33741,Beta-217719,5740,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10637,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33742,Beta-217720,1900,50,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10637,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33743,Beta-217721,1750,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10637,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33744,Beta-217728,1800,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10637,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33745,Beta-217729,1510,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-10637,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33746,Beta-217730,680,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-14448,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33747,Beta-217731,400,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-14448,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33748,Beta-217733,710,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16404,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33749,Beta-217734,740,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16404,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33750,Beta-217735,590,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16404,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33751,Beta-217736,840,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16407,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33752,Beta-217737,900,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16407,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33753,Beta-217738,1270,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16407,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33754,Beta-217739,100,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-16407,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mealey 2006,intcal20
+33791,Beta-217806,830,40,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-9595,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mattingly 2007,intcal20
+33792,Beta-217807,1190,50,CHARCOAL,Charcoal (Adenostoma and Ceanothus),NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-9595,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mattingly 2007,intcal20
+33793,Beta-217808,830,50,CHARCOAL,Charcoal (Ceanothus),NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-9595,NA,USA,California,North America,UWyo2021,Gamble and Mattingly 2012; Mattingly 2007,intcal20
+34397,Beta-221312,5160,50,CHARCOAL,floral,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-4623,Sunflower,USA,California,North America,UWyo2021,Tiley 2008,intcal20
+34661,Beta-223043,1630,40,CHARCOAL,NA,-24.9,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2464,Paradise Ranch Knoll Earth Oven Site,USA,California,North America,UWyo2021,Vance 2009 Investigation of the Paradise Ranch�,intcal20
+35129,Beta-226383,3520,40,CHARCOAL,NA,-21.6,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-12464,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35130,Beta-226384,2460,40,CHARCOAL,NA,-22.9,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-67,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35131,Beta-226385,3570,40,CHARCOAL,NA,-23.7,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-10073,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35132,Beta-226386,1430,40,CHARCOAL,NA,-24.6,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-10074,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35160,Beta-226638,2010,40,CHARCOAL,NA,-24,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-10078,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35161,Beta-226639,4840,40,CHARCOAL,NA,-21.2,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-10075,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+35240,Beta-227262,2010,40,CHARCOAL,NA,-25.7,NA,-118.22564,34.3205641,1,NA,CA-LAN-�,FS-051253134 BM/CP,USA,California,North America,UWyo2021,NA,intcal20
+37076,Beta-239141,40,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SCRI-801,NA,USA,California,North America,UWyo2021,Perry and Glassow 2015-Prehistoric Settlement in Island Interiors;,intcal20
+37178,Beta-239930,510,70,CHARCOAL,NA,-23.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1787,NA,USA,California,North America,UWyo2021,NA,intcal20
+37336,Beta-240533,370,60,CHARCOAL,NA,-22.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,OAF/E-8/CF,USA,California,North America,UWyo2021,NA,intcal20
+37809,Beta-243465,910,40,CHARCOAL,NA,-25.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-5,NA,USA,California,North America,UWyo2021,NA,intcal20
+37813,Beta-243469,790,40,CHARCOAL,NA,-24.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-339,NA,USA,California,North America,UWyo2021,NA,intcal20
+38518,Beta-247914,680,40,CHARCOAL,NA,-12.8,NA,-118.7300953,35.34288817,1,NA,CA-KER-�,Beacon Solar Site 11,USA,California,North America,UWyo2021,Apple Cleland 2008,intcal20
+38519,Beta-247915,190,40,CHARCOAL,NA,-11.8,NA,-118.7300953,35.34288817,1,NA,CA-KER-�,Beacon Solar Site 12,USA,California,North America,UWyo2021,Apple Cleland 2008,intcal20
+38520,Beta-247916,880,40,CHARCOAL,NA,-10.9,NA,-118.7300953,35.34288817,1,NA,CA-KER-�,Beacon Solar Site 13,USA,California,North America,UWyo2021,Apple Cleland 2008,intcal20
+38529,Beta-248247,590,40,CHARCOAL,NA,-22.9,NA,-118.7300953,35.34288817,1,NA,CA-KER-�,Beacon Solar Site 8,USA,California,North America,UWyo2021,Apple Cleland 2008,intcal20
+38578,Beta-248579,1560,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-226,Boulder Spring,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+38579,Beta-248580,420,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-7432,Ed's Terrace,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+38926,Beta-251089,750,40,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-5,Buds/NW-2,USA,California,North America,UWyo2021,NA,intcal20
+38930,Beta-251093,1280,40,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-38,C1-12,USA,California,North America,UWyo2021,NA,intcal20
+38935,Beta-251098,670,40,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-916,NA,USA,California,North America,UWyo2021,NA,intcal20
+40548,Beta-261353,10090,50,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+41701,Beta-273756,230,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41702,Beta-273757,1850,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41703,Beta-273758,1590,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41704,Beta-273759,1630,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41786,Beta-274739,1690,40,CHARCOAL,NA,-22,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13325,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+41839,Beta-275138,1780,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41840,Beta-275139,1820,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2646,Maverick,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+41841,Beta-275140,1880,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2216,NA,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+42183,Beta-280207,1400,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2647/H,Burned cow,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+42184,Beta-280208,940,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2647/H,Burned cow,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+42185,Beta-280209,1450,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2647/H,Burned cow,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+42188,Beta-280211,170,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1180,NA,USA,California,North America,UWyo2021,Faught et al. 2010,intcal20
+42274,Beta-281016,1090,40,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-7432,Ed's Terrace,USA,California,North America,UWyo2021,Allen 2013-Living on the Edge,intcal20
+43385,Beta-294514,1050,30,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Faught et al. 2011,intcal20
+43388,Beta-294518,1100,30,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Faught et al. 2011,intcal20
+43389,Beta-294519,1020,30,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Faught et al. 2011,intcal20
+43436,Beta-295560,1050,30,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1778,NA,USA,California,North America,UWyo2021,Faught et al. 2011,intcal20
+44889,Beta-3161955,710,30,CHARCOAL,Hesperoyucca whipplei,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+44890,Beta-3161956,560,30,CHARCOAL,Hesperoyucca whipplei,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+44891,Beta-3161957,1500,30,CHARCOAL,Hesperoyucca whipplei,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+44892,Beta-3161958,2980,30,CHARCOAL,Hesperoyucca whipplei,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+46152,Beta-340132,1010,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46153,Beta-340133,1520,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46154,Beta-340134,660,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46155,Beta-340135,150,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46156,Beta-340136,1420,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46157,Beta-340137,1230,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46158,Beta-340138,380,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46159,Beta-340139,290,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46160,Beta-340140,1210,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46161,Beta-340141,1730,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46162,Beta-340142,410,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46163,Beta-340143,280,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46164,Beta-340144,770,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46165,Beta-340145,210,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46166,Beta-340146,220,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46167,Beta-340147,1430,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46168,Beta-340148,410,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46966,Beta-357178,8090,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46967,Beta-357179,8660,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+46969,Beta-357181,8410,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47207,Beta-362584,5190,30,CHARCOAL,NA,-23.7,NA,-119.0844612,34.45500084,1,NA,CA-SNI-303,NA,USA,California,North America,UWyo2021,NA,intcal20
+47237,Beta-363802,540,30,CHARCOAL,acorn and wild cucumber,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-574,NA,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47238,Beta-363803,950,30,CHARCOAL,acorn islay and juniper,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-574,NA,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47239,Beta-363804,570,30,CHARCOAL,acorn kernel and shell,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-575,NA,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47240,Beta-363805,950,30,CHARCOAL,acorn and islay,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-575,NA,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47507,Beta-370072,180,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47508,Beta-370073,320,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47509,Beta-370074,1060,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47510,Beta-370075,260,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47511,Beta-370076,1260,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47512,Beta-370077,5570,30,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+47516,Beta-370211,1990,30,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-585,Blue Moon 1,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47517,Beta-370212,2130,30,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-585,Blue Moon 1,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47518,Beta-370213,1140,30,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47519,Beta-370214,6590,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47520,Beta-370215,1040,30,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47521,Beta-370216,1580,30,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-586,Blue Moon 2,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+47829,Beta-379474,820,30,CHARCOAL,NA,-23.5,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-17040,NA,USA,California,North America,UWyo2021,Potter et al 2014-Phase II Testing and Evaluation of Cultural Resources in the Phase 1 Area of Tapestry Project,intcal20
+47830,Beta-379475,690,630,CHARCOAL,NA,-25.8,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-17040,NA,USA,California,North America,UWyo2021,Potter et al 2014-Phase II Testing and Evaluation of Cultural Resources in the Phase 1 Area of Tapestry Project,intcal20
+48227,Beta-390513,4530,30,CHARCOAL,NA,-22.5,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48228,Beta-390514,140,30,CHARCOAL,NA,-20.9,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48229,Beta-390515,4610,30,CHARCOAL,NA,-20,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48230,Beta-390516,4530,30,CHARCOAL,NA,-21.5,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48231,Beta-390517,4820,30,CHARCOAL,NA,-19.7,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48232,Beta-390518,4540,30,CHARCOAL,NA,-23,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-21492,NA,USA,California,North America,UWyo2021,Comeau and Hale 2015-Cultural Resource Report for the Jacumba Solar�,intcal20
+48655,Beta-404175,570,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-3624,NA,USA,California,North America,UWyo2021,NA,intcal20
+48657,Beta-404177,530,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-17208,NA,USA,California,North America,UWyo2021,NA,intcal20
+48659,Beta-404179,510,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9687,NA,USA,California,North America,UWyo2021,NA,intcal20
+48660,Beta-404180,580,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9687,NA,USA,California,North America,UWyo2021,NA,intcal20
+48661,Beta-404181,2130,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9687,NA,USA,California,North America,UWyo2021,NA,intcal20
+48694,Beta-405301,1990,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9687,NA,USA,California,North America,UWyo2021,NA,intcal20
+48768,Beta-408447,460,30,CHARCOAL,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1813,NA,USA,California,North America,UWyo2021,NA,intcal20
+48818,Beta-41038,740,80,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-113,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+48819,Beta-41039,3060,100,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-113,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+48822,Beta-41041,70,60,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-3773,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+49005,Beta-416506,570,30,CHARCOAL,NA,-21.6,NA,-116.1784911,34.84146144,1,NA,CA-SBR-11755,NA,USA,California,North America,UWyo2021,NA,intcal20
+49007,Beta-416804,2990,30,CHARCOAL,NA,-21.8,NA,-116.1784911,34.84146144,1,NA,CA-SBR-11728,NA,USA,California,North America,UWyo2021,NA,intcal20
+49008,Beta-416805,3970,30,CHARCOAL,NA,-26.2,NA,-116.1784911,34.84146144,1,NA,CA-SBR-11728,NA,USA,California,North America,UWyo2021,NA,intcal20
+49009,Beta-416807,820,30,CHARCOAL,NA,-22.4,NA,-116.1784911,34.84146144,1,NA,CA-SBR-11753,NA,USA,California,North America,UWyo2021,NA,intcal20
+49138,Beta-419327,330,30,CHARCOAL,NA,-10.4,NA,-116.1784911,34.84146144,1,NA,CA-SBR-1813,NA,USA,California,North America,UWyo2021,NA,intcal20
+50370,Beta-47274,5105,60,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCAI-17,Little Harbor,USA,California,North America,UWyo2021,Raab et al. 1994 Advances in Southern Channel�,intcal20
+50373,Beta-47278,6880,190,CHARCOAL,NA,-24.1,NA,-118.22564,34.3205641,1,NA,CA-SCAI-17,Little Harbor,USA,California,North America,UWyo2021,Raab et al. 1994 Advances in Southern Channel�,intcal20
+50943,Beta-51115,1390,70,CHARCOAL,NA,-25.2,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,C3-68,USA,California,North America,UWyo2021,NA,intcal20
+50946,Beta-51121,1500,60,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P14-B,USA,California,North America,UWyo2021,NA,intcal20
+50947,Beta-51132,1650,80,CHARCOAL,NA,-20.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P3-3/4-C,USA,California,North America,UWyo2021,NA,intcal20
+50948,Beta-51137,670,60,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P3-3/4-C,USA,California,North America,UWyo2021,NA,intcal20
+50949,Beta-51139,1100,70,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P3-3/4-D,USA,California,North America,UWyo2021,NA,intcal20
+50951,Beta-51141,520,70,CHARCOAL,NA,-23.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P4-2,USA,California,North America,UWyo2021,NA,intcal20
+50961,Beta-51146,340,60,CHARCOAL,NA,-23.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P4-B,USA,California,North America,UWyo2021,NA,intcal20
+51761,Beta-58100,240,50,CHARCOAL,NA,-25.5,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1834,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+51762,Beta-58101,1780,60,CHARCOAL,NA,-21.1,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2116,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+52259,Beta-63483,140,60,CHARCOAL,NA,-25.1,NA,-118.22564,34.3205641,1,NA,CA-LAN-�,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+52260,Beta-63484,1150,80,CHARCOAL,NA,-25.5,NA,-118.22564,34.3205641,1,NA,CA-LAN-�,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+52273,Beta-63601,810,110,CHARCOAL,Wood charcoal,-26.9,NA,-118.22564,34.3205641,1,NA,CA-LAN-705,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+52274,Beta-63602,730,60,CHARCOAL,Wood charcoal,-25,NA,-118.22564,34.3205641,1,NA,CA-LAN-705,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+52350,Beta-64177/CAMS-7890,3670,70,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-526,NA,USA,California,North America,UWyo2021,Byrd et al. 1994,intcal20
+52351,Beta-64178/CAMS-7891,3770,70,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-526,NA,USA,California,North America,UWyo2021,Byrd et al. 1994,intcal20
+52639,Beta-66816,450,70,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1215,Nursery,USA,California,North America,UWyo2021,Raab et al. 1994 Advances in Southern Channel�,intcal20
+53167,Beta-71126,580,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-1074,NA,USA,California,North America,UWyo2021,NA,intcal20
+53168,Beta-71127/CAMS-12058,610,60,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-1074,NA,USA,California,North America,UWyo2021,NA,intcal20
+53169,Beta-71128/CAMS-12059,470,60,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-4411,NA,USA,California,North America,UWyo2021,NA,intcal20
+53170,Beta-71130,2490,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13325,NA,USA,California,North America,UWyo2021,NA,intcal20
+53171,Beta-71131,3720,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13325,NA,USA,California,North America,UWyo2021,NA,intcal20
+53330,Beta-71853,4510,60,CHARCOAL,NA,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1215,Nursery,USA,California,North America,UWyo2021,NA,intcal20
+53763,Beta-73642,1970,70,CHARCOAL,NA,-21.9,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1254,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+53866,Beta-74108,7170,140,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-3939,NA,USA,California,North America,UWyo2021,Gardner et al. 2002,intcal20
+53939,Beta-74588,390,60,CHARCOAL,NA,-22.3,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2129,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+53940,Beta-74589,1240,50,CHARCOAL,NA,-23.2,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2129,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+54179,Beta-75555,5500,160,CHARCOAL,NA,-23.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54375,Beta-76020,840,60,CHARCOAL,NA,-22.4,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1977,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+54376,Beta-76021,8110,300,CHARCOAL,NA,-25.3,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,Cassiday et al. 2004; Porcasi et al. 2000; Jones Klar 2007,intcal20
+54399,Beta-76132,2020,90,CHARCOAL,NA,-23.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54400,Beta-76133,2540,60,CHARCOAL,NA,-24.7,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54404,Beta-76137,4000,100,CHARCOAL,NA,-25,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54405,Beta-76138,4090,90,CHARCOAL,NA,-25.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54407,Beta-76140,4860,190,CHARCOAL,NA,-25.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54408,Beta-76141,1390,60,CHARCOAL,NA,-24.2,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54409,Beta-76142,1640,100,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54411,Beta-76144,1020,50,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54412,Beta-76145,1900,50,CHARCOAL,NA,-24.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54413,Beta-76146,2010,60,CHARCOAL,NA,-22.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54414,Beta-76147,2020,90,CHARCOAL,NA,-23.4,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54415,Beta-76148,2510,60,CHARCOAL,NA,-23.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54417,Beta-76150,3250,80,CHARCOAL,NA,-23.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54420,Beta-76153,2910,50,CHARCOAL,NA,-23.7,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,NA,intcal20
+54435,Beta-76218,1090,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-15254,Previously Locus B SDI-10726,USA,California,North America,UWyo2021,NA,intcal20
+54568,Beta-76542,920,120,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-11953,NA,USA,California,North America,UWyo2021,Gallegos,intcal20
+54641,Beta-76776,3200,80,CHARCOAL,NA,-13.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,P4-6,USA,California,North America,UWyo2021,NA,intcal20
+54642,Beta-76777,320,70,CHARCOAL,NA,-26.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,OAF-23,USA,California,North America,UWyo2021,NA,intcal20
+54643,Beta-76778,610,80,CHARCOAL,NA,-24.5,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,OAF-22A,USA,California,North America,UWyo2021,NA,intcal20
+54645,Beta-76780,440,70,CHARCOAL,NA,-25.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1414C,NA,USA,California,North America,UWyo2021,NA,intcal20
+54646,Beta-76782,620,70,CHARCOAL,NA,-24.6,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1432,NA,USA,California,North America,UWyo2021,NA,intcal20
+54648,Beta-76785,220,60,CHARCOAL,NA,-24.9,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,OAF-79,USA,California,North America,UWyo2021,NA,intcal20
+54880,Beta-77828,2340,150,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+54881,Beta-77829,1500,70,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+54899,Beta-77861,1220,80,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-9775,NA,USA,California,North America,UWyo2021,Kyle C.E. K. Collins and D.R. Gallegos 1995,intcal20
+54926,Beta-77956,570,60,CHARCOAL,NA,-26,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,Salls 1988 Prehistoric Fisheries of the California Bight,intcal20
+54927,Beta-77957,1800,150,CHARCOAL,NA,-23.1,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,Salls 1988 Prehistoric Fisheries of the California Bight,intcal20
+55021,Beta-78489,2630,50,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+55066,Beta-78662,3520,60,CHARCOAL,NA,-25.1,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55067,Beta-78663,4030,100,CHARCOAL,NA,-25,RADIOMETRIC,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55068,Beta-78664,3490,60,CHARCOAL,NA,-24,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55069,Beta-78665,3670,60,CHARCOAL,NA,-24,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55070,Beta-78666,4160,90,CHARCOAL,NA,-25,RADIOMETRIC,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55071,Beta-78667,4550,60,CHARCOAL,NA,-24.1,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55072,Beta-78668,2890,60,CHARCOAL,NA,-24,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55075,Beta-78671,3540,60,CHARCOAL,NA,-24.2,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55078,Beta-78674,3540,100,CHARCOAL,NA,-25,RADIOMETRIC,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55079,Beta-78675,4580,60,CHARCOAL,NA,-22.3,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55082,Beta-78678,4560,40,CHARCOAL,NA,-23,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55084,Beta-78680,4570,60,CHARCOAL,NA,-23.7,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+55225,Beta-79333,5720,60,CHARCOAL,NA,NA,AMS,-120.4061554,35.3872098,1,NA,CA-SLO-1278,NA,USA,California,North America,UWyo2021,Nami 1999-Probable Middle Holocene geomagnetic�,intcal20
+55267,Beta-79553,600,50,CHARCOAL,NA,-25,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2119,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+55268,Beta-79554,660,50,CHARCOAL,NA,-25,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2119,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+55638,Beta-81024,690,80,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-490,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55639,Beta-81025,600,70,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-490,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55640,Beta-81026,1150,100,CHARCOAL,NA,NA,NA,-118.7300953,35.34288817,1,NA,CA-KER-490,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55641,Beta-81027/CAMS-19200,320,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-500,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55642,Beta-81028/CAMS-19201,1910,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-501,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55643,Beta-81029/CAMS-19202,800,50,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-501,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55644,Beta-81030/CAMS-19203,1910,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-501,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55645,Beta-81031/CAMS-19204,640,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-2378,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55646,Beta-81032/CAMS-19205,940,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-2378,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55733,Beta-81518,950,50,CHARCOAL,NA,-24.2,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1359,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+55734,Beta-81519,1170,40,CHARCOAL,NA,-25.5,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1359,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+55790,Beta-81798/CAMS-19949,230,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-490,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55791,Beta-81799/CAMS-19950,840,70,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-490,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55792,Beta-81800/CAMS-19951,1760,60,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-501,NA,USA,California,North America,UWyo2021,Byrd 1996,intcal20
+55870,Beta-82204,2780,70,CHARCOAL,NA,-11.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55871,Beta-82205,2830,100,CHARCOAL,NA,-18.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55872,Beta-82206,3240,200,CHARCOAL,NA,-22.2,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55873,Beta-82207,3160,90,CHARCOAL,NA,-13.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55874,Beta-82208,3080,60,CHARCOAL,NA,-12.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55875,Beta-82209,3160,150,CHARCOAL,NA,-20.3,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+55876,Beta-82210,280,60,CHARCOAL,NA,-23.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+56253,Beta-84101,4150,50,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+56271,Beta-84167,290,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10726,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56272,Beta-84168,570,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-4538,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56273,Beta-84169,940,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-4538,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56286,Beta-84214,1310,90,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-8435,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56313,Beta-84249,2560,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56314,Beta-84250,1980,60,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56316,Beta-84252,2030,70,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56317,Beta-84253,2180,80,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56319,Beta-84255,1700,140,CHARCOAL,NA,NA,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56320,Beta-84256,1790,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56351,Beta-84365,770,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13324,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56352,Beta-84366,390,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13324,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+56358,Beta-84379,1850,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-2696,NA,USA,California,North America,UWyo2021,Colton et al 1999-Hunter-Gatherer Land Use in the San Antonio Creek Drainage,intcal20
+56572,Beta-8541,2280,100,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-421,Sayles Site,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+56578,Beta-8543,1050,60,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-713,Ridge,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+56579,Beta-8544,1620,70,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-713,Ridge,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+56624,Beta-85762,310,50,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-647,NA,USA,California,North America,UWyo2021,Doyle K. T. et al. 1996,intcal20
+56625,Beta-85763,360,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-647,NA,USA,California,North America,UWyo2021,Doyle K. T. et al. 1996,intcal20
+56626,Beta-85764,360,40,CHARCOAL,NA,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-647,NA,USA,California,North America,UWyo2021,Doyle K. T. et al. 1996,intcal20
+56722,Beta-86881,510,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56724,Beta-86883,340,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56725,Beta-86884,570,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56726,Beta-86885,720,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56729,Beta-86888,430,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56731,Beta-86890,640,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56733,Beta-86892,340,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56734,Beta-86893,1040,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+56785,Beta-87388,6750,50,CHARCOAL,NA,NA,NA,-117.7616253,33.70141709,1,NA,CA-ORA-1432,NA,USA,California,North America,UWyo2021,Mason Roger D. 1997,intcal20
+57150,Beta-89586,440,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+57151,Beta-89587,1850,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+57173,Beta-89641,1540,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1644,Trout Creek,USA,California,North America,UWyo2021,Fitzgerald R. 1998,intcal20
+57174,Beta-89643,2540,40,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1644,Trout Creek,USA,California,North America,UWyo2021,Fitzgerald R. 1998,intcal20
+57175,Beta-89644,3880,50,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1644,Trout Creek,USA,California,North America,UWyo2021,Fitzgerald R. 1998,intcal20
+57295,Beta-90628,370,40,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+57296,Beta-90629,4510,50,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-VEN-782,NA,USA,California,North America,UWyo2021,Maxon P. O. E.J. Knell 1996,intcal20
+57383,Beta-91265,330,50,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12557,NA,USA,California,North America,UWyo2021,Bissell R.M. 1997,intcal20
+57404,Beta-91375,6100,60,CHARCOAL,NA,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1756,Salinas River Crossing,USA,California,North America,UWyo2021,NA,intcal20
+57456,Beta-92072,1480,40,CHARCOAL,NA,-23.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-43,NA,USA,California,North America,UWyo2021,NA,intcal20
+57457,Beta-92073,4430,50,CHARCOAL,NA,-24.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-43,NA,USA,California,North America,UWyo2021,NA,intcal20
+57458,Beta-92074,2260,70,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-102,NA,USA,California,North America,UWyo2021,NA,intcal20
+57459,Beta-92075,2590,70,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-102,NA,USA,California,North America,UWyo2021,NA,intcal20
+57460,Beta-92076,2660,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-102,NA,USA,California,North America,UWyo2021,NA,intcal20
+57461,Beta-92077,400,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-340,NA,USA,California,North America,UWyo2021,NA,intcal20
+57462,Beta-92078,380,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-340,NA,USA,California,North America,UWyo2021,NA,intcal20
+57463,Beta-92079,580,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-340,NA,USA,California,North America,UWyo2021,NA,intcal20
+57464,Beta-92080,1050,40,CHARCOAL,NA,-24.6,NA,-119.0844612,34.45500084,1,NA,CA-SNI-342,NA,USA,California,North America,UWyo2021,NA,intcal20
+57465,Beta-92081,960,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-342,NA,USA,California,North America,UWyo2021,NA,intcal20
+57466,Beta-92082,680,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-342,NA,USA,California,North America,UWyo2021,NA,intcal20
+57467,Beta-92083,310,60,CHARCOAL,NA,-24.6,NA,-119.0844612,34.45500084,1,NA,CA-SNI-329,NA,USA,California,North America,UWyo2021,NA,intcal20
+57468,Beta-92084,710,40,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-329,NA,USA,California,North America,UWyo2021,NA,intcal20
+57469,Beta-92085,610,40,CHARCOAL,NA,-24.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-329,NA,USA,California,North America,UWyo2021,NA,intcal20
+57470,Beta-92086,610,40,CHARCOAL,NA,-25.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-346,NA,USA,California,North America,UWyo2021,NA,intcal20
+57471,Beta-92087,1300,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-346,NA,USA,California,North America,UWyo2021,NA,intcal20
+57472,Beta-92088,1170,50,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-346,NA,USA,California,North America,UWyo2021,NA,intcal20
+57484,Beta-92221,700,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-8238,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57485,Beta-92222,440,80,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12621,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57486,Beta-92223,450,70,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12622,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57487,Beta-92224,760,50,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-12622,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57488,Beta-92225,230,80,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13205,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57544,Beta-92366,90,60,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-591,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+57556,Beta-92480,500,50,CHARCOAL,NA,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-9605,NA,USA,California,North America,UWyo2021,Melaney 1996 Gamble and Mattingly 2012,intcal20
+57558,Beta-92482,1500,60,CHARCOAL,NA,NA,RADIOMETRIC,-116.7357302,33.03555017,1,NA,CA-SDI-9605,NA,USA,California,North America,UWyo2021,Melaney 1996 Gamble and Mattingly 2012,intcal20
+57680,Beta-93264,990,110,CHARCOAL,NA,-25.2,NA,-118.22564,34.3205641,1,NA,CA-SCLI-�,SAN-11,USA,California,North America,UWyo2021,NA,intcal20
+57818,Beta-94021,1360,50,CHARCOAL,NA,-23.4,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-2128,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+57819,Beta-94022,2290,50,CHARCOAL,NA,-22.7,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2137,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+57820,Beta-94023,3720,50,CHARCOAL,NA,-24.4,AMS,-118.22564,34.3205641,1,NA,CA-LAN-�,FS-050154089 SGM,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+57841,Beta-94124,4460,50,CHARCOAL,Charcoal from sediment,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12814,NA,USA,California,North America,UWyo2021,Gallegos,intcal20
+57842,Beta-94125,4180,80,CHARCOAL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-12814,NA,USA,California,North America,UWyo2021,Gallegos,intcal20
+57945,Beta-94808,850,60,CHARCOAL,NA,-23.7,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1977,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+58134,Beta-95898,7160,210,CHARCOAL,NA,-24,NA,-118.22564,34.3205641,1,NA,CA-SCLI-43,Eel Point,USA,California,North America,UWyo2021,Salls 1988 Prehistoric Fisheries of the California Bight,intcal20
+58254,Beta-96683,310,60,CHARCOAL,NA,-25.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-214,NA,USA,California,North America,UWyo2021,NA,intcal20
+58255,Beta-96684,2570,60,CHARCOAL,NA,-24.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-105,NA,USA,California,North America,UWyo2021,NA,intcal20
+58256,Beta-96685,4240,60,CHARCOAL,NA,-24.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-105,NA,USA,California,North America,UWyo2021,NA,intcal20
+58257,Beta-96686,2530,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-106,NA,USA,California,North America,UWyo2021,NA,intcal20
+58258,Beta-96687,2490,70,CHARCOAL,NA,-23.2,NA,-119.0844612,34.45500084,1,NA,CA-SNI-106,NA,USA,California,North America,UWyo2021,NA,intcal20
+58259,Beta-96688,2740,60,CHARCOAL,NA,-25,NA,-119.0844612,34.45500084,1,NA,CA-SNI-106,NA,USA,California,North America,UWyo2021,NA,intcal20
+58260,Beta-96689,2220,60,CHARCOAL,NA,-26.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-204,NA,USA,California,North America,UWyo2021,NA,intcal20
+58261,Beta-96690,2580,60,CHARCOAL,NA,-25.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-204,NA,USA,California,North America,UWyo2021,NA,intcal20
+58262,Beta-96691,2630,60,CHARCOAL,NA,-25.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-204,NA,USA,California,North America,UWyo2021,NA,intcal20
+58265,Beta-96702,2090,60,CHARCOAL,NA,-25,NA,-118.22564,34.3205641,1,NA,CA-SCLI-1802,NA,USA,California,North America,UWyo2021,NA,intcal20
+58629,Beta-98855,1130,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58630,Beta-98856,1200,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58631,Beta-98857,1530,50,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58632,Beta-98858,1110,50,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58633,Beta-98859,990,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58634,Beta-98860,1560,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58635,Beta-98861,3660,80,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58636,Beta-98862,3250,60,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58637,Beta-98863,1360,70,CHARCOAL,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-11,NA,USA,California,North America,UWyo2021,NA,intcal20
+58639,Beta-98880,3140,70,CHARCOAL,NA,-24.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58640,Beta-98881,2810,50,CHARCOAL,NA,-14,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58641,Beta-98883,2540,60,CHARCOAL,NA,-18.5,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58642,Beta-98884,4280,210,CHARCOAL,NA,-16.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58643,Beta-98885,2500,70,CHARCOAL,NA,-12.7,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58644,Beta-98886,2300,80,CHARCOAL,NA,-12.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58645,Beta-98887,2740,60,CHARCOAL,NA,-15.3,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58646,Beta-98888,2920,140,CHARCOAL,NA,-12.2,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58647,Beta-98889,2730,120,CHARCOAL,NA,-19.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58648,Beta-98890,3100,120,CHARCOAL,NA,-12.7,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58649,Beta-98891,2110,70,CHARCOAL,NA,-14.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58650,Beta-98892,1490,70,CHARCOAL,NA,-14.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58651,Beta-98893,1230,80,CHARCOAL,NA,-19.3,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58652,Beta-98894,530,50,CHARCOAL,NA,-26.1,NA,-119.0844612,34.45500084,1,NA,CA-SNI-168,NA,USA,California,North America,UWyo2021,NA,intcal20
+58653,Beta-98895,3370,80,CHARCOAL,NA,-24,NA,-119.0844612,34.45500084,1,NA,CA-SNI-169,NA,USA,California,North America,UWyo2021,NA,intcal20
+58654,Beta-98896,2240,50,CHARCOAL,NA,-23.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-171,NA,USA,California,North America,UWyo2021,NA,intcal20
+61299,CAMS-13036,10090,70,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-173,Arlington Springs,USA,California,North America,UWyo2021,Reeder et al. 2008-Forty Years Later: What Have We Learned About the Earliest Human Occupations of Santa Rosa Island,intcal20
+61417,CAMS-14365,310,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-163,Tuquan,USA,California,North America,UWyo2021,Rick Torben C 2004,intcal20
+61871,CAMS-33368,8970,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisy Cave,USA,California,North America,UWyo2021,Hofman et al. 2018-Collagen Fingerprinting and the Earliest Marine Mammal Hunting in North America,intcal20
+61872,CAMS-33369,9580,60,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisy Cave,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+61879,CAMS-33519,8920,70,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisy Cave,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+61931,CAMS-3774,280,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61932,CAMS-3775,360,70,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61933,CAMS-3776,350,80,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61934,CAMS-3777,290,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61935,CAMS-3778,1160,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61936,CAMS-3779,810,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61937,CAMS-3780,480,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61938,CAMS-3781,290,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61939,CAMS-3782,360,60,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61940,CAMS-3783,220,70,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-662,Pelican Hill,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61941,CAMS-3786,610,50,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-671,NA,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61942,CAMS-3787,1390,50,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-671,NA,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61943,CAMS-3788,540,50,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-671,NA,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+61944,CAMS-3789,220,70,CHARCOAL,NA,NA,AMS,-117.7616253,33.70141709,1,NA,CA-ORA-671,NA,USA,California,North America,UWyo2021,Mason Roger D. Mark L. Peterson 1994,intcal20
+62567,CAMS-8862,6000,70,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62568,CAMS-8863,8810,80,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62569,CAMS-8864,3220,70,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62570,CAMS-8865,8040,60,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62571,CAMS-8866,7810,60,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62572,CAMS-8867,8600,60,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+64042,D-AMS-10999,3132,28,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Gamble 2017-Feasting ritual practicies social memory and persistent places�,intcal20
+64043,D-AMS-11000,2967,22,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Gamble 2017-Feasting ritual practicies social memory and persistent places�,intcal20
+64044,D-AMS-11001,5085,26,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Gamble 2017-Feasting ritual practicies social memory and persistent places�,intcal20
+64045,D-AMS-11002,5095,30,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Gamble 2017-Feasting ritual practicies social memory and persistent places�,intcal20
+64082,D-AMS-11287,10011,36,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64329,D-AMS-16056,1147,52,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman and Porcasi 2019-The Lang Ranch Sites�,intcal20
+64330,D-AMS-16057,5844,58,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman and Porcasi 2019-The Lang Ranch Sites�,intcal20
+64338,D-AMS-16249,2225,30,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64339,D-AMS-16250,2530,29,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64340,D-AMS-16251,2449,24,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64341,D-AMS-16258,2198,21,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64342,D-AMS-16259,2407,29,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64348,D-AMS-16502,804,26,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-849,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+64349,D-AMS-16503,90,19,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-849,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+64426,D-AMS-19335,3412,32,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64427,D-AMS-19336,2302,27,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64428,D-AMS-19337,2477,35,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman 2017-New AMS Dating Sequences for the Chumas Ventureno Early Period,intcal20
+64478,D-AMS-21470,2493,27,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman and Porcasi 2019-The Lang Ranch Sites�,intcal20
+64481,D-AMS-21756,83,31,CHARCOAL,NA,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-425/H,Muscupiabit,USA,California,North America,UWyo2021,Grenda 2017-Characterizing Muscupiabit�.,intcal20
+64681,D-AMS-26964,5327,30,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman and Porcasi 2019 The Lang Ranch Sites: New Data on the�,intcal20
+64706,D-AMS-27402,1731,25,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-VEN-1029,NA,USA,California,North America,UWyo2021,Roman and Porcasi 2019-The Lang Ranch Sites�,intcal20
+64956,D-AMS-3502,1356,27,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-845,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+65300,D-AMS-7536,1222,22,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-845,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+102986,LJ-4565/66,3600,110,CHARCOAL,NA,-22.7,NA,-116.7357302,33.03555017,1,NA,CA-SDI-�,SDM-W-1504,USA,California,North America,UWyo2021,Norwood R. H. 1978,intcal20
+102987,LJ-4648,310,50,CHARCOAL,NA,-25.4,NA,-116.7357302,33.03555017,1,NA,CA-SDI-�,Kumeyaay; SDSU No. F:5:1,USA,California,North America,UWyo2021,(need reference) 1984,intcal20
+102990,LJ-4755,270,100,CHARCOAL,NA,-25.3,NA,-118.22564,34.3205641,1,NA,CA-SCAI-137,NA,USA,California,North America,UWyo2021,Cottrell M. G. J. M. Clavenger and T. G. Cooley 1980,intcal20
+102991,LJ-4756,230,90,CHARCOAL,NA,-23.2,NA,-118.22564,34.3205641,1,NA,CA-SCAI-137,NA,USA,California,North America,UWyo2021,Cottrell M. G. J. M. Clavenger and T. G. Cooley 1980,intcal20
+103003,LJ-5112,600,60,CHARCOAL,NA,-25.6,NA,-116.7357302,33.03555017,1,NA,CA-SDI-5634,Shadow Ridge,USA,California,North America,UWyo2021,(need reference) 1984,intcal20
+103004,LJ-5113,520,60,CHARCOAL,NA,-25.5,NA,-116.7357302,33.03555017,1,NA,CA-SDI-5634,Shadow Ridge,USA,California,North America,UWyo2021,(need reference) 1984,intcal20
+103005,LJ-5114,400,50,CHARCOAL,NA,-25.5,NA,-116.7357302,33.03555017,1,NA,CA-SDI-5634,Shadow Ridge,USA,California,North America,UWyo2021,(need reference) 1984,intcal20
+103006,LJ-5115,530,50,CHARCOAL,NA,-24.8,NA,-116.7357302,33.03555017,1,NA,CA-SDI-5634,Shadow Ridge,USA,California,North America,UWyo2021,(need reference) 1984,intcal20
+103010,LJ-5134,280,60,CHARCOAL,NA,-24.1,NA,-116.7357302,33.03555017,1,NA,CA-SDI-�,Kumeyaay; SDSU No. F:5:1,USA,California,North America,UWyo2021,Linick 1984,intcal20
+114483,NZA-37430,1444,20,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,NA,USA,California,North America,UWyo2021,Meyer Kaijankoski 2011,intcal20
+114484,NZA-37431,676,20,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,NA,USA,California,North America,UWyo2021,Meyer Kaijankoski 2011,intcal20
+114969,OS-28485,7370,40,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-606,Busted Balls,USA,California,North America,UWyo2021,NA,intcal20
+115052,OS-37963,8870,40,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-522,NA,USA,California,North America,UWyo2021,NA,intcal20
+115157,OS-54411,175,30,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,Guttenberg 2014-Spatial signatures of Ceremony and Social Interaction�,intcal20
+115159,OS-54562,395,70,CHARCOAL,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-25,Tule Creek Village,USA,California,North America,UWyo2021,Guttenberg 2014-Spatial signatures of Ceremony and Social Interaction�,intcal20
+115315,OS-69026,8780,50,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-522,NA,USA,California,North America,UWyo2021,Hofman et al. 2018-Collagen Fingerprinting and the Earliest Marine Mammal Hunting in North America,intcal20
+115316,OS-69027,8940,50,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-522,NA,USA,California,North America,UWyo2021,Hofman et al. 2018-Collagen Fingerprinting and the Earliest Marine Mammal Hunting in North America,intcal20
+115330,OS-70638,10900,45,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-679,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+115369,OS-75147,10200,45,CHARCOAL,Ceanothus,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+128813,PRI-07-20-5568.2006.01,6305,25,CHARCOAL,NA,-22.4,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-5568,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+129208,PRI-12-21-200623CF,2920,20,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3873,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129209,PRI-12-21-30060242,2955,15,CHARCOAL,Chrysothamnus,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1780,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129210,PRI-12-21-30060246,3120,15,CHARCOAL,Chrysothamnus twig,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1780,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129211,PRI-12-21-3006232E,1890,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1777,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129212,PRI-12-21-300623CE,1905,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1777,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129213,PRI-12-21-300623DB,2985,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1780,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129214,PRI-12-21-300623DD,2900,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3873,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129215,PRI-12-21-300623E0,1885,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1777,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129216,PRI-12-21-3006283,1905,15,CHARCOAL,Yucca brevifolia vitrified,NA,AMS,-118.22564,34.3205641,1,NA,CA-LAN-1777,NA,USA,California,North America,UWyo2021,Cummings et al. 2012-PRI Report 12-21,intcal20
+129860,PRI-14-55-1,323,25,CHARCOAL,vitrified Larrea tridentata,-21,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,C2-M-1,USA,California,North America,UWyo2021,Kovacik 2014- PRI Report 2014-55,intcal20
+129960,PRI-4873,927,22,CHARCOAL,Ambrosia,-23.4,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,CM-1,USA,California,North America,UWyo2021,Kovacik 2016-PRI Report 2015-72/2016/43,intcal20
+130128,PRI-5381,814,25,CHARCOAL,Larrea tridentata,-21.8,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,CM-2,USA,California,North America,UWyo2021,Kovacik 2016-PRI Report 2015-72/2016/43,intcal20
+130129,PRI-5382,1602,26,CHARCOAL,Larrea tridentata,-22.4,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,CM-3,USA,California,North America,UWyo2021,Kovacik 2016-PRI Report 2015-72/2016/43,intcal20
+130146,PRI-5449,2453,25,CHARCOAL,Larrea tridentata vitrified,-23.4,AMS,-118.7300953,35.34288817,1,NA,CA-KER-�,CM-4,USA,California,North America,UWyo2021,Kovacik 2016-PRI Report 2015-72/2016/43,intcal20
+145350,SUERC-46061,212,29,CHARCOAL,NA,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+159261,UCIAMS-144252,380,15,CHARCOAL,NA,NA,AMS,-118.22564,34.3205641,1,NA,CA-SCAI-564,Toyon Bay,USA,California,North America,UWyo2021,Radde 2015-Understanding an Island Tongva Village�,intcal20
+159262,UCIAMS-144253,1040,15,CHARCOAL,NA,NA,AMS,-118.22564,34.3205641,1,NA,CA-SCAI-564,Toyon Bay,USA,California,North America,UWyo2021,Radde 2015-Understanding an Island Tongva Village�,intcal20
+159263,UCIAMS-144254,1280,15,CHARCOAL,NA,NA,AMS,-118.22564,34.3205641,1,NA,CA-SCAI-564,Toyon Bay,USA,California,North America,UWyo2021,Radde 2015-Understanding an Island Tongva Village�,intcal20
+159897,UCIAMS-60751,10155,30,CHARCOAL,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-512,NA,USA,California,North America,UWyo2021,Erlandson et al 2011-Paleoindian Seafaring�,intcal20
+160081,UCIAMS-87888,2510,20,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Jazwa et al. 2013-A High-Precision Chronology for Two House Features�,intcal20
+160082,UCIAMS-87889,2485,20,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Jazwa et al. 2013-A High-Precision Chronology for Two House Features�,intcal20
+160083,UCIAMS-87890,3080,20,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Jazwa et al. 2013-A High-Precision Chronology for Two House Features�,intcal20
+160084,UCIAMS-87891,2540,20,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Jazwa et al. 2013-A High-Precision Chronology for Two House Features�,intcal20
+160085,UCIAMS-87892,2970,20,CHARCOAL,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Jazwa et al. 2013-A High-Precision Chronology for Two House Features�,intcal20
+160540,UCLA-1789A,1440,50,CHARCOAL,NA,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-713,Ridge,USA,California,North America,UWyo2021,Ericson J. E. 1977; Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+160906,UCR-1993,210,60,CHARCOAL,NA,-24.65,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160907,UCR-1994,485,90,CHARCOAL,NA,-25.64,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160908,UCR-1995,550,80,CHARCOAL,NA,-25.65,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160909,UCR-1996,810,90,CHARCOAL,NA,-24.68,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160910,UCR-1997,1050,90,CHARCOAL,NA,-24.79,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160911,UCR-1998,720,50,CHARCOAL,NA,-24.66,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160912,UCR-1999,1000,90,CHARCOAL,NA,-25.3,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160913,UCR-2000,1250,100,CHARCOAL,NA,-24.48,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160914,UCR-2001,1130,70,CHARCOAL,NA,-24.51,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160915,UCR-2002,980,90,CHARCOAL,NA,-24.7,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160916,UCR-2003,530,60,CHARCOAL,NA,-25.22,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160917,UCR-2004,1250,75,CHARCOAL,NA,-25.31,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160918,UCR-2005,1360,100,CHARCOAL,NA,-24.88,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160919,UCR-2007,1220,80,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160920,UCR-2008,1120,80,CHARCOAL,NA,-24.6,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160921,UCR-2009,460,90,CHARCOAL,NA,-24.8,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160922,UCR-2010,1100,90,CHARCOAL,NA,-24.74,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160923,UCR-2011,1140,100,CHARCOAL,NA,-25.76,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160924,UCR-2012,1030,100,CHARCOAL,NA,-25.22,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160925,UCR-2013,1780,70,CHARCOAL,NA,-24.78,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160926,UCR-2014,1950,85,CHARCOAL,NA,-25.33,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160927,UCR-2015,1790,100,CHARCOAL,NA,-25.16,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160928,UCR-2016,1520,100,CHARCOAL,NA,-24.95,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160929,UCR-2017,1240,80,CHARCOAL,NA,-25,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160930,UCR-2018,625,100,CHARCOAL,NA,-24.99,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160931,UCR-2019,1515,80,CHARCOAL,NA,-24.93,NA,-118.22564,34.3205641,1,NA,CA-LAN-43,Sj�tkanga Encino Village,USA,California,North America,UWyo2021,Taylor R. E. P.J. Ennis L.A. Payen C.A. Prior and P.J. Slota 1986,intcal20
+160942,UCR-2102,960,50,CHARCOAL,NA,-25,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-1165,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+160947,UCR-2206/AA-4028,1855,70,CHARCOAL,NA,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-2322,SBR-2322 or -5728�,USA,California,North America,UWyo2021,Yohe R. M. II M. Q. Sutton 1989,intcal20
+160977,UCR-2658,780,70,CHARCOAL,NA,-23.9,NA,-119.0844612,34.45500084,1,NA,CA-SNI-351,NA,USA,California,North America,UWyo2021,NA,intcal20
+160979,UCR-2660,2570,60,CHARCOAL,NA,-24.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-351,NA,USA,California,North America,UWyo2021,NA,intcal20
+164113,UGaMS-33881,70,20,CHARCOAL,NA,-24.01,AMS,-118.7300953,35.34288817,1,NA,CA-KER-3810,NA,USA,California,North America,UWyo2021,Harvey David 2019 personal communication,intcal20
+14598,Beta-108484,1390,60,OTHER,Sea grass,-24.4,NA,-119.0844612,34.45500084,1,NA,CA-SNI-160,NA,USA,California,North America,UWyo2021,NA,intcal20
+27190,Beta-180868,6750,80,OTHER,Resin,-18.2,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+27530,Beta-182595,2030,40,OTHER,Resin,-22.3,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2327,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+37714,Beta-242490,270,40,OTHER,canarygrass,-22.4,AMS,-118.22564,34.3205641,1,NA,CA-LAN-2768,NA,USA,California,North America,UWyo2021,Vargas et al 2016-People in a Changing Land (Vol 2),intcal20
+46133,Beta-339701,100,30,OTHER,Marah,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1174,NA,USA,California,North America,UWyo2021,Stevens et al. 2013,intcal20
+47234,Beta-363795,3400,30,OTHER,Organic food residue�,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-94/95,NA,USA,California,North America,UWyo2021,Far Western et al. 2014,intcal20
+49283,Beta-423247,2420,30,OTHER,Manzanita pit,NA,NA,-120.0183356,34.67161852,1,NA,CA-SBA-46,Mescalitan Island,USA,California,North America,UWyo2021,NA,intcal20
+63780,CURL-10017,1010,20,OTHER,pigment,-17.3,AMS,-118.7300953,35.34288817,1,NA,CA-KER-17,Palakuc,USA,California,North America,UWyo2021,Garfinkel et al. 2008-Dating palakuc�,intcal20
+64015,D-AMS-10972,5824,25,OTHER,Urchin,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-333,El Monton,USA,California,North America,UWyo2021,Gamble 2017-Feasting ritual practicies social memory and persistent places�,intcal20
+64790,D-AMS-3046,226,24,OTHER,Corm,-37.1,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64791,D-AMS-3047,4008,29,OTHER,Corm,-32,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64792,D-AMS-3048,4035,31,OTHER,Corm,-34.3,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64793,D-AMS-3049,4157,31,OTHER,Corm,-27.4,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64794,D-AMS-3050,2464,25,OTHER,Corm,-27.2,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64795,D-AMS-3051,3320,29,OTHER,Corm,-19,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+64796,D-AMS-3052,3875,33,OTHER,Corm,-28.2,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+65119,D-AMS-3972,3331,34,OTHER,Corm,-22.3,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+65120,D-AMS-3973,2331,22,OTHER,Corm,-28.4,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+65121,D-AMS-3974,4445,23,OTHER,Corm,-26.7,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+65122,D-AMS-3975,2961,21,OTHER,Corm,-25.6,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+65124,D-AMS-3978,623,28,OTHER,Corm,-13.2,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 3,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+115020,OS-34718,1962,94,OTHER,Phyllospadix,-11.71,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-325,NA,USA,California,North America,UWyo2021,NA,intcal20
+121532,OxA-25191,178,27,OTHER,Basketry rush�,-26.3,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-�,NA,USA,California,North America,UWyo2021,Ramsey et al. 2014-Radiocarbon dates from the Oxford AMS System: Datelist 35,intcal20
+121533,OxA-25192,1021,28,OTHER,Basketry tule�,-22.1,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-1985,NA,USA,California,North America,UWyo2021,Ramsey et al. 2014-Radiocarbon dates from the Oxford AMS System: Datelist 35,intcal20
+121534,OxA-25193,1623,29,OTHER,Basketry tule�,-25.8,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-2004,NA,USA,California,North America,UWyo2021,Ramsey et al. 2014-Radiocarbon dates from the Oxford AMS System: Datelist 35,intcal20
+129195,PRI-12-119-1140,5810,25,OTHER,Calcined bone,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-1313/14791,NA,USA,California,North America,UWyo2021,Cummings and Puseman 2012-AMS Radiocarbon dating of boen from site CA-SDI-1313/14791 on the Marine Corps Base Camp Pendleton CA,intcal20
+129787,PRI-13-84-1A,137,24,OTHER,charred leaf,-23.32,AMS,-118.22564,34.3205641,1,NA,NA,Valentine Cache #3 (05-01-53-377),USA,California,North America,UWyo2021,Cummings et al. 2013- PRI Report 2013-84,intcal20
+129788,PRI-13-84-1B,332,23,OTHER,Poaceae A Caryopsis,-18.88,AMS,-118.22564,34.3205641,1,NA,NA,Valentine Cache #3 (05-01-53-377),USA,California,North America,UWyo2021,Cummings et al. 2013- PRI Report 2013-84,intcal20
+130530,PSUAMS-6264,148,15,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+130531,PSUAMS-6265,105,20,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+130532,PSUAMS-6266,210,15,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+130533,PSUAMS-6267,145,15,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+130534,PSUAMS-6268,230,20,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+130535,PSUAMS-6269,295,15,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+145272,SUERC-44589,239,29,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+145273,SUERC-44590,114,29,OTHER,Quid,NA,AMS,-118.7300953,35.34288817,1,NA,CA-KER-5836,Pinwheel Cave,USA,California,North America,UWyo2021,Robinson et al 2020-Datura quids at Pinwheel Cave�,intcal20
+160932,UCR-2034-1/AA-3043,230,85,OTHER,Organic insect,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-334,Southcott Cave,USA,California,North America,UWyo2021,Sutton et al. 1985,intcal20
+160933,UCR-2034/AA-2467,2100,230,OTHER,Organic insect creosote lac scale resin,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-334,Southcott Cave,USA,California,North America,UWyo2021,Sutton et al. 1985,intcal20
+18346,Beta-130807,180,50,POTTERYRESIDUE,sherd soot,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10726A,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+18347,Beta-130808,410,50,POTTERYRESIDUE,sherd soot,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10726A,NA,USA,California,North America,UWyo2021,Byrd and Reddy 2002-Late Holocene Adaptation along the Northern San Diego Coast,intcal20
+4870,AA-757,5110,270,SEDIMENT,Carbonate Caliche on Bone Homo sapiens,NA,AMS,-116.7357302,33.03555017,1,NA,CA-SDI-18307,SDM-W-2; P-37-18179,USA,California,North America,UWyo2021,Stafford T. West Jr. A.J.T. Hull K. Brendel R.C. Duhamel and D. Donah 1987,intcal20
+14536,Beta-108166,4070,50,SEDIMENT,NA,NA,AMS,-120.4061554,35.3872098,1,NA,CA-SLO-1278,NA,USA,California,North America,UWyo2021,Nami 1999-Probable Middle Holocene geomagnetic�,intcal20
+22646,Beta-155556,5590,50,SEDIMENT,NA,-22.4,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+22647,Beta-155557,5870,60,SEDIMENT,NA,-22.3,AMS,-118.22564,34.3205641,1,NA,CA-LAN-3013,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+25023,Beta-168649,3210,40,SEDIMENT,NA,-25.7,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+38441,Beta-247385,540,40,SEDIMENT,NA,-24.8,NA,-116.7357302,33.03555017,1,NA,CA-SDI-10697,NA,USA,California,North America,UWyo2021,Scharlotta 2015 (personal comm),intcal20
+46968,Beta-357180,7800,40,SEDIMENT,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-7074,NA,USA,California,North America,UWyo2021,Laylander et al 2014-A Regional Synthesis of Prehistoric Archaeolgoical Landscape,intcal20
+48656,Beta-404176,3100,30,SEDIMENT,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-17205,NA,USA,California,North America,UWyo2021,NA,intcal20
+48658,Beta-404178,1220,30,SEDIMENT,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-9687,NA,USA,California,North America,UWyo2021,NA,intcal20
+54136,Beta-75375,1800,80,SEDIMENT,NA,-25,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reedy 1999,intcal20
+54137,Beta-75376,4230,60,SEDIMENT,NA,-25,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reedy 1999,intcal20
+54898,Beta-77860,3310,80,SEDIMENT,Soil with charcoal,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-4763,NA,USA,California,North America,UWyo2021,Kyle C.E. D.R. Gallegos 1995,intcal20
+56285,Beta-84212,3810,60,SEDIMENT,NA,-26.2,NA,-116.7357302,33.03555017,1,NA,CA-SDI-8435,NA,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+56571,Beta-85409,840,70,SEDIMENT,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-8435,NA,USA,California,North America,UWyo2021,Byrd 1998,intcal20
+57183,Beta-89704,4180,90,SEDIMENT,NA,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-8250,NA,USA,California,North America,UWyo2021,Knell E. J. 1996,intcal20
+57201,Beta-89975,3200,100,SEDIMENT,NA,-25.6,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+57202,Beta-89976,1850,80,SEDIMENT,NA,-26.2,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+57203,Beta-89977,490,60,SEDIMENT,NA,-26.8,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+57204,Beta-89978,2470,80,SEDIMENT,NA,-26.9,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+57205,Beta-89979,1370,70,SEDIMENT,NA,-27.9,NA,-116.7357302,33.03555017,1,NA,CA-SDI-811,Red Beach,USA,California,North America,UWyo2021,Waters Byrd Reddy 1999,intcal20
+57489,Beta-92226,4490,80,SEDIMENT,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-13206,NA,USA,California,North America,UWyo2021,Oakes Country Estates Cultural Resources Testing and Survey Report,intcal20
+170055,WSU-4099,2420,120,SEDIMENT,NA,NA,RADIOMETRIC,-118.22564,34.3205641,1,NA,CA-LAN-192,Lovejoy Springs Site,USA,California,North America,UWyo2021,Price et al. 2009 The Archaeology of CA-LAN-192�,intcal20
+26152,Beta-175779,3500,50,SEEDS,Prunus ilicifolia nutshell,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1180,NA,USA,California,North America,UWyo2021,Leach-Palm Joslin 2003,intcal20
+32786,Beta-212745,1290,40,SEEDS,acorn nutburned,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2207,NA,USA,California,North America,UWyo2021,Hannahs Farrell 2007,intcal20
+46132,Beta-339700,1710,30,SEEDS,acorn,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1174,NA,USA,California,North America,UWyo2021,Stevens et al. 2013,intcal20
+46134,Beta-339702,360,30,SEEDS,acorn nutshell,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2566,NA,USA,California,North America,UWyo2021,Stevens et al. 2013,intcal20
+46135,Beta-339703,340,30,SEEDS,Acorn and Islay,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2612,SLO-2612-U,USA,California,North America,UWyo2021,Stevens et al. 2013,intcal20
+46136,Beta-339704,300,30,SEEDS,acorn,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-2612,SLO-2612-L,USA,California,North America,UWyo2021,Stevens et al. 2013,intcal20
+46832,Beta-354153,200,30,SEEDS,Charred acorn,-23.1,NA,-118.22564,34.3205641,1,NA,NA,Valentine Cache #3 (05-01-53-377),USA,California,North America,UWyo2021,Ryder 2014-Circular Rock Features of the Liebre-Sawmill Mountains,intcal20
+52909,Beta-69142,150,50,SEEDS,Zea mays corn,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-2630,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+57246,Beta-90317,2800,60,SEEDS,acorn husk,NA,NA,-120.4061554,35.3872098,1,NA,CA-SLO-1756,Salinas River Crossing,USA,California,North America,UWyo2021,NA,intcal20
+65123,D-AMS-3976,421,28,SEEDS,Manzinita berry pit,-24,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-619/620,Diablo Valdez Locus 2,USA,California,North America,UWyo2021,Gill 2015-Ancient Plant Use and the Importance of Geophytes�,intcal20
+3032,AA-405,7140,290,SOIL,bulk organic material,NA,NA,-116.1784911,34.84146144,1,NA,CA-SBR-4966,Henwood,USA,California,North America,UWyo2021,Gilreath Basgall and Hall 1987,intcal20
+4431,AA-648,8470,370,SOIL,bulk organic material,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-4966,Henwood,USA,California,North America,UWyo2021,Gilreath Basgall and Hall 1987,intcal20
+4440,AA-649,7150,290,SOIL,bulk organic material,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-4966,Henwood,USA,California,North America,UWyo2021,Gilreath Basgall and Hall 1987,intcal20
+4970,AA-798,4360,280,SOIL,bulk organic material,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-4966,Henwood,USA,California,North America,UWyo2021,Gilreath Basgall and Hall 1987,intcal20
+4975,AA-800,7400,280,SOIL,bulk organic material,NA,AMS,-116.1784911,34.84146144,1,NA,CA-SBR-4966,Henwood,USA,California,North America,UWyo2021,Gilreath Basgall and Hall 1987,intcal20
+13255,Beta-100174,3570,70,SOIL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-11424,NA,USA,California,North America,UWyo2021,Gallegos et al 2004-Cultural Resource Survey and Test Report for the Lonestar Project�.,intcal20
+13256,Beta-100175,3380,100,SOIL,NA,NA,NA,-116.7357302,33.03555017,1,NA,CA-SDI-11424,NA,USA,California,North America,UWyo2021,Gallegos et al 2004-Cultural Resource Survey and Test Report for the Lonestar Project�.,intcal20
+14121,Beta-105603,3520,40,SOIL,Soil matrix,NA,NA,-118.22564,34.3205641,1,NA,CA-SCLI-152,NA,USA,California,North America,UWyo2021,Porcasi 1999 Prehistoric Exploitation of Albatross�,intcal20
+52275,Beta-63603,1420,70,SOIL,NA,-26.8,NA,-118.22564,34.3205641,1,NA,CA-LAN-705,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+153149,Tx-6814,885,76,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+153150,Tx-6815,1483,75,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+153151,Tx-6816,1140,77,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+153152,Tx-6817,1230,83,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+153153,Tx-6818,1080,77,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+153154,Tx-6819,873,55,SOIL,Humate,NA,NA,-118.22564,34.3205641,1,NA,CA-LAN-47,Admiralty,USA,California,North America,UWyo2021,Altschul et al. 1992-Life in Ballona�,intcal20
+159700,UCIAMS-206754,7280,20,TEXTILE,Eel grass knot,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-603,Cave of the Chimneys,USA,California,North America,UWyo2021,Ainis 2019-Reconstructing nearshore and kelp forest habitats�,intcal20
+14884,Beta-110543,1341,122,UNKNOWN,NA,-22.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-162,NA,USA,California,North America,UWyo2021,NA,intcal20
+14885,Beta-110544,1331,102,UNKNOWN,NA,-22.8,NA,-119.0844612,34.45500084,1,NA,CA-SNI-162,NA,USA,California,North America,UWyo2021,NA,intcal20
+17395,Beta-124398,3960,70,UNKNOWN,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-�,NA,USA,California,North America,UWyo2021,Scheib et al. 2018-Ancient human parallel lineages within Noth America contributed to a coastal expansion,intcal20
+40540,Beta-261340,1330,70,UNKNOWN,NA,NA,NA,-117.7616253,33.70141709,1,NA,CA-ORA-906,NA,USA,California,North America,UWyo2021,BonTerra Consulting 2010-Newport Banning Ranch Archaeological Resources Assessment,intcal20
+40541,Beta-261341,2340,80,UNKNOWN,NA,NA,NA,-117.7616253,33.70141709,1,NA,CA-ORA-906,NA,USA,California,North America,UWyo2021,BonTerra Consulting 2010-Newport Banning Ranch Archaeological Resources Assessment,intcal20
+52382,Beta-64264,90,80,UNKNOWN,NA,-20.5,NA,-118.22564,34.3205641,1,NA,CA-LAN-2630,NA,USA,California,North America,UWyo2021,Boxt 2020 personal communication,intcal20
+64350,D-AMS-16504,1220,19,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-849,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+64351,D-AMS-16505,1301,18,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-849,NA,USA,California,North America,UWyo2021,Sunell 2018-Local technology and shifting sociopolitics�,intcal20
+115010,OS-34058,4430,30,UNKNOWN,NA,NA,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-�,NA,USA,California,North America,UWyo2021,Scheib et al. 2018-Ancient human parallel lineages within Noth America contributed to a coastal expansion,intcal20
+159540,UCIAMS-186167,6300,20,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-174,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159541,UCIAMS-186168,4690,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-174,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159542,UCIAMS-186169,4245,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159543,UCIAMS-186170,5305,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159544,UCIAMS-186171,775,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159545,UCIAMS-186172,3220,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159546,UCIAMS-186173,4584,20,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159547,UCIAMS-186174,3905,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-393,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159548,UCIAMS-186175,3940,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-393,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159549,UCIAMS-186176,4495,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-393,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159550,UCIAMS-186177,4540,20,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-393,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159551,UCIAMS-186178,5290,20,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-393,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159554,UCIAMS-186582,4995,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159557,UCIAMS-187576,4615,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-174,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159558,UCIAMS-187578,4615,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159559,UCIAMS-187579,4615,20,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159560,UCIAMS-187580,3215,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+159561,UCIAMS-187581,4395,15,UNKNOWN,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-183,NA,USA,California,North America,UWyo2021,Hoppa 2017-Understanding the Role of Interior Sites and Terrestrial Resources during the Middle Holocene on Santa Cruz Island,intcal20
+5113,AA-83751,388,34,WOOD,juniper,-23,AMS,-120.0183356,34.67161852,1,NA,CA-SBA-3931,Oak Flat Site,USA,California,North America,UWyo2021,Draucker 2014-Archaeological investigations at the Oak Flat Site,intcal20
+16412,Beta-119070,400,50,WOOD,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SCRI-253,NA,USA,California,North America,UWyo2021,Gamble 2002 Arch Evidence for the origin of the plank canoe�,intcal20
+16606,Beta-120340,2020,60,WOOD,NA,NA,NA,-119.0844612,34.45500084,1,NA,CA-SNI-169,NA,USA,California,North America,UWyo2021,NA,intcal20
+18171,Beta-129776,1370,40,WOOD,NA,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisy Cave,USA,California,North America,UWyo2021,Gamble 2002 Arch Evidence for the origin of the plank canoe�,intcal20
+25015,Beta-168641,2260,60,WOOD,NA,-25,RADIOMETRIC,-120.0183356,34.67161852,1,NA,CA-SBA-1010,Barka Slough,USA,California,North America,UWyo2021,Lebow 2006 Large Game Hunting and Other Late Holocene�,intcal20
+48821,Beta-41040,260,50,WOOD,burnt log,-25,RADIOMETRIC,-116.1784911,34.84146144,1,NA,CA-SBR-3773,NA,USA,California,North America,UWyo2021,Milburn et al. 2009 Spatial and Temporal Distributions�,intcal20
+55074,Beta-78670,4870,80,WOOD,charred wood,-24,AMS,-119.0844612,34.45500084,1,NA,CA-SNI-161,NA,USA,California,North America,UWyo2021,Vellanoweth and Erlandson 1999 Middle Holocene Fishing and Maritime�,intcal20
+56255,Beta-84103,190,60,WOOD,NA,-28,NA,-119.0844612,34.45500084,1,NA,CA-SNI-43,NA,USA,California,North America,UWyo2021,NA,intcal20
+61418,CAMS-14366,9180,60,WOOD,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62624,CAMS-9094,10390,130,WOOD,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+62625,CAMS-9095,3110,60,WOOD,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-261,Daisey Cave,USA,California,North America,UWyo2021,Erlandson Jon M. Douglas J. Kennett B. Lynn Ingram Daniel A. Guth 1996,intcal20
+114957,OS-27236,2510,55,WOOD,Charred twig,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SMI-87,NA,USA,California,North America,UWyo2021,Rick Torben C 2004,intcal20
+115021,OS-34790,915,30,WOOD,canoe sample 2,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-6,NA,USA,California,North America,UWyo2021,Rick et al. 2004- Style Context and Chronology of a Wooden Canoe Model from Santa Rosa Island,intcal20
+115032,OS-35592,650,30,WOOD,canoe sample 3,NA,AMS,-120.0183356,34.67161852,1,NA,CA-SRI-6,NA,USA,California,North America,UWyo2021,Rick et al. 2004- Style Context and Chronology of a Wooden Canoe Model from Santa Rosa Island,intcal20
