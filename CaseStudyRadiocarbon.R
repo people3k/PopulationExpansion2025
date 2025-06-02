@@ -176,15 +176,67 @@ pcgrowth$PeriodID <- cut(pcgrowth$calBP,
                           breaks=c(240, 500, 750, 1450, 2450, 3450, 8170),
                           labels=c('Inka', 'LIP', 'Tiwanaku', 'Late Formative', 'Early Formative', 'Archaic'))
 
+
 write.table(pcgrowth, file = "data/Percapita/SAmericaPerCap2.csv", sep = ",", col.names=NA)
 
 ###Plot mean KDE against the per capita growth rate in the North
- 
+
+###Plot mean KDE against the per capita growth rate in the North
+sa30pc<- read.csv("data/Percapita/SAmericaPerCap2.csv")
+
+sa30pc2<-subset(sa30pc, calBP<6500 & calBP>1500)
+
+#Standardize the mean KDE by the maximum mean KDE during the Neolithic 
+StKDE<-(sa30pc2$MKDE-min(sa30pc2$MKDE))/(max((sa30pc2$MKDE)-min(sa30pc2$MKDE)))
+##Add the standardized KDE to the Neolithic dataframe
+sa30pc3<-cbind(StKDE,sa30pc2)
+
+pccenand <- ggplot(sa30pc3,aes(x=(StKDE), y=(PerCap))) +
+  #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
+  geom_point(aes(y=PerCap, color=PeriodID), size=3.5) +
+  geom_path(aes(),size=1)+
+  #scale_color_gradient(low ="#F8766D", high = "#619CFF") +
+  #scale_color_manual(values=c("#619CFF", "#00BA38", "#F8766D"))+
+  #geom_line(aes(y=logFit3), color="blue", size=1) +
+  theme_bw() +
+  # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
+  # scale_y_continuous(limits=c(-.75,0.5))+
+  theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
+        axis.title.y=element_text(size=24), axis.text.y = element_text(
+          size=28), plot.title = element_text(size=18, face = "bold"))+
+  labs(x = "Mean KDE (density)", y="KDE per capita growth", title = "D. Andes KDE Per Capita Growth vs. Density")
+#annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
+#annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
+#annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
+#annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
+pccenand
+
+cenandcpt <- ggplot(sa30pc3,aes(x=(calBP), y=(StKDE))) +
+  #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
+  geom_point(aes(y=StKDE, color=PeriodID), size=3.5) +
+  geom_path(aes(),size=1)+
+  #scale_color_gradient(low ="#F8766D", high = "#619CFF") +
+  #scale_color_manual(values=c("#619CFF", "#00BA38", "#F8766D"))+
+  #geom_line(aes(y=logFit3), color="blue", size=1) +
+  theme_bw() +
+  scale_x_reverse()+
+  # scale_y_continuous(limits=c(-.75,0.5))+
+  theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
+        axis.title.y=element_text(size=24), axis.text.y = element_text(
+          size=28), plot.title = element_text(size=18, face = "bold"))+
+  labs(x = "Years BP", y="KDE per capita growth", title = "D. Central Andes Density vs. Time")
+#geom_vline(xintercept = 800)
+#annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
+#annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
+#annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
+#annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
+cenandcpt
+
 ##Plot side-by-side per capita and time plots
 Figca<-plot_grid(pccenand, cenandcpt, ncol=2, align="hv", axis = "rl")
 Figca
 
-pdf("Figs/ExCentralAndes1.pdf", width=20.55, height=14)
+pdf("data/Figs/ExCentralAndes1.pdf", width=20.55, height=14)
 Figca
 dev.off()
 
@@ -374,7 +426,7 @@ Cpt
 FigSWAsia<-plot_grid(Cpc2, Cpt, ncol=2, align="hv", axis = "rl")
 FigSWAsia
 
-pdf("Figs/ExSWAsia1.pdf", width=20.55, height=14)
+pdf("data/Figs/ExSWAsia1.pdf", width=20.55, height=14)
 FigSWAsia
 dev.off()
 
@@ -552,7 +604,7 @@ uscpt
 Figmidcont<-plot_grid(pcUSdom, uscpt, ncol=2, align="hv", axis = "rl")
 Figmidcont
 
-pdf("Figs/Exmidcont.pdf", width=20.55, height=14)
+pdf("data/Figs/Exmidcont.pdf", width=20.55, height=14)
 Figmidcont
 dev.off()
 
@@ -732,7 +784,7 @@ chcpt
 Figch<-plot_grid(pcch, chcpt, ncol=2, align="hv", axis = "rl")
 Figch
 
-pdf("Figs/ExSEchina.pdf", width=20.55, height=14)
+pdf("data/Figs/ExSEchina.pdf", width=20.55, height=14)
 Figch
 dev.off()
 
@@ -5490,3 +5542,5 @@ Fignpat
 pdf("data/Figs/ExNpatagonia.pdf", width=20.55, height=14)
 Fignpat
 dev.off()
+
+
