@@ -83,3 +83,4 @@ Kincrease--The increase in standardized population density per demographic trans
 (4) Getting started working with the project:
 
 To begin working with the data, (i) open the R files. (ii) install and load all of the relevant packages at the beginning of the document, and (iii) follow the comments to begin reproducing the results reported in the manuscript. 
+
