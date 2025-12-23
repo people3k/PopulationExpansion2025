@@ -1,0 +1,99 @@
+Region,Site/ Phase,Age,calBP,TimeBin,PhaseTime,"Sum
+n.","Crop max.
+n",Crop min. n,PerCropsMax,PerCropsMin,source
+Levant S,Shubayqa,-12450,-14400,Natufian,12500,27414,198,186,0.72,0.68,Arranz-Otaegui et al. 2018
+Levant S,Dederiyeh Cave,-11065,-13015,Natufian,12500,12367,218,209,0.02,0.02,Tanno et al. 2013
+Levant N,Tell Abu Hureyra 1,-10650,-12600,Natufian,12500,19764,953,272,4.82,1.38,Moore et al 2000
+Levant N,Tell Qaramel,-10000,-11950,Natufian,12500,12838,4208,2878,32.78,22.42,"Tanno and Willcox 2006a, Willcox et al. 2009, Willcox et al 2008"
+Levant N,Tell Mureybit II,-9950,-11900,Natufian,12500,2186,28,8,1.28,0.37,van Zeist and Bakker-Heeres 1984b; Willcox and Fornite 1999
+East FC,Sheikh-e Abad 1,-9620,-11570,Natufian,12500,507,1,0,0.2,0,Whitlam et al. 2018
+Levant S,Dhra',-9500,-11450,PPNA,11000,4909,558,558,11.37,11.37,Colledge 2018
+North FC,Körtik Tepe,-9500,-11450,PPNA,11000,762,9,7,1.18,0.92,Riehl et al 2012
+North FC,Hallan Çemi Tepesi,-9485,-11435,PPNA,11000,13285,229,60,1.72,0.45,Savard 2005
+North FC,Hasankey Höyük,-9440,-11390,PPNA,11000,11839,14,14,0.12,0.12,Miyake 2012
+North FC,Demirköy,-9360,-11310,PPNA,11000,911,7,3,0.77,0.33,Savard 2005
+North FC,Gusir Höyük 1,-9250,-11200,PPNA,11000,1465,220,58,15.02,3.96,Kabukcu et al 2021
+Levant S,Iraq ed Dubb,-9230,-11180,PPNA,11000,851,102,85,11.99,9.99,Colledge 2001
+Levant N,Tell 'Abr,-9120,-11070,PPNA,11000,4426,3509,3229,79.28,72.96,Willcox 2008
+Levant N,Jerf al Ahmar,-9075,-11025,PPNA,11000,36164,18079,4701,49.99,13,Willcox and Fornite 1999; Willcox 1996; 2008
+Levant N,Tell Mureybit III,-9075,-11025,PPNA,11000,3281,2394,37,72.97,1.13,van Zeist and Bakker-Heeres 1984b; Willcox and Fornite 1999
+Levant S,Netiv Hagdud,-9075,-11025,PPNA,11000,13818,4190,207,30.32,1.5,Kislev 1997
+North FC,M'lefaat,-9000,-10950,PPNA,11000,5218,1258,987,24.11,18.92,Nesbitt 1998; Savard 2005
+Levant S,Zahrat Adh-Dhra (ZAD 2),-8995,-10945,PPNA,11000,31238,3515,3432,11.23,7.09,Edwards et al 2004; Meadow 2004
+North FC,Göbekli Tepe,-8900,-10850,PPNA,11000,505,38,2,7.52,0.4,Neef 2003
+North FC,Gusir Höyük 2,-8900,-10850,PPNA,11000,1079,226,55,20.95,5.19,Kabukcu et al 2021
+Levant S,El-Hemmeh (PPNA),-8885,-10835,PPNA,11000,3554,290,107,8.16,3.01,White and Makarewicz 2011
+Anatolia Central,Pınarbaşı,-8800,-10750,PPNA,11000,3386,28,26,0.01,0.01,Fairbairn et al 2014
+Levant S,Tell Qarassa,-8590,-10540,PPNA,11000,8695,2793,2786,32.12,32.04,Arranz Ortegui et al 2016
+Levant N,Dja'de,-8550,-10500,Early PPNB,9750,32583,11470,7029,35.2,21.57,Willcox 1996; 2008
+North FC,Çayönü (CAIb),-8550,-10500,Early PPNB,9750,4060,1783,1624,43.92,40,van Zeist and de Roller 1992
+Levant N,Tell El-Kerkh (2),-8430,-10380,Early PPNB,9750,23533,921,921,3.91,3.91,Tsuneki et al. 2006; Tanno and Willcox 2006; Tanno per comm. 2015
+North FC,Gusir Hoyuk 3,-8350,-10300,Early PPNB,9750,1284,359,359,27.96,27.96,Kabukcu et al 2021
+North FC,Nevalı Çori,-8275,-10225,Early PPNB,9750,33985,29136,28999,85.73,85.33,Pasternak 1998
+East FC,Chogha Golan,-8200,-10150,Early PPNB,9750,661,108,10,16.34,1.51,Riehl et al 2012
+North FC,Cafer Höyük (XIII-IX),-8100,-10050,Middle PPNB,9750,1150,618,548,44.9,36.4,De Moulins 1997
+East FC,Chia Sabz,-8075,-10025,Middle PPNB,9750,579,70,27,12.09,4.66,Riehl et al 2012
+East FC,Sheikh-e Abad 2,-7980,-9930,Middle PPNB,9750,10724,757,445,7.06,4.15,Whitlam et al. 2018
+East FC,Ganj Dareh,-7850,-9800,Middle PPNB,9750,1058,319,313,30.15,29.58,Van Zeist et al 1984
+North FC,Çayönü (CAId),-7765,-9715,Middle PPNB,9750,4471,4266,4215,95.41,94.27,van Zeist and de Roller 1992
+Anatolia Central,Aşıklı Höyük,-7670,-9620,Middle PPNB,9750,22270,902,901,4.05,4.05,Van Zeist and Roller 1995
+East FC,Sheikh-e Abad 3,-7610,-9560,Middle PPNB,9750,1813,23,12,12.7,0.66,Whitlam et al. 2018
+Levant N,Tell Abu Hureyra 2A,-7600,-9550,Middle PPNB,9750,6886,349,270,5.07,3.92,de Moulins 2000
+Levant S,Nahal Hemar,-7600,-9550,Middle PPNB,9750,1285,68,29,5.29,2.26,Kislev 1988; Bar-Yosef 1985
+Levant S,Tell Aswad,-7600,-9550,Middle PPNB,9750,31330,23460,23424,74.88,74.77,van Zeist and Bakker-Heeres 1982
+Cyprus,"Krittou Marottou 
+'Ais Yiorkis",-7550,-9500,Middle PPNB,9750,1378,416,414,30.19,30.04,Lucas 2014
+Levant N,Tell El-Kerkh (3),-7550,-9500,Middle PPNB,9750,3759,249,249,6.62,6.62,Tsuneki et al. 2006; Tanno and Willcox 2006; Tanno per comm. 2015
+Levant N,Tell Hallula (early),-7550,-9500,Middle PPNB,9750,1824,697,593,38.21,32.51,Ferrio et al. 2012
+Levant S,"Wadi Jilat 7 (I, II)",-7550,-9500,Middle PPNB,9750,3764,341,238,9.06,6.32,Colledge 2001
+North FC,Cafer Höyük (IV-I),-7350,-9300,Late PPNB,8900,706,317,257,53.74,47.65,De Moulins 1997
+Levant S,Azraq 31,-7335,-9285,Late PPNB,8900,195,8,8,4.1,4.1,Colledge 2001
+Levant N,Tell Hallula (late),-7320,-9270,Late PPNB,8900,1987,960,864,48.31,43.48,Ferrio et al. 2012
+East FC,Jarmo,-7300,-9250,Late PPNB,8900,459,333,319,72.55,69.5,Carretero et et al 2023
+East FC,Ali Kosh (Bus Mordeh),-7225,-9175,Late PPNB,8900,31173,480,315,1.54,1.01,Helbaek 1969
+Levant N,Tell Abu Hureyra 2B,-7200,-9150,Late PPNB,8900,6721,455,340,6.77,5.06,Moore et al 2000; Hillman 2000
+Levant S,Tell Ramad I,-7200,-9150,Late PPNB,8900,8149,3129,3095,38.4,37.98,van Zeist and Bakker-Heeres 1982
+Cyprus,"Kalavasos Tenta (2, 2-3, 2L)",-7175,-9125,Late PPNB,8900,870,74,74,8.51,8.51,"Hansen, J. 2005"
+Levant S,Basta,-7175,-9125,Late PPNB,8900,609,183,183,30.05,30.05,Neef 2004
+Anatolia Central,Can Hasan III,-7150,-9100,Late PPNB,8900,4238,126,75,2.97,1.77,"Hillman 1972, 1978"
+Cyprus,Kissonerga Mylouthkia,-7150,-9100,Late PPNB,8900,1880,635,631,33.78,33.56,Murray 2003
+Levant S,Tell Ghoraifé II,-7150,-9100,Late PPNB,8900,2892,1506,1480,52.07,51.18,van Zeist and Bakker-Heeres 1982
+Levant S,Wadi Fidan A,-7025,-8975,Late PPNB,8900,304,273,269,89.8,88.49,Colledge 2001
+Anatolia Central,Çatalhöyük (Early),-6900,-8850,Late PPNB,8900,164937,70005,61259,42.44,37.14,Bogaard et al. 2021
+East FC,Chogha Bonut,-6900,-8850,Late PPNB,8900,529,122,122,23.06,23.06,Miller 2003
+Levant N,Tell Bouqras,-6900,-8850,Late PPNB,8900,418,54,52,12.92,12.44,van Zeist and Waterbolk-van Rooijen 1985
+Levant S,Tell Nebi Mend,-6830,-8780,Late PPNB,8900,1904,766,766,40.23,40.23,Smith and Moffett 2015
+Levant S,Wadi Jilat 13,-6815,-8765,Late PPNB,8900,22555,99,70,0.44,0.31,Colledge 2001
+Levant S,Tell Ramad II,-6750,-8700,Late PPNB,8900,65028,53839,53620,82.79,82.46,van Zeist and Bakker-Heeres 1985
+Levant N,El Kowm II,-6725,-8675,Late PPNB,8900,5583,1004,1004,17.98,17.98,van Zeist 1986
+Levant N,El Kowm 1A,-6675,-8625,Late PPNB,8900,1410,40,35,2.84,2.48,van Zeist 1986
+Anatolia Central,Çatalhöyük (Middle),-6660,-8610,Late PPNB,8900,443411,259143,253172,58.44,57.1,Bogaard et al. 2021
+Levant N,Tell Hallula,-6550,-8500,Late PPNB,8900,1458,752,748,30.3,18.18,Ferrio et al. 2012
+Levant N,Tell Ras Shamra Vb,-6540,-8490,Late PPNB,8900,1657,1514,1510,91.37,91.13,van Zeist and Bakker-Heeres 1984a
+Cyprus,Khirokitia (4),-6475,-8425,Late PPNB,8900,4555,2501,2501,54.91,54.91,"Hansen 1989, 1994; Waines and Stanley-Price 1977; Miller 1984"
+Anatolia Central,Erbaba,-6450,-8400,Late PPNB,8900,19772,17865,17853,90.36,90.29,van Zeist and Buitenhuis 1983
+Cyprus,Cape Andreas Kastros,-6450,-8400,Late PPNB,8900,1048,491,477,46.85,45.52,Van Zeist 1981
+East FC,Ali Kosh (Ali Kosh),-6450,-8400,Late PPNB,8900,916,183,180,19.98,19.65,Helbaek 1969
+Cyprus,Khirokitia (3a),-6420,-8370,Late PPNB,8900,1040,650,650,62.5,62.5,"Hansen 1989, 1994; Waines and Stanley-Price 1977; Miller 1984"
+Cyprus,Khirokitia (3b),-6420,-8370,Late PPNB,8900,1349,773,773,57.3,57.3,"Hansen 1989, 1994; Waines and Stanley-Price 1977"
+Anatolia Central,Höyücek,-6400,-8350,Late PPNB,8900,39231,38288,38074,97.6,97,Martinoli and Nesbitt 2003
+North FC,Çayönü (CAII),-6400,-8350,Late PPNB,8900,1984,1913,1906,96.42,96.07,van Zeist and de Roller 1992
+Levant S,Wadi Fidan C,-6350,-8300,Late PPNB,8900,2937,2871,2859,97.75,97.34,Colledge 2001
+North FC,Salat Cami Yani,-6345,-8295,Late PPNB,8900,3112,2627,2596,84.42,83.42,Miyake 2011
+Levant N,Tell Ras Shamra Va,-6340,-8290,Late PPNB,8900,9755,8995,8983,92.21,92.09,van Zeist and Bakker-Heeres 1984a
+Levant S,Sha'ar Hagolan,-6230,-8180,Late PPNB,8900,640,49,48,7.66,7.5,Allen 1997
+Levant N,El Kowm 1B,-6220,-8170,Late PPNB,8900,3155,215,215,6.81,6.81,van Zeist 1986
+Levant N,Tell Abu Hureyra 2C,-6200,-8150,Late PPNB,8900,1391,177,173,12.72,12.44,Moore et al 2000; Hillman 2000
+East FC,Ali Kosh (M.Jaffar),-6150,-8100,Late PPNB,8900,8094,179,178,2.21,2.2,Helbaek 1969
+Anatolia Central,Çatalhöyük (Late),-6125,-8075,Late PPNB,8900,267979,146978,138943,53.74,50.84,Bogaard et al. 2021
+Levant S,Nahal Zehora,-6050,-8000,Late PPNB,8900,7064,7002,970,99.12,13.73,Kislev and Hartmann 2012
+Levant N,Tell Sabi Abyad,-5960,-7910,PN,7500,18972,16649,16646,87.76,87.74,"van Zeist, 1994; van Zeist, 1995; van Zeist and Waterbolk-van Rooijen, 1999"
+Levant N,Tell Hallula,-5925,-7875,PN,7500,312,96,86,37.93,24.14,Ferrio et al. 2012
+East FC,Choga Mami,-5795,-7745,PN,7500,3028,434,412,14.33,13.61,Helbaek 1972
+Anatolia Central,Çatalhöyük West (Chalolithic),-5750,-7700,PN,7500,12176,4285,3385,35.19,27.8,Bogaard et al. 2021
+Levant N,Umm Qseir,-5750,-7700,PN,7500,873,793,784,90.84,89.81,McCorriston 1992
+Levant N,Tell Kurdu,-5550,-7500,PN,7500,16043,3343,3341,20.84,20.83,Yener et al. 2000
+Levant S,Arjoune,-5520,-7470,PN,7500,2946,2349,2328,79.74,79.02,Moffett 2003
+Levant S,Jebel Abu Thawwb,-5500,-7450,PN,7500,1954,1550,1547,79.32,79.17,Neef 2001
+North FC,Tell Aqab,-5500,-7450,PN,7500,422,201,201,47.63,47.63,McCorriston 1992
+East FC,Tepe Marani,-5265,-7215,PN,7500,1366,628,523,45.97,38.29,Wengrow et al 2016

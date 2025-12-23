@@ -1,0 +1,76 @@
+taxon,part,site,region,age BC,calBP,DomTrait,stdev,stdev, PerDom,PerCrops,References
+barley,grain,Mureybet,Levant North,-9675,-11625,2.111373,0.155,0.073,0.01,0.013,Van Zeist and Bakker-Heeres 1984b; Fuller et al. 2012
+barley,grain," Jerf el Ahmar (Early, PPNA)",Levant North,-9300,-11250,2.117347,0.328,0.155,0.01,0.499,Willcox 2004; Fuller et al. 2012
+barley,grain,Zahrat Adh-Dhra 2,Levant South,-8995,-10945,2.0987,0.49,0.234,0,0.113,Meadows 2004; Fuller et al. 2012
+barley,grain,"Jerf el Ahmar (Late, EPPNB)",Levant North,-8800,-10750,2.4485,0.264,0.108,0.17,0.499,Willcox 2004; Fuller et al. 2012
+barley,grain,Djade (EPPNB),Levant North,-8400,-10350,2.2216,0.259,0.117,0.06,0.352,Willcox 2004; Fuller et al. 2012
+barley,grain,Ganj Dareh (EPPNB),East FC,-8040,-9990,2.87,0.334,0.116,0.37,0.302,Van Zeist et al 1986; Fuller et al. 2012
+barley,grain,Aswad West (MPPNB),Levant South,-7600,-9550,2.606,0.19,0.073,0.24,0.749,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+barley,grain,Ras Shamra (Vc),Levant North,-7200,-9150,2.725,0.232,0.085,0.3,0.748,Van Zeist and Bakker-Heeres 1984a; Fuller et al. 2012
+barley,grain,Ramad (LPPNB),Levant South,-6975,-8925,2.783,0.36,0.129,0.33,0.384,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+barley,grain,Bouqras (LPPNB),Levant North,-6950,-8900,3.12,0.347,0.111,0.49,0.129,Van Zeist & Waterbolk-van Rooijen 1985; Fuller et al. 2012
+barley,grain,Yarim Tepe I (PN),North FC,-6100,-8050,3.006,0.353,0.117,0.43,0.997,Bakhteyev and Yanushevich 1980; Fuller et al. 2012
+einkorn,grain,Qaramel,Levant North,-9725,-11675,1.329,0.279,0.21,0.153,0.328,"Willcox, personal communication, in Fuller et al. 2012"
+einkorn,grain,Mureybet II/III,Levant North,-9675,-11625,1.229,0.155,0.126,0.066,0.013,Van Zeist 1970; Fuller et al. 2012
+einkorn,grain,Jerf al Ahmar Early,Levant North,-9300,-11250,1.153,0.213,0.185,0,0.499,Willcox 2004; Fuller et al. 2012
+einkorn,grain,Jerf al Ahmar Late,Levant North,-8800,-10750,1.32,0.298,0.226,0.145,0.499,Willcox 2004; Fuller et al. 2012
+einkorn,grain,Dja'de,Levant North,-8550,-10500,1.42,0.28,0.197,0.232,0.352,Willcox 2004; Fuller et al. 2012
+einkorn,grain,Gusir Hoyuk II,North FC,-8350,-10300,1.54,0.19,0.123,0.336,0.2642,Kabukcu et al. 2021
+einkorn,grain,Çayönü,North FC,-8150,-10100,1.6,0.292,0.183,0.388,0.954,Van Zeist and de Roller 1994; Fuller et al. 2012
+einkorn,grain,Wadi Jilat 7,Levant South,-7775,-9725,1.67,0.365,0.219,0.448,0.091,Colledge 2001; Fuller et al. 2012
+einkorn,grain,Ramad,Levant South,-6975,-8925,1.814,0.271,0.149,0.573,0.384,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+einkorn,grain,Erbaba,Anatolia Central,-6450,-8400,1.914,0.249,0.13,0.66,0.931,Van Zeist and Buitenhuis 1983; Fuller et al. 2012
+emmer,grain,Dja'de,Levant,-8400,-10350,1.811,0.292,0.161,0,0.352,Willcox 2004; Fuller et al. 2012
+emmer,grain,Çayönü,North FC,-8300,-10250,1.905,0.38,0.199,0.05,0.954,Van Zeist and de Roller 1994; Fuller et al. 2012
+emmer,grain,Aswad West (MPPNB),Levant South,-7600,-9550,2.095,0.162,0.077,0.16,0.749,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+emmer,grain,Ghoraifé,Levant South,-7425,-9375,2.19,0.165,0.075,0.21,0.521,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+emmer,grain,Ramad I,Levant South,-6975,-8925,2.116,0.338,0.16,0.17,0.384,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+emmer,grain,Ramad II,Levant South,-6800,-8750,2.253,0.235,0.104,0.24,0.828,Van Zeist and Bakker-Heeres 1982; Fuller et al. 2012
+emmer,grain,Khirokitia,Cyprus,-6550,-8500,2.507,0.465,0.185,0.38,0.625,Waines and Stanley-Price 1977; Fuller et al. 2014
+emmer,grain,Erbaba,Anatolia Central,-6450,-8400,2.03,0.301,0.148,0.12,0.931,Van Zeist and Buitenhuis 1983; Fuller et al. 2012
+emmer,grain,Höyücek PN,Anatolia Central,-6250,-8200,2.669,0.267,0.1,0.47,0.98,Martinoli and Nesbitt 2003; Fuller et al. 2012
+emmer,grain,Yarim Tepe I (PN),North FC,-6100,-8050,2.15,0.294,0.137,0.19,0.997,Bakhteyev and Yanushevich 1980; Fuller et al. 2012
+barley,rachis,Mureybet (Ia),Levant North,-9950,-11900,0,0,,0,0.0215,Willcox 2008; Allaby et al. 2017
+barley,rachis,Iraq ed-Dubb (PPNA),Levant South,-9200,-11150,0,0,,0,0.12,Colledge 2001; Allaby et al. 2017
+barley,rachis,Netiv Hagdud,Levant South,-9080,-11030,0.04,0.006,,0.04,0.303,Kislev 1997; Allaby et al. 2017
+barley,rachis,Jerf el-Ahmar,Levant North,-9075,-11025,0,0.069,,0,0.499,Tanno and Willcox 2012; Allaby et al 2017
+barley,rachis,Zahrat Adh-Dhra (ZAD 2),Levant South,-8995,-10945,0.29,0.096,,0.29,0.112,Edwards et al 2004; Allaby et al. 2017
+barley,rachis,el-Hemmeh (PPNA),Levant South,-8855,-10805,0.06,0.031,,0.06,0.584,White 2013
+barley,rachis,Tell Qarassa,Levant South,-8590,-10540,0.32,0.081,,0.32,0.3212,Arranz-Otaegui et al. 2016a; 2016b Allaby et al. 2017
+barley,rachis,Dja'de,Levant North,-8550,-10500,0.01,0,,0.01,0.352,Tanno and Willcox 2012; Allaby et al 2017
+barley,rachis,Aswad (I),Levant South,-8300,-10250,0.3,0.019,,0.3,0.749,Tanno and Willcox 2012; Allaby et al 2017
+barley,rachis,Chogha Golan,East FC,-8200,-10150,0.03,0.022,,0.03,0.163,Weide et al. 2015; Allaby et al 2017
+barley,rachis,East Chia Sabz,East FC,-8075,-10025,0,0,,0,0.121,Riehl et al. 2012; Allaby et al 2017
+barley,rachis,Jilat 7,Levant South,-7775,-9725,0,0.037,,0,0.091,Colledge 2001; Allaby et al. 2017
+barley,rachis,Abu Hureyra (2B),Levant North,-7400,-9350,1,0.141,,1,0.067,De Moulins 1997; Allaby et al 2017
+barley,rachis,Azraq 31,Levant South,-7335,-9285,0.01,,,0.01,0.041,Colledge 2001; Allaby et al. 2017
+barley,rachis,Wadi Fidan A,Levant South,-7275,-9225,0.69,0.1,,0.69,0.898,Colledge 2001; Allaby et al. 2017
+barley,rachis,Ramad,Levant South,-6975,-8925,0.59,0.224,,0.59,0.384,Van Zeist and Bakker-Heeres 1982; Allaby et al 2017
+barley,rachis,el-Hemmeh (LPPNB),Levant South,-6915,-8865,0.5,0.023,,0.5,0.46,White 2013
+barley,rachis,Jilat 13,Levant South,-6815,-8765,0.05,0,,0.05,0.004,Colledge 2001; Allaby et al. 2017
+barley,rachis,El Kowm 2,Levant North,-6725,-8675,1,0.001,,1,0.18,De Moulins 1997; Allaby et al 2017
+barley,rachis,Çatalhöyük East,Anatolia Central,-6660,-8610,1,0.456,,1,0.7,Fairbarin et al. 2022; Allaby et al. 2017
+barley,rachis,Mazgaliyeh,North FC,-6650,-8600,0.83,0,,0.83,0.372,Willcox 2006; Allaby et al 2017
+barley,rachis,Wadi Fidan C,Levant South,-6350,-8300,0.91,0.566,,0.91,0.973,Colledge 2001; Allaby et al. 2017
+barley,rachis,Salat Cami Yani,North FC,-6345,-8295,1,0.669,,1,0.844,Tanno and Willcox 2012; Allaby et al 2017
+barley,rachis,Abu Hureyra (2C),Levant North,-6200,-8150,1,0.072,,1,0.127,De Moulins 1997; Allaby et al 2017
+einkorn,rachis,Shubayqa,Levant South,-12450,-14400,0,0,,0,0.0072,Arranz-Otaegui et al. 2018
+einkorn,rachis,Qaramel,Levant North,-9725,-11675,0.02,0.044,,0.02,0.007,Tanno and Willcox 2006; Allaby et al 2017
+einkorn,rachis,Jerf el-Ahmar,Levant North,-9075,-11025,0,0,,0,0.499,Tanno and Willcox 2012; Allaby et al 2017
+einkorn,rachis,D'jade,Levant North,-8550,-10500,0,0,,0,0.352,Tanno and Willcox 2012; Allaby et al 2017
+einkorn,rachis,Tell Qarassa,Levant South,-8495,-10445,0.29,0.015,,0.286,0.321,Arranz-Otaegui et al. 2016a; Allaby et al 2017
+einkorn,rachis,Tell el Kerkh,Levant North,-8430,-10380,0.36,0.117,,0.364,0.039,Tanno and Willcox 2012; Allaby et al 2017
+einkorn,rachis,Nevali Cori,North FC,-8275,-10225,0.11,0.135,,0.11,0.847,Tanno and Willcox 2012; Allaby et al 2017
+einkorn,rachis,Cafer Hoyuk IX-XIII,North FC,-8100,-10050,0.4,0.139,,0.4,0.449,De Moulins 1997; Allaby et al 2017
+einkorn,rachis,Cafer Hoyuk III-VIII,North FC,-7575,-9525,0.53,0.105,,0.526,0.673,De Moulins 1997; Allaby et al 2017
+einkorn,rachis,El Kowm 2,Levant North,-6675,-8625,1,0,,1,0.18,De Moulins 1997; Allaby et al 2017
+einkorn,rachis,Catal Hoyuk East,Anatolia Central,-6660,-8610,0.95,0,,0.946,0.7,Fairbarin et al. 2022; Allaby et al. 2017
+emmer,rachis,Netiv Hagdud,Levant South,-9080,-11030,0,0,,0,0.303,Kislev 1997; Allaby et al 2017
+emmer,rachis,el-Hemmeh (PPNA),Levant South,-8905,-10855,0,0,,0,0.584,White and Makarewicz 2012; Allaby et al 2017
+emmer,rachis,Tell Qarassa,Levant South,-8590,-10540,0.211,"0.001
+",,0.211,"0.321
+",Arranz-Otaegui et al. 2016a; Allaby et al 2017
+emmer,rachis,Aswad (I),Levant South,-8300,-10250,0.23,0.006,,0.23,0.749,Tanno and Willcox 2012; Allaby et al 2017
+emmer,rachis,Chogha Golan,East FC,-8200,-10150,0.563,0.167,,0.56,0.163,Weide et al. 2015; Allaby et al 2017
+emmer,rachis,Asikli Hoyuk,Anatolia Central,-7670,-9620,0.45,0.17,,0.45,0.0393,Tanno and Willcox 2012; Allaby et al 2017
+emmer,rachis,Salat Cami Yani,North FC,-6345,-8295,0.98,0.048,,0.98,0.844,Tanno and Willcox 2012; Allaby et al 2017
