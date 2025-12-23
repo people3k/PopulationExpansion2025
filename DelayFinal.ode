@@ -1,0 +1,67 @@
+# delayed feedback in a population growth model: delayFinal.ode
+# declare all the parameters, initializing the delay to 0
+
+p tau=0,B1=0,r=0.25,coop=0, comp=1, alpha=2, tau2=0, B2=0, resp=0, rmean=1,rsigma=0, Amin=0.5, fitmin=0.1, A=.25
+
+##Hidden functions
+###define scale of social integration due to more inclusive institutions.
+
+Set comp=1, 0>=coop<1
+S=comp-coop
+#Add stochastic process for ecosystem productivity with mean and standard
+#deviation. In the model we analyze, w is set to 0.
+#Thus, no stochastic variation in pro.
+
+wiener w
+pro = max(rmean*(1 + rsigma*w),Amin)
+
+#niche capacity is the balance of positive and negative effects on the
+#productivity of #ecosystems due to human activity. These impacts can have
+#different delays from 0 to 35 #generations
+##Strategy one niche capacity
+cap=B1*delay(p,tau2)
+##Strategy two niche capacity
+cap2=B2*delay(p,tau2)
+
+#Define the change in ecosystem capacity to support humans as climate driven
+#productivity plus #niche construction capacity
+#####First, we write the fitness function. Note the delay defined as tau here. We do
+#not study #this delay here, and thus set tau =0.
+#However, it is included because the ability
+#to detect #population pressure through competitive signals
+#and respond to such signals is another potential
+#delay point or, rather, process that may take time.
+
+fit1=r-(S/Kt)*delay(p,tau)
+########Next we define kt as climate driven productivity
+#plus the niche capacity of strategy one.
+
+Kt=pro+cap
+
+###We define kt2 as climate driven productivity plus
+#the niche capacity of strategy two.
+
+Kt2=pro+A+cap2
+
+##I is an if, then function. If fit1<fitmin,
+#then there is population pressure, and the mean
+#agent switches to Kt2
+
+I= if (fit1<fitmin) then (Kt2) else (Kt)
+
+# population growth equation
+p'= (r*p)-((S*p^alpha)/I)
+
+##Set initial condition of p
+init p=.01
+# set maxdelay
+@ delay=35
+aux niche=cap
+aux Car=Kt
+aux pp=p/Kt
+aux fit=r-((S/I)*p)
+4
+aux It=I
+@ total=100, xlo=0,xhi=150,ylo=0,yhi=2.5
+# done
+d

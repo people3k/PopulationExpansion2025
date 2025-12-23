@@ -141,9 +141,18 @@ dd2c<- read.csv("data/KDEs/SAmericaKDE50bin2.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
+#calculate the 5th and 95th percentile of each time step of the 200 KDE simulations
+lo<-apply( out50, #select columns
+           1, # row-wise calcs
+           quantile, probs=0.05) # give `quantile`
+hi <-apply( out50, #select columns
+            1, # row-wise calcs
+            quantile, probs=0.95) # give `quantile`
 ##Add in the 30 year bin dates
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
          7690,7660,7630,7600,7570,7540,7510,7480,7450,7420,7390,7360,7330,7300,7270,7240,7210,7180, 7150, 7120, 7090,
@@ -159,17 +168,52 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
          2050,2020,1990,1960,1930,1900,1870,1840,1810,1780,1750,1720,1690,1660,1630,1600,1570,1540,1510,
          1480,1450,1420,1390,1360,1330,1300,1270,1240,1210,1180,1150,1120,1090,1060,1030,1000,970,
          940,910,880,850,820,790,760,730,700,670,640,610,580,550,520,490,460,430,400,370,340,310,280,250, 220)
-sums<-cbind(calBP, MKDE, out50)
+sums<-cbind(calBP, MKDE, hi, lo, out50)
 write.table(sums, file = "data/Sumbin/SAmericaSumbin2.csv", sep = ",", col.names=NA)
 
-###
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400, 200
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SAmericaSumbin200.csv", sep = ",", col.names=NA)
 
+
+###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.\
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/SAmericaSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(240, 500, 750, 1450, 2450, 3450, 8170),
+                         labels=c('Inka', 'LIP', 'Tiwanaku', 'Late Formative', 'Early Formative', 'Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/SAmericaPerCap200.csv", sep = ",", col.names=NA)
+
+##Calculate growth rates for 30 year bins
 d <-read_csv("data/Sumbin/SAmericaSumbin2.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
 ### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
 pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+pcgrowth <- d2 %>%
+  mutate(
+    PerCap   = log(lag(MKDE) / MKDE),
+    PerCaphi = log(lag(hi)   / hi),
+    PerCaplo = log(lag(lo)   / lo)
+  )
 
 ##Add ID variable for culture history periods
 pcgrowth$PeriodID <- cut(pcgrowth$calBP,
@@ -179,10 +223,13 @@ pcgrowth$PeriodID <- cut(pcgrowth$calBP,
 
 write.table(pcgrowth, file = "data/Percapita/SAmericaPerCap2.csv", sep = ",", col.names=NA)
 
+
 ###Plot mean KDE against the per capita growth rate in the North
 
 ###Plot mean KDE against the per capita growth rate in the North
 sa30pc<- read.csv("data/Percapita/SAmericaPerCap2.csv")
+#sa30pc<- read.csv("data/Percapita/SAmericaPerCaptest.csv")
+sa30pc<- read.csv("data/Percapita200/SAmericaPerCap200.csv")
 
 sa30pc2<-subset(sa30pc, calBP<6500 & calBP>1500)
 
@@ -190,6 +237,9 @@ sa30pc2<-subset(sa30pc, calBP<6500 & calBP>1500)
 StKDE<-(sa30pc2$MKDE-min(sa30pc2$MKDE))/(max((sa30pc2$MKDE)-min(sa30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 sa30pc3<-cbind(StKDE,sa30pc2)
+
+##Write food production file
+#write.table(sa30pc3, file = "data/Percapita2/SAmericaPerCap2.csv", sep = ",", col.names=NA)
 
 pccenand <- ggplot(sa30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -203,8 +253,9 @@ pccenand <- ggplot(sa30pc3,aes(x=(StKDE), y=(PerCap))) +
   # scale_y_continuous(limits=c(-.75,0.5))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
-          size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Mean KDE (density)", y="KDE per capita growth", title = "D. Andes KDE Per Capita Growth vs. Density")
+          size=28), plot.title = element_text(size=22, face = "bold"))+
+  labs(x = "Mean KDE (density)", y="KDE per capita growth", title = "A. Andes KDE Per Capita Growth vs. Density")+
+  geom_hline(yintercept=0)+
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
 #annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
@@ -224,7 +275,31 @@ cenandcpt <- ggplot(sa30pc3,aes(x=(calBP), y=(StKDE))) +
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Years BP", y="KDE per capita growth", title = "D. Central Andes Density vs. Time")
+  labs(x = "Years BP", y="KDE per capita growth", title = "B. Central Andes Density vs. Time")
+#geom_vline(xintercept = 800)
+#annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
+#annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
+#annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
+#annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
+cenandcpt
+
+
+cenandcpt <- ggplot(sa30pc3,aes(x=(calBP), y=(MKDE))) +
+  #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
+  geom_point(aes(y=MKDE, color=PeriodID), size=3.5) +
+  geom_ribbon(aes(ymin = lo, ymax = hi),
+              fill = "gray70", alpha = 0.5)+
+  geom_path(aes(),size=1)+
+  #scale_color_gradient(low ="#F8766D", high = "#619CFF") +
+  #scale_color_manual(values=c("#619CFF", "#00BA38", "#F8766D"))+
+  #geom_line(aes(y=logFit3), color="blue", size=1) +
+  theme_bw() +
+  scale_x_reverse()+
+  # scale_y_continuous(limits=c(-.75,0.5))+
+  theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
+        axis.title.y=element_text(size=24), axis.text.y = element_text(
+          size=28), plot.title = element_text(size=18, face = "bold"))+
+  labs(x = "Years BP", y="KDE per capita growth", title = "B. Central Andes Density vs. Time")
 #geom_vline(xintercept = 800)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
@@ -233,12 +308,15 @@ cenandcpt <- ggplot(sa30pc3,aes(x=(calBP), y=(StKDE))) +
 cenandcpt
 
 ##Plot side-by-side per capita and time plots
-Figca<-plot_grid(pccenand, cenandcpt, ncol=2, align="hv", axis = "rl")
+Figca<-plot_grid(pccenand, cenandcpt, pccenand2, cenandcpt2, ncol=2, align="hv", axis = "rl")
 Figca
 
-pdf("data/Figs/ExCentralAndes1.pdf", width=20.55, height=14)
+pdf("data/Figs/ExCentralAndes200comp.pdf", width=20.55, height=14)
 Figca
 dev.off()
+
+#1 dataset: columns = locations, rows = dates, values = mean KDE
+#1 dataset columsn = locations, rows = dates, tvalues = time_periods
 
 ###SW Asia (Fertile Crescent) Case ID 21==============================================
 #====================================================================================
@@ -300,12 +378,11 @@ PrDens<-spd.fc$grid$PrDens
 calBP<-spd.fc$grid$calBP
 
 ##KDE=============================================
-##KDE
 ####make KDEs
 US.randates = sampleDates(cptcal, bins=boxbins, nsim=200,verbose=FALSE)
 D.ckde = ckde(US.randates,timeRange=c(15000,2000),bw=50, normalised = FALSE)
 plot(D.ckde,type='multiline')
-D.ckde$timeRange
+#D.ckde$timeRange
 
 ##Write matrix of KDEs as a data frame
 Check<-as.data.frame(D.ckde$res.matrix)
@@ -336,9 +413,17 @@ dd2c<- read.csv("data/KDEs/LevantKDE50bin2.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
+#calculate the 5th and 95th percentile of each time step of the 200 KDE simulations
+lo<-apply(out50, #select columns
+           1, # row-wise calcs
+           quantile, probs=0.10) # give `quantile`
+hi <-apply(out50, #select columns
+            1, # row-wise calcs
+            quantile, probs=0.90) # give `quantile`
 ##Add in the 30 year bin dates
 calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640,14610,14580,14550,14520,14490,14460,14430,14400,14370,14340,14310,14280,14250,14220,14190,14160,14130,14100,14070,14040,14010,13980,13950,13920,13890,13860,13830,
          13800,13770,13740,13710,13680,13650,13620,13590,13560,13530,13500,13470,13440,13410,13380,13350,13320,13290,13260,13230,13200,13170,13140,13110,13080,13050,13020,12990,12960,12930,12900,12870,12840,12810,12780,12750,12720,12690,12660,12630,12600,12570,12540,12510,12480,12450,12420,12390,12360,12330,12300,12270,
@@ -351,10 +436,39 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
          3840,3810,3780,3750,3720,3690,3660,3630,3600, 3570,3540,3510,3480,3450,3420,3390,3360,3330,3300,3270,3240,3210,3180,3150,3120,3090,3060,3030,3000,2970,2940,2910,2880,2850,2820,2790,2760,2730,2700,2670,2640,2610,2580,2550,2520,2490,2460,2430,
          2400,2370,2340,2310,2280,2250,2220,2190,2160,2130,2100,2070,2040,2010)
 
-sums<-cbind(calBP, MKDE, out50)
+sums<-cbind(calBP, MKDE, hi, lo, out50)
 write.table(sums, file = "data/Sumbin/LevantSumbin2.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/LevantSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/LevantSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 3720,5250, 6450, 8000, 9500, 10100, 10500, 11500, 13590, 14970),
+                         labels=c( 'Iron Age','Bronze Age','Calcolithic','PN', 'Late PPNB', 'Middle PPNB', 'Early PPNB', 'PPNA','Late Natufian','Early Natufian'))
+
+write.table(pcgrowth, file = "data/Percapita200/LevantPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/LevantSumbin2.csv") 
 d2<-arrange(d, calBP)
@@ -370,15 +484,20 @@ write.table(pcgrowth, file = "data/Percapita/LevantPerCap2.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 pc30cp<- read.csv("data/Percapita/LevantPerCap2.csv")
+#pc30cp<- read.csv("data/Percapita200/LevantPerCap200.csv")
 
 #Subset to the period of the evolution of food production (Neolithic)
-pc30cp2<-subset(pc30cp, calBP<11500 & calBP>7000)
+pc30cp2<-subset(pc30cp, calBP<11500 & calBP>8500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(pc30cp2$MKDE-min(pc30cp2$MKDE))/(max((pc30cp2$MKDE)-min(pc30cp2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 pc30cp3<-cbind(StKDE,pc30cp2)
 
+##Write food production file
+#write.table(pc30cp3, file = "data/Percapita2/LevantPerCap2.csv", sep = ",", col.names=NA)
+
+###Plots
 Cpc2 <- ggplot(pc30cp3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
   geom_point(aes(y=PerCap, color=PeriodID), size=3.5) +
@@ -388,7 +507,7 @@ Cpc2 <- ggplot(pc30cp3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   scale_x_continuous(breaks=c(0,.25, .5, .75, 1), limits=c(0,1.0))+
-  scale_y_continuous(limits=c(-.06,0.05))+
+  #scale_y_continuous(limits=c(-.06,0.05))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -416,6 +535,27 @@ Cpt <- ggplot(pc30cp3,aes(x=(calBP), y=StKDE)) +
           size=28), plot.title = element_text(size=18, face = "bold"))+
   labs(x = "Years cal BP", y="Standardized KDE density", title = "B. SW Asia Standardized Density vs. Time")+
   geom_hline(yintercept = 0.20)
+#annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
+#annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
+#annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
+#annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
+Cpt
+
+Cpt <- ggplot(pc30cp3,aes(x=(calBP), y=MKDE)) +
+  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
+  geom_point(aes(color=PeriodID), size=3.5) +
+  geom_path(aes(y=MKDE),size=1)+
+  #scale_color_gradient(low ="#F8766D", high = "#619CFF") +
+  #scale_color_manual(values=c("#619CFF", "#00BA38", "#F8766D"))+
+  #geom_line(aes(y=logFit3), color="blue", size=1) +
+  theme_bw() +
+  scale_x_reverse()+
+ # scale_y_continuous(limits=c(0,1))+
+  theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
+        axis.title.y=element_text(size=24), axis.text.y = element_text(
+          size=28), plot.title = element_text(size=18, face = "bold"))+
+  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. SW Asia Standardized Density vs. Time")
+  #geom_hline(yintercept = 0.20)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
 #annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
@@ -509,9 +649,19 @@ dd2c<- read.csv("data/KDEs/USDomestKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
+#calculate the 5th and 95th percentile of each time step of the 200 KDE simulations
+lo<-apply(out50, #select columns
+          1, # row-wise calcs
+          quantile, probs=0.10) # give `quantile`
+hi <-apply(out50, #select columns
+           1, # row-wise calcs
+           quantile, probs=0.90) # give `quantile`
+
 ##Add in the 30 year bin dates
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
          7690,7660,7630,7600,7570,7540,7510,7480,7450,7420,7390,7360,7330,7300,7270,7240,7210,7180, 7150, 7120, 7090,
@@ -527,12 +677,40 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
          2050,2020,1990,1960,1930,1900,1870,1840,1810,1780,1750,1720,1690,1660,1630,1600,1570,1540,1510,
          1480,1450,1420,1390,1360,1330,1300,1270,1240,1210,1180,1150,1120,1090,1060,1030,1000,970,
          940,910,880,850,820,790,760,730,700,670,640,610,580,550,520,490,460,430,400,370,340,310,280,250, 220)
-sums<-cbind(calBP, MKDE, out50)
+sums<-cbind(calBP, MKDE, out50, hi, lo)
 
 write.table(sums, file = "data/Sumbin/USDomestSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/USDomestSumbin200.csv", sep = ",", col.names=NA)
 
+
+###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.\
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/USDomestSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 580, 1060, 1570, 2050, 3000, 6000, 8200),
+                         labels=c('Oneota', 'Mississippian', 'Late Woodland', 'Middle Woodland','Early Woodland','Late Archic','Middle Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/USDomestPerCap200.csv", sep = ",", col.names=NA)
+
+##Claculate 30 year growth rates
 d <-read_csv("data/Sumbin/USDomestSumbin.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
@@ -548,14 +726,18 @@ write.table(pcgrowth, file = "data/Percapita/USDomestPerCap.csv", sep = ",", col
 
 ###Plot mean KDE against the per capita growth rate in the North
 us30pc<- read.csv("data/Percapita/USDomestPerCap.csv")
-
+us30pc<- read.csv("data/Percapita200/USDomestPerCap200.csv")
 #Initial Domestication: cir. 4200
-us30pc2<-subset(us30pc, calBP<4201 & calBP>499)
+us30pc2<-subset(us30pc, calBP<4201 & calBP>1700)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(us30pc2$MKDE-min(us30pc2$MKDE))/(max((us30pc2$MKDE)-min(us30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 us30pc3<-cbind(StKDE,us30pc2)
+
+##Write food production file
+#write.table(us30pc3, file = "data/Percapita2/USDomestPerCap.csv", sep = ",", col.names=NA)
+
 
 pcUSdom <- ggplot(us30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -566,7 +748,7 @@ pcUSdom <- ggplot(us30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.25,0.2))+
+  scale_y_continuous(limits=c(-.3,0.3))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -693,7 +875,7 @@ dd2c<- read.csv("data/KDEs/China1KDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -713,9 +895,35 @@ sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/China1Sumbin.csv", sep = ",", col.names=NA)
 
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/China1Sumbin200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
+d <-read.csv("data/Sumbin/China1Sumbin200.csv") 
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000,3000, 4000, 6500, 8000, 10500, 11500, 15000),
+                         labels=c('States', 'Bronze Age', 'Late Neolithic', 'Middle Neolithic','Early Neolithic','Early Holocence',' Pleistocene'))
+
+write.table(pcgrowth, file = "data/Percapita200/China1PerCap200.csv", sep = ",", col.names=NA)
+
+##Calculate 30 year growth rate
 d <-read_csv("data/Sumbin/China1Sumbin.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
@@ -730,14 +938,19 @@ write.table(pcgrowth, file = "data/Percapita/China1PerCap.csv", sep = ",", col.n
 
 ###Plot mean KDE against the per capita growth rate in the North
 ch30pc<- read.csv("data/Percapita/China1PerCap.csv")
+ch30pc<- read.csv("data/Percapita200/China1PerCap200.csv")
 
 ###Initial exploitation of rice at 10000
-ch30pc2<-subset(ch30pc, calBP<11500 & calBP>7000)
+ch30pc2<-subset(ch30pc, calBP<10001 & calBP>7500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(ch30pc2$MKDE-min(ch30pc2$MKDE))/(max((ch30pc2$MKDE)-min(ch30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 ch30pc3<-cbind(StKDE,ch30pc2)
+
+##Write food production file
+#write.table(ch30pc3, file = "data/Percapita2/China1PerCap.csv", sep = ",", col.names=NA)
+
 
 pcch<- ggplot(ch30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -748,7 +961,7 @@ pcch<- ggplot(ch30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.23,0.4))+
+  #scale_y_continuous(limits=c(-.23,0.4))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -780,6 +993,31 @@ chcpt <- ggplot(ch30pc3,aes(x=(calBP), y=(StKDE))) +
 #annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
 #annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
 chcpt
+
+kchina=ch30pc3$StKDE/(0.7-ch30pc3$PerCap)
+
+chcptK <- ggplot(ch30pc3,aes(x=(calBP), y=(kchina))) +
+  #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
+  geom_point(aes(y=StKDE, color=PeriodID), size=3.5) +
+  geom_path(aes(),size=1)+
+  #scale_color_gradient(low ="#F8766D", high = "#619CFF") +
+  #scale_color_manual(values=c("#619CFF", "#00BA38", "#F8766D"))+
+  #geom_line(aes(y=logFit3), color="blue", size=1) +
+  theme_bw() +
+  scale_x_reverse()+
+  # scale_y_continuous(limits=c(-.75,0.5))+
+  theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
+        axis.title.y=element_text(size=24), axis.text.y = element_text(
+          size=28), plot.title = element_text(size=18, face = "bold"))+
+  labs(x = "Years BP", y="Standardized KDE density", title = "B. SE China Density vs. Time")+
+  geom_hline(yintercept=0.20)
+#annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
+#annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
+#annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
+#annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
+chcptK
+
+
 
 Figch<-plot_grid(pcch, chcpt, ncol=2, align="hv", axis = "rl")
 Figch
@@ -863,7 +1101,7 @@ dd2c<- read.csv("data/KDEs/SonoranKDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 
@@ -885,7 +1123,32 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/SonoranSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SonoranSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/SonoranSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200 ,700, 1780, 2800, 3130, 4050, 4500, 7500, 8200),
+                         labels=c('Post-Hohokam','Hohokam', 'Cienega', 'San Pedro', 'Silver Bell','Late Archaic','Middle Archaic','Early Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/SonoranPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/SonoranSumbin.csv") %>%
   dplyr::select(-...1)
@@ -895,14 +1158,16 @@ pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
 
 ##Add ID variable for culture history periods
 pcgrowth$PeriodID <- cut(pcgrowth$calBP,
-                         breaks=c(200 ,700, 1780, 2800, 3130, 4050, 4500, 7500, 8200),
-                         labels=c('Post-Hohokam','Hohokam', 'Cienega', 'San Pedro', 'Silver Bell','Late Archaic','Middle Archaic','Early Archaic'))
+                         breaks=c(200 ,700, 1780, 2800, 4050, 7500, 8200),
+                         labels=c('Post-Hohokam','Hohokam', 'Cienega', 'Early Agricultural Period','Middle Archaic','Early Archaic'))
 
 
 write.table(pcgrowth, file = "data/Percapita/SonoranPerCap.csv", sep = ",", col.names=NA)
 
-###Plot mean KDE against the per capita growth rate in the North
+###Plot mean KDE against the per capita growth rate in the Sonoran desert
 son30pc<- read.csv("data/Percapita/SonoranPerCap.csv")
+
+son30pc<- read.csv("data/Percapita200/SonoranPerCap200.csv")
 
 son30pc2<-subset(son30pc, calBP<4900 & calBP>400)
 
@@ -910,6 +1175,9 @@ son30pc2<-subset(son30pc, calBP<4900 & calBP>400)
 StKDE<-(son30pc2$MKDE-min(son30pc2$MKDE))/(max((son30pc2$MKDE)-min(son30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 son30pc3<-cbind(StKDE, son30pc2)
+
+##Write food production file
+#write.table(son30pc3, file = "data/Percapita2/SonoranPerCap.csv", sep = ",", col.names=NA)
 
 pcSon <- ggplot(son30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -920,12 +1188,12 @@ pcSon <- ggplot(son30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.2,0.2))+
+  scale_y_continuous(limits=c(-.3,0.3))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Standardized KDE density", y="KDE per capita growth", title = "A. Sonoran KDE Per Capita Growth vs. Density")+
-  geom_vline(xintercept = 0.20)
+  labs(x = "Standardized KDE density", y="KDE per capita growth", title = "B. Sonoran KDE Per Capita Growth vs. Density")
+  #geom_vline(xintercept = 0.20)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
 #annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
@@ -945,8 +1213,8 @@ Soncpt <- ggplot(son30pc3,aes(x=(calBP), y=(StKDE))) +
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. Sonoran Density vs. Time")+
-  geom_hline(yintercept = 0.20)
+  labs(x = "Years cal BP", y="Standardized KDE density", title = "A. Sonoran Density vs. Time")
+#  geom_hline(yintercept = 0.20)
 #geom_vline(xintercept = 2550)+
 #geom_vline(xintercept = 2250)+
 #geom_vline(xintercept = 830)
@@ -956,7 +1224,7 @@ Soncpt <- ggplot(son30pc3,aes(x=(calBP), y=(StKDE))) +
 #annotate("text", x =310, y = .25, label = "Phase 4", size = 6)
 Soncpt
 
-Figsonora<-plot_grid(pcSon, Soncpt, ncol=1, align="hv", axis = "rl")
+Figsonora<-plot_grid(Soncpt, pcSon, ncol=1, align="hv", axis = "rl")
 Figsonora
 
 pdf("data/Figs/Sonora.pdf", width=17.55, height=15)
@@ -1008,8 +1276,10 @@ write.table(dd2, file = "data/KDEs/YucaKDE50bin.csv", sep = ",", col.names=NA)
 #load North KDE data set and select columns for removal that we do not want to sum 
 dd2c<- read.csv("data/KDEs/YucaKDE50bin.csv") %>%
   dplyr::select(-X,-calBP,-PrDens, -MKDE,-hi,-lo)
+
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -1032,7 +1302,34 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/YucaSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/YucaSumbin200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.\
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/YucaSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 1100, 1710, 4800, 8200),
+                         labels=c('Post-Classic','Classic','Formative','Archaic'))
+write.table(pcgrowth, file = "data/Percapita200/YucaPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 ###Not working........
 d <-read.csv("data/Sumbin/YucaSumbin.csv") 
 #%>%
@@ -1049,13 +1346,16 @@ write.table(pcgrowth, file = "data/Percapita/YucaPerCap.csv", sep = ",", col.nam
 
 ###Plot mean KDE against the per capita growth rate in the North
 yuc30pc<- read.csv("data/Percapita/YucaPerCap.csv")
-
-yuc30pc2<-subset(yuc30pc, calBP<4700 & calBP>500)
+yuc30pc<- read.csv("data/Percapita200/YucaPerCap200.csv")
+yuc30pc2<-subset(yuc30pc, calBP<4500 & calBP>1999)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(yuc30pc2$MKDE-min(yuc30pc2$MKDE))/(max((yuc30pc2$MKDE)-min(yuc30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 yuc30pc3<-cbind(StKDE, yuc30pc2)
+
+##Write food production file
+#write.table(yuc30pc3, file = "data/Percapita2/YucaPerCap.csv", sep = ",", col.names=NA)
 
 pcYuc <- ggplot(yuc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -1066,7 +1366,7 @@ pcYuc <- ggplot(yuc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  # scale_y_continuous(limits=c(-.75,0.5))+
+   #scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -1183,7 +1483,7 @@ dd2c<- read.csv("data/KDEs/FremontKDE50bin.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
@@ -1203,7 +1503,35 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/FremontSumbin.csv", sep = ",", col.names=NA)
 
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/FremontSumbin200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/FremontSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 700, 1850, 4800, 8200),
+                         labels=c('Post-Fremont','Fremont','Late Archaic','Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/FremontPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/FremontSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -1218,11 +1546,16 @@ write.table(pcgrowth, file = "data/Percapita/FremontPerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 fre30pc<- read.csv("data/Percapita/FremontPerCap.csv")
+fre30pc<- read.csv("data/Percapita200/FremontPerCap200.csv")
 
-fre30pc2<-subset(fre30pc, calBP<2700 & calBP>400)
+
+fre30pc2<-subset(fre30pc, calBP<2701 & calBP>400)
 
 StKDE<-(fre30pc2$MKDE-min(fre30pc2$MKDE))/(max((fre30pc2$MKDE)-min(fre30pc2$MKDE)))
 fre30pc3<-cbind(StKDE,fre30pc2)
+
+##Write food production file
+#write.table(fre30pc3, file = "data/Percapita2/FremontPerCap.csv", sep = ",", col.names=NA)
 
 pcfre <- ggplot(fre30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -1233,11 +1566,11 @@ pcfre <- ggplot(fre30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.25,0.2))+
+  scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Standardized KDE density", y="Per capita growth rate", title = "A. Fremont KDE Per Capita Growth vs. Density")+
+  labs(x = "Standardized KDE density", y="Per capita growth rate", title = "B. Fremont KDE Per Capita Growth vs. Density")+
   geom_hline(yintercept=0)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
@@ -1258,7 +1591,7 @@ frecpt <- ggplot(fre30pc3,aes(x=(calBP), y=(StKDE))) +
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Time (years cal BP)", y="Standardized KDE density", title = "B. Fremont Density vs. Time")+
+  labs(x = "Time (years cal BP)", y="Standardized KDE density", title = "A. Fremont Density vs. Time")+
   geom_hline(yintercept = 0.20)
 #geom_vline(xintercept = 1400)+
 #geom_vline(xintercept = 1100)+
@@ -1354,6 +1687,7 @@ dd2c<- read.csv("data/KDEs/JornadaKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -1375,7 +1709,36 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/JornadaSumbin.csv", sep = ",", col.names=NA)
 
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/JornadaSumbin200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/JornadaSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 650, 1000, 1800, 3800, 6000, 8200),
+                         labels=c('Post-Pueblo','Pueblo','Formative','Early Agricultural Period','Middle Archaic','Early Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/JornadaPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/JornadaSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -1391,11 +1754,15 @@ write.table(pcgrowth, file = "data/Percapita/JornadaPerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 jor30pc<- read.csv("data/Percapita/JornadaPerCap.csv")
+jor30pc<- read.csv("data/Percapita200/JornadaPerCap200.csv")
 
-jor30pc2<-subset(jor30pc, calBP<4000 & calBP>499)
+jor30pc2<-subset(jor30pc, calBP<3800 & calBP>1300)
 
 StKDE<-(jor30pc2$MKDE-min(jor30pc2$MKDE))/(max((jor30pc2$MKDE)-min(jor30pc2$MKDE)))
 jor30pc3<-cbind(StKDE, jor30pc2)
+
+##Write food production file
+write.table(jor30pc3, file = "data/Percapita2/JornadaPerCap.csv", sep = ",", col.names=NA)
 
 pcjor <- ggplot(jor30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -1406,7 +1773,7 @@ pcjor <- ggplot(jor30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.14,0.14))+
+  scale_y_continuous(limits=c(-.3,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -1523,6 +1890,7 @@ dd2c<- read.csv("data/KDEs/ColoradoPlatKDE50bin.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -1543,11 +1911,37 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/ColoradoPlatSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/ColoradoPlatSumbin200.csv", sep = ",", col.names=NA)
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/ColoradoPlatSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 320, 670, 820, 1050, 1210, 1455, 3430, 4000, 8200),
+                         labels=c('PV','PIV','PIII','PII','PI','BMIII','BMII','Early Agricultural Period','Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/ColoradoPlatPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/ColoradoPlatSumbin.csv") 
 d2<-arrange(d, calBP)
-### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+### We calculate per capita growth as LN(MKDE at t+1/ MKDE at time t).
 pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
 
 ##Code cultural historical periods
@@ -1560,11 +1954,15 @@ write.table(pcgrowth, file = "data/Percapita/ColoradoPlatPerCap.csv", sep = ",",
 
 ###Plot mean KDE against the per capita growth rate in the North
 col30pc<- read.csv("data/Percapita/ColoradoPlatPerCap.csv")
+col30pc<- read.csv("data/Percapita200/ColoradoPlatPerCap200.csv")
 
-col30pc2<-subset(col30pc, calBP<4000 & calBP>500)
+col30pc2<-subset(col30pc, calBP<3801 & calBP>1300)
 
 StKDE<-(col30pc2$MKDE-min(col30pc2$MKDE))/(max((col30pc2$MKDE)-min(col30pc2$MKDE)))
 col30pc3<-cbind(StKDE, col30pc2)
+
+##Write food production file
+#write.table(col30pc3, file = "data/Percapita2/ColoradoPlatPerCap.csv", sep = ",", col.names=NA)
 
 pccol <- ggplot(col30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -1575,7 +1973,7 @@ pccol <- ggplot(col30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.3,0.15))+
+  scale_y_continuous(limits=c(-.3,.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -1696,6 +2094,8 @@ dd2c<- read.csv("data/KDEs/WesternBasinKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 MKDE<-rowMeans(out50)
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
@@ -1715,7 +2115,33 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/WesternBasinSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/WesternBasinSumbin200.csv", sep = ",", col.names=NA)
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/WesternBasinSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 800, 4000, 6970, 8200),
+                         labels=c('Post Archaic','Late Archaic','Middle Archaic','Early Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/WesternBasinPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/WesternBasinSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -1730,11 +2156,15 @@ write.table(pcgrowth, file = "data/Percapita/WesternBasinPerCap.csv", sep = ",",
 
 ###Plot mean KDE against the per capita growth rate in the North
 west30pc<- read.csv("data/Percapita/WesternBasinPerCap.csv")
+west30pc<- read.csv("data/Percapita200/WesternBasinPerCap200.csv")
 
-west30pc2<-subset(west30pc, calBP<4700 & calBP>200)
+west30pc2<-subset(west30pc, calBP<4000 & calBP>1500)
 
 StKDE<-(west30pc2$MKDE-min(west30pc2$MKDE))/(max((west30pc2$MKDE)-min(west30pc2$MKDE)))
 west30pc3<-cbind(StKDE, west30pc2)
+
+##Write food production file
+#write.table(west30pc3, file = "data/Percapita2/WesternBasinPerCap.csv", sep = ",", col.names=NA)
 
 pcwest <- ggplot(west30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -1745,7 +2175,7 @@ pcwest <- ggplot(west30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.19,.2))+
+  #scale_y_continuous(limits=c(-.19,.2))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -1865,6 +2295,8 @@ dd2c<- read.csv("data/KDEs/SoCalKDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -1886,7 +2318,33 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/SoCalSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SoCalSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/SoCalSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 950, 2560, 6220, 8200),
+                         labels=c('Late Precontact','Late Archaic','Middle Archaic','Early Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/SoCalPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/SoCalSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -1900,11 +2358,15 @@ write.table(pcgrowth, file = "data/Percapita/SoCalPerCap.csv", sep = ",", col.na
 
 ###Plot mean KDE against the per capita growth rate in the North
 SoCal30pc<- read.csv("data/Percapita/SoCalPerCap.csv")
+SoCal30pc<- read.csv("data/Percapita200/SoCalPerCap200.csv")
 
-SoCal30pc2<-subset(SoCal30pc, calBP<4700 & calBP>200)
+SoCal30pc2<-subset(SoCal30pc, calBP<3001 & calBP>500)
 
 StKDE<-(SoCal30pc2$MKDE-min(SoCal30pc2$MKDE))/(max((SoCal30pc2$MKDE)-min(SoCal30pc2$MKDE)))
 SoCal30pc3<-cbind(StKDE, SoCal30pc2)
+
+##Write food production file
+#write.table(SoCal30pc3, file = "data/Percapita2/SoCalPerCap.csv", sep = ",", col.names=NA)
 
 
 pcsocal <- ggplot(SoCal30pc3,aes(x=(StKDE), y=(PerCap))) +
@@ -1916,7 +2378,7 @@ pcsocal <- ggplot(SoCal30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.15,0.15))+
+  scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2037,6 +2499,7 @@ dd2c<- read.csv("data/KDEs/SpainKDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -2055,6 +2518,19 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/SpainSumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+         )
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SpainSumbin200.csv", sep = ",", col.names=NA)
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
 d <-read.csv("data/Sumbin/SpainSumbin.csv") 
@@ -2068,13 +2544,35 @@ pcgrowth$PeriodID <- cut(pcgrowth$calBP,
 
 write.table(pcgrowth, file = "data/Percapita/SpainPerCap.csv", sep = ",", col.names=NA)
 
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/SpainSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4000, 5500, 8050, 11500, 15000),
+                         labels=c('Bronze Age','Calcolithic','Neolithic','Mesolithic','Paleolithic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/SpainPerCap200.csv", sep = ",", col.names=NA)
+
+
 ###Plot mean KDE against the per capita growth rate in the North
 Spal30pc<- read.csv("data/Percapita/SpainPerCap.csv")
+Spal30pc<- read.csv("data/Percapita200/SpainPerCap200.csv")
 
-Spal30pc2<-subset(Spal30pc, calBP<8500 & calBP>5000)
+Spal30pc2<-subset(Spal30pc, calBP<8500 & calBP>6000)
 
 StKDE<-(Spal30pc2$MKDE-min(Spal30pc2$MKDE))/(max((Spal30pc2$MKDE)-min(Spal30pc2$MKDE)))
 Spal30pc3<-cbind(StKDE, Spal30pc2)
+
+##Write food production file
+#write.table(Spal30pc3, file = "data/Percapita2/SpainPerCap.csv", sep = ",", col.names=NA)
+
 
 pcsp <- ggplot(Spal30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2085,7 +2583,7 @@ pcsp <- ggplot(Spal30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.2))+
+  #scale_y_continuous(limits=c(-.1,0.2))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2195,6 +2693,8 @@ dd2c<- read.csv("data/KDEs/SFranceKDE50bin.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -2212,6 +2712,36 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/SFranceSumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SFranceSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/SFranceSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4250, 8050, 11500, 15000),
+                         labels=c('Bronze Age','Neolithic','Mesolithic','Paleolithic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/SFrancePerCap200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
 d <-read.csv("data/Sumbin/SFranceSumbin.csv") 
@@ -2227,11 +2757,15 @@ write.table(pcgrowth, file = "data/Percapita/SFrancePerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 sfr30pc<- read.csv("data/Percapita/SFrancePerCap.csv")
+sfr30pc<- read.csv("data/Percapita200/SFrancePerCap200.csv")
 
-sfr30pc2<-subset(sfr30pc, calBP<8500 & calBP>4500)
+sfr30pc2<-subset(sfr30pc, calBP<8500 & calBP>6000)
 
 StKDE<-(sfr30pc2$MKDE-min(sfr30pc2$MKDE))/(max((sfr30pc2$MKDE)-min(sfr30pc2$MKDE)))
 sfr30pc3<-cbind(StKDE, sfr30pc2)
+
+##Write food production file
+#write.table(sfr30pc3, file = "data/Percapita2/SFrancePerCap.csv", sep = ",", col.names=NA)
 
 pcsfr <- ggplot(sfr30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2242,7 +2776,7 @@ pcsfr <- ggplot(sfr30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.15))+
+  #scale_y_continuous(limits=c(-.1,0.15))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2283,7 +2817,7 @@ Figsf
 
 pdf("data/Figs/ExSfrance.pdf", width=20.55, height=14)
 Figsf
-dev.off()
+dev.off()f
 
 #========== Med. Basin Italy======================================================
 box<- read.csv("data/RawP3Kc14.csv")
@@ -2359,6 +2893,7 @@ dd2c<- read.csv("data/KDEs/ItalyKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200 <- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -2376,6 +2911,36 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/ItalySumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/ItalySumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/ItalySumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4000, 5560, 8500, 11500, 15000),
+                         labels=c('Bronze Age','Cooper Age','Neolithic','Mesolithic','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/ItalyPerCap200.csv", sep = ",", col.names=NA)
+
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
 d <-read.csv("data/Sumbin/ItalySumbin.csv") 
@@ -2392,11 +2957,15 @@ write.table(pcgrowth, file = "data/Percapita/ItalyPerCap.csv", sep = ",", col.na
 
 ###Plot mean KDE against the per capita growth rate in the North
 It30pc<- read.csv("data/Percapita/ItalyPerCap.csv")
+It30pc<- read.csv("data/Percapita200/ItalyPerCap200.csv")
 
-It30pc2<-subset(It30pc, calBP<9000 & calBP>4000)
+It30pc2<-subset(It30pc, calBP<9000 & calBP>6500)
 
 StKDE<-(It30pc2$MKDE-min(It30pc2$MKDE))/(max((It30pc2$MKDE)-min(It30pc2$MKDE)))
 It30pc3<-cbind(StKDE, It30pc2)
+
+##Write food production file
+#write.table(It30pc3, file = "data/Percapita2/ItalyPerCap.csv", sep = ",", col.names=NA)
 
 pcIt <- ggplot(It30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2407,7 +2976,7 @@ pcIt <- ggplot(It30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.23))+
+  #scale_y_continuous(limits=c(-.1,0.23))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2527,7 +3096,7 @@ dd2c<- read.csv("data/KDEs/GreeceKDE50bin.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640,14610,14580,14550,14520,14490,14460,14430,14400,14370,14340,14310,14280,14250,14220,14190,14160,14130,14100,14070,14040,14010,13980,13950,13920,13890,13860,13830,
@@ -2544,6 +3113,35 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/GreeceSumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/GreeceSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/GreeceSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4000, 5560, 9000, 11500, 15000),
+                         labels=c('Bronze Age','Cooper Age','Neolithic','Mesolithic','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/GreecePerCap200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
 d <-read.csv("data/Sumbin/GreeceSumbin.csv") 
@@ -2552,19 +3150,24 @@ d2<-arrange(d, calBP)
 pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
 ##Code cultural historical periods
 pcgrowth$PeriodID <- cut(pcgrowth$calBP,
-                         breaks=c(2000, 4000, 5560, 8500, 11500, 15000),
+                         breaks=c(2000, 4000, 5560, 9000, 11500, 15000),
                          labels=c('Bronze Age','Cooper Age','Neolithic','Mesolithic','Paleolithic'))
 write.table(pcgrowth, file = "data/Percapita/GreecePerCap.csv", sep = ",", col.names=NA)
 
 ###Plot mean KDE against the per capita growth rate in the North
 gree30pc<- read.csv("data/Percapita/GreecePerCap.csv")
+gree30pc<- read.csv("data/Percapita200/GreecePerCap200.csv")
 
-gree30pc2<-subset(gree30pc, calBP<9500 & calBP>5000)
+gree30pc2<-subset(gree30pc, calBP<9500 & calBP>7000)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(gree30pc2$MKDE-min(gree30pc2$MKDE))/(max((gree30pc2$MKDE)-min(gree30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 gree30pc3<-cbind(StKDE,gree30pc2)
+
+##Write food production file
+#write.table(gree30pc3, file = "data/Percapita2/GreecePerCap.csv", sep = ",", col.names=NA)
+
 
 pcgree <- ggplot(gree30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2575,7 +3178,7 @@ pcgree <- ggplot(gree30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.2))+
+  #scale_y_continuous(limits=c(-.1,0.2))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2600,9 +3203,9 @@ greecpt <- ggplot(gree30pc3,aes(x=(calBP), y=(StKDE))) +
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. Greece Density vs. Time")+
-  geom_hline(yintercept = 0.2)+
-  geom_vline(xintercept = 7250)
+  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. Greece Density vs. Time")
+  #geom_hline(yintercept = 0.2)+
+  #geom_vline(xintercept = 7250)
 #geom_vline(xintercept = 2250)+
 #geom_vline(xintercept = 830)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
@@ -2692,6 +3295,7 @@ dd2c<- read.csv("data/KDEs/NorFranceKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -2710,7 +3314,36 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/NorFranceSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##Bin 200 years
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NorFranceSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/NorFranceSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+#
+## We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4320, 7800, 11500, 15000),
+                         labels=c('Metal Age','Neolithic','Mesolithic','Paleolithic'))
+write.table(pcgrowth, file = "data/Percapita200/NorFrancePerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/NorFranceSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -2724,11 +3357,15 @@ write.table(pcgrowth, file = "data/Percapita/NorFrancePerCap.csv", sep = ",", co
 
 ###Plot mean KDE against the per capita growth rate in the North
 nf30pc<- read.csv("data/Percapita/NorFrancePerCap.csv")
+nf30pc<- read.csv("data/Percapita200/NorFrancePerCap200.csv")
 
-nf30pc2<-subset(nf30pc, calBP<8500 & calBP>4500)
+nf30pc2<-subset(nf30pc, calBP<8001 & calBP>6400)
 
 StKDE<-(nf30pc2$MKDE-min(nf30pc2$MKDE))/(max((nf30pc2$MKDE)-min(nf30pc2$MKDE)))
 nf30pc3<-cbind(StKDE, nf30pc2)
+
+##Write food production file
+#write.table(nf30pc3, file = "data/Percapita2/NorFrancePerCap.csv", sep = ",", col.names=NA)
 
 pcnfr <- ggplot(nf30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2739,7 +3376,7 @@ pcnfr <- ggplot(nf30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.2))+
+  #scale_y_continuous(limits=c(-.1,0.2))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2855,6 +3492,7 @@ dd2c<- read.csv("data/KDEs/WestCenEuropeKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -2873,6 +3511,34 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/WestCenEuropeSumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/WestCenEuropeSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/WestCenEuropeSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 3960, 8010, 11500, 15000),
+                         labels=c('Metal Age','Neolithic','Mesolithic','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/WestCenEuropePerCap200.csv", sep = ",", col.names=NA)
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
 d <-read.csv("data/Sumbin/WestCenEuropeSumbin.csv") 
@@ -2886,11 +3552,15 @@ write.table(pcgrowth, file = "data/Percapita/WestCenEuropePerCap.csv", sep = ","
 
 ###Plot mean KDE against the per capita growth rate in the North
 wce30pc<- read.csv("data/Percapita/WestCenEuropePerCap.csv")
+wce30pc<- read.csv("data/Percapita200/WestCenEuropePerCap200.csv")
 
-wce30pc2<-subset(wce30pc, calBP<8500 & calBP>5950)
+wce30pc2<-subset(wce30pc, calBP<8400 & calBP>5899)
 
 StKDE<-(wce30pc2$MKDE-min(wce30pc2$MKDE))/(max((wce30pc2$MKDE)-min(wce30pc2$MKDE)))
 wce30pc3<-cbind(StKDE, wce30pc2)
+
+##Write food production file
+#write.table(wce30pc3, file = "data/Percapita2/WestCenEuropePerCap.csv", sep = ",", col.names=NA)
 
 pcwce <- ggplot(wce30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -2901,7 +3571,7 @@ pcwce <- ggplot(wce30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.15,0.15))+
+  #scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -2948,7 +3618,7 @@ Figwce
 dev.off()
 
 ####S. Britain Case ID 27=============================================
-box<- read.csv("NERDv4_0/RawP3Kc14.csv")
+box<- read.csv("data/RawP3Kc14.csv")
 box2<- subset(box, Latitude>51 & Latitude<55 & Longitude>-5 & Longitude<2)
 
 #write.table(box2, file = "data/SouthBritdates.csv", sep = ",", col.names=NA)
@@ -3024,7 +3694,7 @@ dd2c<- read.csv("data/KDEs/SouthBritKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 
@@ -3044,7 +3714,36 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/SouthBritSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SouthBritSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/SouthBritSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 4200, 6060, 11500, 15000),
+                         labels=c('Metal Age','Neolithic','Mesolithic','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/SouthBritPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps
 
 d <-read.csv("data/Sumbin/SouthBritSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -3058,13 +3757,17 @@ write.table(pcgrowth, file = "data/Percapita/SouthBritPerCap.csv", sep = ",", co
 
 ###Plot mean KDE against the per capita growth rate in the North
 gr30pc<- read.csv("data/Percapita/SouthBritPerCap.csv")
+gr30pc<- read.csv("data/Percapita200/SouthBritPerCap200.csv")
 
-gr30pc2<-subset(gr30pc, calBP<7001 & calBP>4499)
+gr30pc2<-subset(gr30pc, calBP<6801 & calBP>4300)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(gr30pc2$MKDE-min(gr30pc2$MKDE))/(max((gr30pc2$MKDE)-min(gr30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 gr30pc3<-cbind(StKDE,gr30pc2)
+
+##Write food production file
+#write.table(gr30pc3, file = "data/Percapita2/SouthBritPerCap.csv", sep = ",", col.names=NA)
 
 pcGr <- ggplot(gr30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -3075,7 +3778,7 @@ pcGr <- ggplot(gr30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.05,0.17))+
+  #scale_y_continuous(limits=c(-.05,0.17))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3197,6 +3900,7 @@ dd2c<- read.csv("data/KDEs/NorthSeaKDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -3215,7 +3919,36 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/NorthSeaSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NorthSeaSumbin200.csv", sep = ",", col.names=NA)
+
+###calculate growth rates for 200 year summed bins=====================
+
+d <-read_csv("data/Sumbin/NorthSeaSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Code cultural historical periods
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(2000, 3630, 6060, 11500, 15000),
+                         labels=c('Metal Age','Neolithic','Mesolithic','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/NorthSeaPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read.csv("data/Sumbin/NorthSeaSumbin.csv") 
 d2<-arrange(d, calBP)
@@ -3229,6 +3962,7 @@ write.table(pcgrowth, file = "data/Percapita/NorthSeaPerCap.csv", sep = ",", col
 
 ###Plot mean KDE against the per capita growth rate in the North
 ns30pc<- read.csv("data/Percapita/NorthSeaPerCap.csv")
+ns30pc<- read.csv("data/Percapita200/NorthSeaPerCap200.csv")
 
 ns30pc2<-subset(ns30pc, calBP<6800 & calBP>4300)
 
@@ -3236,6 +3970,9 @@ ns30pc2<-subset(ns30pc, calBP<6800 & calBP>4300)
 StKDE<-(ns30pc2$MKDE-min(ns30pc2$MKDE))/(max((ns30pc2$MKDE)-min(ns30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 ns30pc3<-cbind(StKDE,ns30pc2)
+
+##Write food production file
+#write.table(ns30pc3, file = "data/Percapita2/NorthSeaPerCap.csv", sep = ",", col.names=NA)
 
 pcns <- ggplot(ns30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -3246,7 +3983,7 @@ pcns <- ggplot(ns30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.1))+
+  #scale_y_continuous(limits=c(-.1,0.1))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3359,6 +4096,7 @@ dd2c<- read.csv("data/KDEs/CTexKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -3380,7 +4118,34 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/CTexSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/CTexSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/CTexSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 500, 790, 1210, 4200, 8200),
+                         labels=c('Historic','Toya','Austin','Late Archaic','Middle Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/CTexPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/CTexSumbin.csv") %>%
   dplyr::select(-...1)
@@ -3395,13 +4160,17 @@ write.table(pcgrowth, file = "data/Percapita/CTexPerCap.csv", sep = ",", col.nam
 
 ###Plot mean KDE against the per capita growth rate in the North
 ct30pc<- read.csv("data/Percapita/CTexPerCap.csv")
+ct30pc<- read.csv("data/Percapita200/CTexPerCap200.csv")
 
-ct30pc2<-subset(ct30pc, calBP<4000 & calBP>500)
+ct30pc2<-subset(ct30pc, calBP<4000 & calBP>1500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(ct30pc2$MKDE-min(ct30pc2$MKDE))/(max((ct30pc2$MKDE)-min(ct30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 ct30pc3<-cbind(StKDE,ct30pc2)
+
+##Write food production file
+#write.table(ct30pc3, file = "data/Percapita2/CTexPerCap.csv", sep = ",", col.names=NA)
 
 pcctex <- ggplot(ct30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -3412,7 +4181,7 @@ pcctex <- ggplot(ct30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.25))+
+  #scale_y_continuous(limits=c(-.1,0.25))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3517,7 +4286,7 @@ dd2c<- read.csv("data/KDEs/TCPKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
@@ -3537,7 +4306,32 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/TCPSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/TCPSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/TCPSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 500, 790, 1210, 4000, 8200),
+                         labels=c('Historic','Toya','Austin','Late Archaic','Middle Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/TCPPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/TCPSumbin.csv") %>%
   dplyr::select(-...1)
@@ -3551,13 +4345,17 @@ write.table(pcgrowth, file = "data/Percapita/TCPPerCap.csv", sep = ",", col.name
 
 ###Plot mean KDE against the per capita growth rate in the North
 txc30pc<- read.csv("data/Percapita/TCPPerCap.csv")
+txc30pc<- read.csv("data/Percapita200/TCPPerCap200.csv")
 
-txc30pc2<-subset(txc30pc, calBP<5000 & calBP>500)
+txc30pc2<-subset(txc30pc, calBP<3000 & calBP>500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(txc30pc2$MKDE-min(txc30pc2$MKDE))/(max((txc30pc2$MKDE)-min(txc30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 txc30pc3<-cbind(StKDE, txc30pc2)
+
+##Write food production file
+#write.table(txc30pc3, file = "data/Percapita2/TCPPerCap.csv", sep = ",", col.names=NA)
 
 pctxcoast <- ggplot(txc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -3568,7 +4366,7 @@ pctxcoast <- ggplot(txc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.15,0.17))+
+  #scale_y_continuous(limits=c(-.15,0.17))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3675,7 +4473,7 @@ dd2<-dd %>%  filter(MKDE >0)
 ##Write the table
 write.table(dd2, file = "data/KDEs/SoutheastKDE50bin.csv", sep = ",", col.names=NA)
 
-#load North KDE data set and select columns for removal that we do not want to sum 
+#load Southeast KDE data set and select columns for removal that we do not want to sum 
 dd2c<- read.csv("data/KDEs/SoutheastKDE50bin.csv") %>%
   dplyr::select(-X,-calBP,-PrDens, -MKDE,-hi,-lo)
 
@@ -3683,6 +4481,8 @@ dd2c<- read.csv("data/KDEs/SoutheastKDE50bin.csv") %>%
 library(zoo)
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
+
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -3703,7 +4503,33 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/SoutheastSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SoutheastSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/SoutheastSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 580, 1060, 1570, 2050, 3000, 6000, 8200),
+                         labels=c('Post-Mississippian', 'Mississippian', 'Late Woodland', 'Middle Woodland','Early Woodland','Late Archic','Middle Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/SoutheastPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/SoutheastSumbin.csv") %>%
   dplyr::select(-...1)
@@ -3718,13 +4544,17 @@ write.table(pcgrowth, file = "data/Percapita/SoutheastPerCap.csv", sep = ",", co
 
 ###Plot mean KDE against the per capita growth rate in the North
 se30pc<- read.csv("data/Percapita/SoutheastPerCap.csv")
+se30pc<- read.csv("data/Percapita200/SoutheastPerCap200.csv")
 
-se30pc2<-subset(se30pc, calBP<4900 & calBP>400)
+se30pc2<-subset(se30pc, calBP<3000 & calBP>500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(se30pc2$MKDE-min(se30pc2$MKDE))/(max((se30pc2$MKDE)-min(se30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 se30pc3<-cbind(StKDE, se30pc2)
+
+##Write food production file
+#write.table(se30pc3, file = "data/Percapita2/SoutheastPerCap.csv", sep = ",", col.names=NA)
 
 pcseus <- ggplot(se30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -3735,7 +4565,7 @@ pcseus <- ggplot(se30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  # scale_y_continuous(limits=c(-.75,0.5))+
+  scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3849,7 +4679,7 @@ dd2c<- read.csv("data/KDEs/NortheastKDE50bin.csv") %>%
 
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
@@ -3869,8 +4699,34 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/NortheastSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###Calculate per capita growth rate of 30 year time steps.
 
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NortheastSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/NortheastSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 400, 1570, 2700, 6000, 8200),
+                         labels=c('Historic' ,'Late', 'Woodland','Late Archaic','Middle Archaic'))
+
+write.table(pcgrowth, file = "data/Percapita200/NortheastPerCap200.csv", sep = ",", col.names=NA)
+
+###30 year bins growth=====
 d <-read_csv("data/Sumbin/NortheastSumbin.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
@@ -3881,17 +4737,21 @@ pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
 pcgrowth$PeriodID <- cut(pcgrowth$calBP,
                          breaks=c(200, 400, 1570, 2700, 6000, 8200),
                          labels=c('Historic' ,'Late', 'Woodland','Late Archaic','Middle Archaic'))
+
 write.table(pcgrowth, file = "data/Percapita/NortheastPerCap.csv", sep = ",", col.names=NA)
 
 ###Plot mean KDE against the per capita growth rate in the North
 ne30pc<- read.csv("data/Percapita/NortheastPerCap.csv")
-
-ne30pc2<-subset(ne30pc, calBP<2401 & calBP>299)
+ne30pc<- read.csv("data/Percapita200/NortheastPerCap200.csv")
+ne30pc2<-subset(ne30pc, calBP<2401 & calBP>400)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(ne30pc2$MKDE-min(ne30pc2$MKDE))/(max((ne30pc2$MKDE)-min(ne30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 ne30pc3<-cbind(StKDE, ne30pc2)
+
+##Write food production file
+#write.table(ne30pc3, file = "data/Percapita2/NortheastPerCap.csv", sep = ",", col.names=NA)
 
 
 pcne <- ggplot(ne30pc3,aes(x=(StKDE), y=(PerCap))) +
@@ -3903,7 +4763,7 @@ pcne <- ggplot(ne30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  # scale_y_continuous(limits=c(-.75,0.5))+
+  #scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -3928,8 +4788,8 @@ necpt <- ggplot(ne30pc3,aes(x=(calBP), y=(StKDE))) +
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
-  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. Northeast US Density vs. Time")+
-  geom_vline(xintercept = 770)
+  labs(x = "Years cal BP", y="Standardized KDE density", title = "B. Northeast US Density vs. Time")
+  #geom_vline(xintercept = 770)
 #annotate("text", x =3500, y = .25, label = "Phase 1", size = 6)+
 #annotate("text", x =2000, y = .25, label = "Phase 2", size = 6)+
 #annotate("text", x =900, y = .25, label = "Phase 3", size = 6)+
@@ -4016,6 +4876,7 @@ dd2c<- read.csv("data/KDEs/NWCoastKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -4036,7 +4897,32 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/NWCoastSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NWCoastSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/TCPSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 325, 1750, 3750, 6350, 8200),
+                         labels=c('Historic' ,'Late Pacific', 'Middle Pacific','Early Pacific','Archaic'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/NWCoastPerCap200.csv", sep = ",", col.names=NA)
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/NWCoastSumbin.csv") %>%
   dplyr::select(-...1)
@@ -4052,13 +4938,18 @@ write.table(pcgrowth, file = "data/Percapita/NWCoastPerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 nwc30pc<- read.csv("data/Percapita/NWCoastPerCap.csv")
+nwc30pc<- read.csv("data/Percapita200/NWCoastPerCap200.csv")
 
-nwc30pc2<-subset(nwc30pc, calBP<5000 & calBP>500)
+
+nwc30pc2<-subset(nwc30pc, calBP<3801 & calBP>499)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(nwc30pc2$MKDE-min(nwc30pc2$MKDE))/(max((nwc30pc2$MKDE)-min(nwc30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 nwc30pc3<-cbind(StKDE, nwc30pc2)
+
+##Write food production file
+#write.table(nwc30pc3, file = "data/Percapita2/NWCoastPerCap.csv", sep = ",", col.names=NA)
 
 pcnwc <- ggplot(nwc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4069,7 +4960,7 @@ pcnwc <- ggplot(nwc30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  # scale_y_continuous(limits=c(-.75,0.5))+
+   scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -4182,6 +5073,7 @@ dd2c<- read.csv("data/KDEs/SWWyKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -4202,7 +5094,35 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/SWWySumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SWWySumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/SWWySumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 400, 1800, 3670, 8200),
+                         labels=c('Historic', 'Late Prehistoric','Late Archaic','Early Archaic'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/SWWyPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/SWWySumbin.csv") %>%
   dplyr::select(-...1)
@@ -4218,13 +5138,18 @@ write.table(pcgrowth, file = "data/Percapita/SWWyPerCap.csv", sep = ",", col.nam
 
 ###Plot mean KDE against the per capita growth rate in the North
 wy30pc<- read.csv("data/Percapita/SWWyPerCap.csv")
+wy30pc<- read.csv("data/Percapita200/SWWyPerCap200.csv")
 
-wy30pc2<-subset(wy30pc, calBP<8000 & calBP>3500)
+
+wy30pc2<-subset(wy30pc, calBP<8000 & calBP>5500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(wy30pc2$MKDE-min(wy30pc2$MKDE))/(max((wy30pc2$MKDE)-min(wy30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 wy30pc3<-cbind(StKDE,wy30pc2)
+
+##Write food production file
+#write.table(wy30pc3, file = "data/Percapita2/SWWyPerCap.csv", sep = ",", col.names=NA)
 
 pcswwy <- ggplot(wy30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4235,7 +5160,7 @@ pcswwy <- ggplot(wy30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.15))+
+  scale_y_continuous(limits=c(-.7,.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -4347,6 +5272,7 @@ dd2c<- read.csv("data/KDEs/ESouthAfKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<- rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -4367,7 +5293,34 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/ESouthAfSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/ESouthAfSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/ESouthAfSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 700, 2110, 8200),
+                         labels=c('Polity','Agg','HG'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/ESouthAfPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/ESouthAfSumbin.csv") %>%
   dplyr::select(-...1)
@@ -4382,13 +5335,17 @@ write.table(pcgrowth, file = "data/Percapita/ESouthAfPerCap.csv", sep = ",", col
 
 ###Plot mean KDE against the per capita growth rate in the North
 esa30pc<- read.csv("data/Percapita/ESouthAfPerCap.csv")
+esa30pc<- read.csv("data/Percapita200/ESouthAfPerCap200.csv")
 
-esa30pc2<-subset(esa30pc, calBP<2101 & calBP>600)
+esa30pc2<-subset(esa30pc, calBP<2401 & calBP>400)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(esa30pc2$MKDE-min(esa30pc2$MKDE))/(max((esa30pc2$MKDE)-min(esa30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 esa30pc3<-cbind(StKDE, esa30pc2)
+
+##Write food production file
+#write.table(esa30pc3, file = "data/Percapita2/ESouthAfPerCap.csv", sep = ",", col.names=NA)
 
 pcesa <- ggplot(esa30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4509,6 +5466,7 @@ dd2c<- read.csv("data/KDEs/WSouthAfKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -4529,8 +5487,35 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/WSouthAfSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###Calculate per capita growth rate of 30 year time steps.
 
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/WSouthAfSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/WSouthAfSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 700, 2110, 8200),
+                         labels=c('Polity','Herding','HG'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/WSouthAfPerCap200.csv", sep = ",", col.names=NA)
+
+###30 year bins
 d <-read_csv("data/Sumbin/WSouthAfSumbin.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
@@ -4543,13 +5528,17 @@ write.table(pcgrowth, file = "data/Percapita/WSouthAfPerCap.csv", sep = ",", col
 
 ###Plot mean KDE against the per capita growth rate in the North
 wsa30pc<- read.csv("data/Percapita/WSouthAfPerCap.csv")
+wsa30pc<- read.csv("data/Percapita200/WSouthAfPerCap200.csv")
 
-wsa30pc2<-subset(wsa30pc, calBP<2700 & calBP>299)
+wsa30pc2<-subset(wsa30pc, calBP<2401 & calBP>400)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(wsa30pc2$MKDE-min(wsa30pc2$MKDE))/(max((wsa30pc2$MKDE)-min(wsa30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 wsa30pc3<-cbind(StKDE, wsa30pc2)
+
+##Write food production file
+#write.table(wsa30pc3, file = "data/Percapita2/WSouthAfPerCap.csv", sep = ",", col.names=NA)
 
 pcwsa <- ggplot(wsa30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4666,7 +5655,7 @@ dd2c<- read.csv("data/KDEs/NWAustKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,7810,7780,7750,7720,
@@ -4686,7 +5675,34 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/NWAustSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NWAustSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/NWAustSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 500, 2050, 8200),
+                         labels=c('Late','Intensive HG','HG'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/NWAustPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/NWAustSumbin.csv") %>%
   dplyr::select(-...1)
@@ -4700,13 +5716,18 @@ write.table(pcgrowth, file = "data/Percapita/NWAustPerCap.csv", sep = ",", col.n
 
 ###Plot mean KDE against the per capita growth rate in the North
 nwau30pc<- read.csv("data/Percapita/NWAustPerCap.csv")
+nwau30pc<- read.csv("data/Percapita200/NWAustPerCap200.csv")
 
-nwau30pc2<-subset(nwau30pc, calBP<5000 & calBP>500)
+
+nwau30pc2<-subset(nwau30pc, calBP<3000 & calBP>500)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(nwau30pc2$MKDE-min(nwau30pc2$MKDE))/(max((nwau30pc2$MKDE)-min(nwau30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 nwau30pc3<-cbind(StKDE, nwau30pc2)
+
+##Write food production file
+write.table(nwau30pc3, file = "data/Percapita2/NWAustPerCap.csv", sep = ",", col.names=NA)
 
 pcnwaus <- ggplot(nwau30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4717,7 +5738,7 @@ pcnwaus <- ggplot(nwau30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.17,0.2))+
+  #scale_y_continuous(limits=c(-.17,0.2))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -4826,6 +5847,7 @@ dd2c<- read.csv("data/KDEs/SEAustKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -4846,7 +5868,35 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/SEAustSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SEAustSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins.
+
+d <-read_csv("data/Sumbin/SEAustSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 400, 2500, 8200),
+                         labels=c('Late','Intensive HG','HG'))
+#save data
+write.table(pcgrowth, file = "data/Percapita200/SEAustPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/SEAustSumbin.csv") %>%
   dplyr::select(-...1)
@@ -4860,13 +5910,16 @@ write.table(pcgrowth, file = "data/Percapita/SEAustPerCap.csv", sep = ",", col.n
 
 ###Plot mean KDE against the per capita growth rate in the North
 seau30pc<- read.csv("data/Percapita/SEAustPerCap.csv")
-
-seau30pc2<-subset(seau30pc, calBP<5000 & calBP>500)
+seau30pc<- read.csv("data/Percapita200/SEAustPerCap200.csv")
+seau30pc2<-subset(seau30pc, calBP<3500& calBP>900)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(seau30pc2$MKDE-min(seau30pc2$MKDE))/(max((seau30pc2$MKDE)-min(seau30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 seau30pc3<-cbind(StKDE, seau30pc2)
+
+##Write food production file
+#write.table(seau30pc3, file = "data/Percapita2/SEAustPerCap.csv", sep = ",", col.names=NA)
 
 pcseaus <- ggplot(seau30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -4877,7 +5930,7 @@ pcseaus <- ggplot(seau30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.07,0.15))+
+ # scale_y_continuous(limits=c(-.07,0.15))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -4987,7 +6040,7 @@ dd2c<- read.csv("data/KDEs//JapanSouthKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640,14610,14580,14550,14520,14490,14460,14430,14400,14370,14340,14310,14280,14250,14220,14190,14160,14130,
@@ -5004,12 +6057,41 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
          4440,4410,4380,4350,4320,4290,4260,4230,4200,4170,4140,4110,4080,4050,4020,3990,3960,3930,3900,3870,3840,3810,3780,3750,3720,3690,3660,3630,3600,3570,3540,3510,3480,3450,3420,
          3390,3360,3330,3300,3270,3240,3210,3180,3150,3120,3090,3060,3030,3000,2970,2940,2910,2880,2850,2820,2790,2760,2730,2700,2670,2640,2610,2580,2550,2520,2490,2460,2430,2400,2370,
          2340,2310,2280,2250,2220,2190,2160,2130,2100,2070,2040,2010,1980,1950,1920,1890,1860,1830,1800,1770,1740,1710,1680,1650,1620,1590,1560,1530,1500,1470,1440,1410,1380,1350,1320,
-         1290,1260,1230,1200,1170,1140,1110,1080,1050,1020,990,960,930,900,870,840,810,780,750,720,690,660,630,600,570,540,510,480,450,420,390,360,330,300,270,240,210)
+         1290,1260,1230,1200,1170,1140,1110,1080,1050,1020,990,960,930,900,870,840,810,780,750,720,690,660,630,600,570,540,510,480,450,420,390,360,330,300,270,240)
 sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "data/Sumbin/JapanSouthSumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(15000, 14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000, 1800, 1600, 1400, 1200, 1000, 800, 600
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/JapanSouthSumbin200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 200 year time steps for each of the 200 simulations.
+
+d <-read.csv("data/Sumbin/JapanSouthSumbin200.csv") 
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 1350, 1590, 1770, 3100, 11500, 15000),
+                         labels=c('Classic','Kofun','Shonai', 'Yayoi','Jamon','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/JapanSouthPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/JapanSouthSumbin.csv") %>%
   dplyr::select(-...1)
@@ -5023,13 +6105,17 @@ write.table(pcgrowth, file = "data/Percapita/JapanSouthPerCap.csv", sep = ",", c
 
 ###Plot mean KDE against the per capita growth rate in the North
 sjp30pc<- read.csv("data/Percapita/JapanSouthPerCap.csv")
+sjp30pc<- read.csv("data/Percapita200/JapanSouthPerCap200.csv")
 
-sjp30pc2<-subset(sjp30pc, calBP<3001 & calBP>999)
+sjp30pc2<-subset(sjp30pc, calBP<3500 & calBP>999)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(sjp30pc2$MKDE-min(sjp30pc2$MKDE))/(max((sjp30pc2$MKDE)-min(sjp30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 sjp30pc3<-cbind(StKDE, sjp30pc2)
+
+##Write food production file
+#write.table(sjp30pc3, file = "data/Percapita2/JapanSouthPerCap.csv", sep = ",", col.names=NA)
 
 sjppc <- ggplot(sjp30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -5040,7 +6126,7 @@ sjppc <- ggplot(sjp30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.05,0.15))+
+  scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -5146,14 +6232,14 @@ dd2<-dd %>%  filter(MKDE >0)
 ##Write the table
 write.table(dd2, file = "data/KDEs/JapanNorthKDE50bin.csv", sep = ",", col.names=NA)
 
-#load North KDE data set and select columns for removal that we do not want to sum 
+#load Japan North KDE data set and select columns for removal that we do not want to sum 
 dd2c<- read.csv("data/KDEs/JapanNorthKDE50bin.csv") %>%
   dplyr::select(-X,-calBP,-PrDens, -MKDE,-hi,-lo)
 
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640,14610,14580,14550,14520,14490,14460,14430,14400,14370,14340,14310,14280,14250,14220,14190,14160,14130,
@@ -5174,7 +6260,36 @@ calBP<-c(14970,14940,14910,14880,14850,14820,14790,14760,14730,14700,14670,14640
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/JapanNorthSumbin.csv", sep = ",", col.names=NA)
 
+###200 year bins=================================================
+MKDE<-rowMeans(out200)
+
+calBP<-c(15000, 14800,	14600,	14400,	14200,	14000,	13800,	13600,	13400,	13200,	13000,
+         12800,	12600,	12400,	12200,	12000,	11800,	11600,	11400,	11200,	11000,	
+         10800,	10600,	10400,	10200,	10000,	9800,	9600,	9400,	9200,	9000,	8800,	8600,
+         8400,	8200,	8000,	7800,	7600,	7400,	7200,	7000,	6800,	6600,	6400,	6200,	6000,
+         5800,	5600,	5400,	5200,	5000,	4800,	4600,	4400,	4200,	4000,	3800,	3600,	3400,
+         3200,	3000,	2800,	2600,	2400,	2200,	2000, 1800, 1600, 1400, 1200, 1000, 800, 600
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/JapanNorthSumbin200.csv", sep = ",", col.names=NA)
+
+
 ###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+
+d <-read.csv("data/Sumbin/JapanNorthSumbin200.csv") 
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200, 700, 1300, 2320, 3280,4000, 5000, 6000, 11500, 15000),
+                         labels=c('Ainu','Satsumon','Epi Jamon','Final Jamon','Late Jamon','Middle Jamon', 'Early Jamon','Initial Jamon','Paleolithic'))
+
+write.table(pcgrowth, file = "data/Percapita200/JapanNorthPerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/JapanNorthSumbin.csv") %>%
   dplyr::select(-...1)
@@ -5188,13 +6303,17 @@ write.table(pcgrowth, file = "data/Percapita/JapanNorthPerCap.csv", sep = ",", c
 
 ###Plot mean KDE against the per capita growth rate in the North
 njp30pc<- read.csv("data/Percapita/JapanNorthPerCap.csv")
+njp30pc<- read.csv("data/Percapita200/JapanNorthPerCap200.csv")
 
-njp30pc2<-subset(njp30pc, calBP<6500 & calBP>3000)
+njp30pc2<-subset(njp30pc, calBP<6601 & calBP>3100)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(njp30pc2$MKDE-min(njp30pc2$MKDE))/(max((njp30pc2$MKDE)-min(njp30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 njp30pc3<-cbind(StKDE, njp30pc2)
+
+##Write food production file
+#write.table(njp30pc3, file = "data/Percapita2/JapanNorthPerCap.csv", sep = ",", col.names=NA)
 
 pcnjp <- ggplot(njp30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -5205,7 +6324,7 @@ pcnjp <- ggplot(njp30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_line(aes(y=logFit3), color="blue", size=1) +
   theme_bw() +
   # scale_x_reverse(breaks=c(3500, 2500, 1500, 500), limits=c(3700,300))+
-  scale_y_continuous(limits=c(-.1,0.2))+
+  scale_y_continuous(limits=c(-.7,0.7))+
   theme(axis.text.x = element_text(size=28, colour = "black"), axis.title.x=element_text(size=24),
         axis.title.y=element_text(size=24), axis.text.y = element_text(
           size=28), plot.title = element_text(size=18, face = "bold"))+
@@ -5301,6 +6420,7 @@ dd2c<- read.csv("data/KDEs/NorthKDE50bin.csv") %>%
 ### Sum into 30 year generation time steps..........
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
@@ -5322,13 +6442,42 @@ calBP<-c(8170, 8140, 8110, 8080, 8050, 8020, 7990, 7960, 7930, 7900,7870,7840,78
 sums<-cbind(calBP, MKDE, out50)
 write.table(sums, file = "data/Sumbin/North30Sumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
 
+##200 year bins=========================
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/NorthSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/NorthSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200,500, 1300, 2380, 3970, 8200),
+                         labels=c('Phase 4','Phase 3', 'Phase 2','Phase 1','Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/North30PerCap200.csv", sep = ",", col.names=NA)
+
+#30 year bin growth rates
 d <-read_csv("data/Sumbin/North30Sumbin.csv") %>%
   dplyr::select(-...1)
 d2<-arrange(d, calBP)
 ### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
 pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
 pcgrowth$PeriodID <- cut(pcgrowth$calBP,
                          breaks=c(200,500, 1300, 2380, 3970, 8200),
                          labels=c('Phase 4','Phase 3', 'Phase 2','Phase 1','Archaic'))
@@ -5337,13 +6486,18 @@ write.table(pcgrowth, file = "data/Percapita/North30PerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 nmz30pc<- read.csv("data/Percapita/North30PerCap.csv")
+nmz30pc<- read.csv("data/Percapita200/North30PerCap200.csv")
 
-nmz30pc2<-subset(nmz30pc, calBP<3000 & calBP>200)
+nmz30pc2<-subset(nmz30pc, calBP<2700 & calBP>200)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(nmz30pc2$MKDE-min(nmz30pc2$MKDE))/(max((nmz30pc2$MKDE)-min(nmz30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic data frame
 nmz30pc3<-cbind(StKDE, nmz30pc2)
+
+##Write food production file
+#write.table(nmz30pc3, file = "data/Percapita2/North30PerCap.csv", sep = ",", col.names=NA)
+
 
 pcnmdz <- ggplot(nmz30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
@@ -5446,7 +6600,7 @@ dd2c<- read.csv("data/KDEs/SouthKDE50bin.csv") %>%
 ###Sum SPD by 30 year intervals
 # sum and save new csvs.
 out50 <- rollapply(dd2c,30,(sum),by=30,by.column=TRUE,align='right')
-
+out200<-rollapply(dd2c,200,(sum),by=200,by.column=TRUE,align='right')
 ###Calculate the mean KDE of the 30 year sums of the 200 KDEs
 MKDE<-rowMeans(out50)
 ##Add in the 30 year bin dates
@@ -5468,7 +6622,36 @@ sums<-cbind(calBP, MKDE, out50)
 
 write.table(sums, file = "Data/Sumbin/South30Sumbin.csv", sep = ",", col.names=NA)
 
-###Calculate per capita growth rate of 30 year time steps for each of the 200 simulations.
+##200 year bins=========================
+MKDE<-rowMeans(out200)
+##Add in the 30 year bin dates
+calBP<-c(8000, 7800, 7600, 7400, 7200, 7000, 6800, 6600, 6400, 6200, 6000, 5800, 5600, 5400,
+         5200, 5000, 4800, 4600, 4400, 4200, 4000, 3800, 3600, 3400, 3200, 3000, 2800, 2600,
+         2400, 2200, 2000, 1800, 1600, 1400, 1200, 1000, 800, 600, 400
+)
+sums<-cbind(calBP, MKDE, out200)
+write.table(sums, file = "data/Sumbin/SouthSumbin200.csv", sep = ",", col.names=NA)
+
+
+###calculate growth rates for 200 year summed bins
+
+d <-read_csv("data/Sumbin/SouthSumbin200.csv") %>%
+  dplyr::select(-...1)
+d2<-arrange(d, calBP)
+### We calculate capita growth as LN(MKDE at t+1/ MKDE at time t).
+pcgrowth<-d2 %>% mutate(PerCap = (log(lag(MKDE)/MKDE)))
+
+##Add ID variable for culture history periods
+
+pcgrowth$PeriodID <- cut(pcgrowth$calBP,
+                         breaks=c(200,500, 1300, 2380, 3970, 8200),
+                         labels=c('Phase 4','Phase 3', 'Phase 2','Phase 1','Archaic'))
+
+
+write.table(pcgrowth, file = "data/Percapita200/South30PerCap200.csv", sep = ",", col.names=NA)
+
+
+###Calculate per capita growth rate of 30 year time steps.
 
 d <-read_csv("data/Sumbin/South30Sumbin.csv") %>%
   dplyr::select(-...1)
@@ -5483,13 +6666,17 @@ write.table(pcgrowth, file = "data/Percapita/South30PerCap.csv", sep = ",", col.
 
 ###Plot mean KDE against the per capita growth rate in the North
 npt30pc<- read.csv("data/Percapita/South30PerCap.csv")
+npt30pc<- read.csv("data/Percapita200/South30PerCap200.csv")
 
-npt30pc2<-subset(npt30pc, calBP<3000 & calBP>200)
+npt30pc2<-subset(npt30pc, calBP<2700 & calBP>200)
 
 #Standardize the mean KDE by the maximum mean KDE during the Neolithic 
 StKDE<-(npt30pc2$MKDE-min(npt30pc2$MKDE))/(max((npt30pc2$MKDE)-min(npt30pc2$MKDE)))
 ##Add the standardized KDE to the Neolithic dataframe
 npt30pc3<-cbind(StKDE, npt30pc2)
+
+##Write food production file
+#write.table(npt30pc3, file = "data/Percapita2/South30PerCap.csv", sep = ",", col.names=NA)
 
 pcnpat <- ggplot(npt30pc3,aes(x=(StKDE), y=(PerCap))) +
   #geom_ribbon(aes(ymin = lo, ymax = hi), fill = "grey70") +
