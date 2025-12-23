@@ -1,12 +1,15 @@
 
-(1) Citation to the manuscript: This document describes the data files and R-code that accompany ``Innovations in food production and patterns of long-term population expansion" by Jacob Freeman and Erick Robinson. This README document describes the csv files and how to get started with the analysis. 
+(1) Citation to the manuscript: This document describes the data files and R-code that accompany ``Long-term population dynamics following innovations in food production" by Jacob Freeman and Erick Robinson. Journal of Archaeological Method and Theory. This README document describes .R, .ODE, and the .csv files and how to get started with the analysis. 
 
 
 (2) Description of the files included in the repository and their relationship to the figures and tables in the manuscript
 Files: 
 
+(i)DelayFinal.ode is an xppaut script associated with the logistic model that forms the foundation of the ISM. The script is published with 
 
-(i) Radiocarbon files. These files are needed to run the code CaseStudyRadiocarbon.R For example: load data/FinalRCDTexas3.csv or data/nerd.csv.
+Freeman, J., Robinson, E., Bird, D., Hard, R. J., Mauldin, R. P., & Anderies, J. M. (2024). The long-term expansion and recession of human populations. Proceedings of the National Academy of Sciences, 121(12), e2312207121. We used the script here to help generate Figures 2 and 8. 
+
+(ii) Radiocarbon files. These files are needed to run the code CaseStudyRadiocarbon.R For example: load data/FinalRCDTexas3.csv or data/nerd.csv.
 
 These files contains all radiocarbon ages associated with archaeological remains collected from the archaeological regions. These files are essential to reproduce each file called RegionPerCap.csv and, ultimately, Figures 3 and S8-S38 in the main manuscript and the Supporting Material. These data are provided for researchers interested in reproducing the KDEs used in the study and engaging in their own analysis.
 
@@ -39,7 +42,7 @@ Region--Central Texas =CTx, Coastal Plain=TCP
 Zone--Inland, riverine or coastal ecosystems
 
 
-(ii) File path: data/RegionPerCap.csv 
+(iii) File path: data/RegionPerCap.csv 
 
 These files contains the time-series of the per capita growth rates of all simulated KDEs, the mean KDE, and per capita growth rate of the mean KDE. The files are essential to reproduce population dynamics figures in the main manuscript and the Supporting Material. These files can be used by those people who do not want to reproduce the full analysis of archaeological radiocarbon based on the raw data.
 
@@ -52,7 +55,7 @@ MKDE--The mean value of the 200 KDEs at each 30 year time-step
 PerCap--The per capita growth rate of the mean KDE
 
 
-(iii) File Path data/expansion.csv
+(iv) File Path data/expansion.csv
 This file contains all of the summary data necessary to replicate Figure 4 in the main text. This file contains the following columns
 
 Case ID--unique ID number for each region.
@@ -72,7 +75,9 @@ ExpandK-The number of demographic transitions in a sequence
 YearsperDT--The number of years per demographic transition
 Kincrease--The increase in standardized population density per demographic transition in a sequence
 
-(3)The code to analyze the data is contained in CaseStudyRadiocarbon.R, SumAnalysis.R, and PopExpandMap. The analysis was run in "R version 4.2.2 (2022-10-31 ucrt)" with the Rstudio integrated development environment version ``2023.06.0 Build 421." ChatGPT was used to help create the map.
+(v)File Path: data/PerCapita2/AllCasesFoodPro200sims2.csv. This file is an aggregation of the 200 KDE simulations for each region and culture history periods for the time periods of study. This file is used in the analysis of per capital growth rates using PerCapitaGrowth.R
+
+(3)The code to analyze the data is contained in CaseStudyRadiocarbon.R, PerCapitaGrowth.R, ExampleCases.R, SumAnalysis.R, and PopExpandMap. The analysis was run in "R version 4.2.2 (2022-10-31 ucrt)" with the Rstudio integrated development environment version ``2023.06.0 Build 421." ChatGPT was used to help create the map.
 
 
 (4) Getting started working with the project:
